@@ -48,7 +48,7 @@ for current_directory in input_directories:
     inputs = os.listdir(current_directory + "/")
     print("Inputs: " + str(inputs))
 
-    output_directory = current_directory + output_directory_name
+    output_directory = current_directory + "/" + output_directory_name
 
     if(os.path.isdir(output_directory)):
         print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
