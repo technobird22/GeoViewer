@@ -25,6 +25,8 @@ dir_name = os.path.basename(os.getcwd())
 
 output = dir_name
 
+print("-" * 30)
+print("[INFO] ---Excecution start---")
 if(dir_name != target_dir):
     print("[WARNING] Working directory '" + dir_name + "' is not the target directory. Continue? [y/n]")
     # choice = input()
@@ -37,22 +39,27 @@ if(dir_name != target_dir):
 else:
     print("[OK] Working directory is target directory...")
 
+print("-" * 30)
 print("[STATUS] ---Begin Processing---")
+
 start_time = time.time()
 
+print("[INFO] Directories to process: " + str(os.listdir()))
+print("-"*30)
 for current_directory in input_directories:
     # Check if it is a directory
     if(not(os.path.isdir(current_directory))):
         continue
 
     inputs = os.listdir(current_directory + "/")
-    print("Inputs: " + str(inputs))
+    print("Inputs from directory '" + str(current_directory) + "': " + str(inputs))
 
     output_directory = current_directory + "/" + output_directory_name
 
     if(os.path.isdir(output_directory)):
         print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
         choice = input()
+        first_img += 1
         while(choice != 'y' and choice != 'n'):
             print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
             choice = input()
@@ -70,12 +77,30 @@ for current_directory in input_directories:
             print("[OK] Successfully created the directory '" + output_directory + "'.")
 
     cnt = 0.0
-    height, width, c = cv2.imread(inputs[first_img]).shape
+    
+
+    for img_path in inputs:
+        print("[STATUS] Got image: '" + str(img_path) + "'.")
+    
+    print("-" * 30)
+
+    cur_img_path = current_directory + "/" + inputs[first_img]
+
+    print("[STATUS] Loading image '" + cur_img_path + "'.")
+    cur_img = cv2.imread(cur_img_path)
+
+    print("[STATUS] Getting frame dimensions...")
+    height, width, c = cur_img.shape
+
+    print("[OK] Got frame dimensions")
 
     # Define the codec and create VideoWriter object
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     out = cv2.VideoWriter("clahe_" + dir_name + ".mp4", fourcc, fps, (round(width),round(height)))
+
     for img_path in inputs:
+        img_path = current_directory + "/" + img_path
+
         print("[" + str(round(cnt/len(inputs)*100)) + "%] Performing CLAHE on: \"" + img_path + "\"")
         try:
             cnt += 1
