@@ -40,25 +40,6 @@ else:
 print("[STATUS] ---Begin Processing---")
 start_time = time.time()
 
-if(os.path.isdir(output_directory)):
-    print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
-    choice = input()
-    while(choice != 'y' and choice != 'n'):
-        print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
-        choice = input()
-    if(choice != 'y'):
-        print("[STATUS] Aborting...")
-        exit()
-else:
-    print("[OK] No output directory found.")
-    print("[STATUS] Creating output directory...")
-    try:
-        os.mkdir(output_directory)
-    except OSError:
-        print("[ERROR] Creation of the directory '" + output_directory + "' failed")
-    else:
-        print("[OK] Successfully created the directory '" + output_directory + "'.")
-
 for current_directory in input_directories:
     # Check if it is a directory
     if(not(os.path.isdir(current_directory))):
@@ -66,6 +47,27 @@ for current_directory in input_directories:
 
     inputs = os.listdir(current_directory + "/")
     print("Inputs: " + str(inputs))
+
+    output_directory = current_directory + output_directory_name
+
+    if(os.path.isdir(output_directory)):
+        print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
+        choice = input()
+        while(choice != 'y' and choice != 'n'):
+            print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
+            choice = input()
+        if(choice != 'y'):
+            print("[STATUS] Aborting...")
+            exit()
+    else:
+        print("[OK] No output directory found.")
+        print("[STATUS] Creating output directory...")
+        try:
+            os.mkdir(output_directory)
+        except OSError:
+            print("[ERROR] Creation of the directory '" + output_directory + "' failed")
+        else:
+            print("[OK] Successfully created the directory '" + output_directory + "'.")
 
     cnt = 0.0
     height, width, c = cv2.imread(inputs[first_img]).shape
