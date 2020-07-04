@@ -18,10 +18,34 @@ input_directories = os.listdir()
 target_dir = "compilation"
 
 # output = ""
+collection = "everything/"
 output_directory_name = "frames/"
 
 # Current directory name
 dir_name = os.path.basename(os.getcwd())
+
+# Directory for every frame
+output_directory = "everything/"
+
+if(os.path.isdir(output_directory)):
+    print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
+    choice = input()
+    # first_dir += 1
+    while(choice != 'y' and choice != 'n'):
+        print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
+        choice = input()
+    if(choice != 'y'):
+        print("[STATUS] Aborting...")
+        exit()
+else:
+    print("[OK] No output directory found.")
+    print("[STATUS] Creating output directory...")
+    try:
+        os.mkdir(output_directory)
+    except OSError:
+        print("[ERROR] Creation of the directory '" + output_directory + "' failed")
+    else:
+        print("[OK] Successfully created the directory '" + output_directory + "'.")
 
 output = dir_name
 
@@ -48,11 +72,8 @@ print("[INFO] Directories to process: " + str(os.listdir()))
 print("-"*30)
 for current_directory in input_directories:
     # Check if it is a directory
-    if(not(os.path.isdir(current_directory))):
+    if(not(os.path.isdir(current_directory)) or current_directory == collection[:-1]):
         continue
-
-    inputs = os.listdir(current_directory + "/")
-    print("Inputs from directory '" + str(current_directory) + "': " + str(inputs))
 
     output_directory = current_directory + "/" + output_directory_name
 
@@ -76,15 +97,20 @@ for current_directory in input_directories:
         else:
             print("[OK] Successfully created the directory '" + output_directory + "'.")
 
-    cnt = 0.0
     
+    inputs = os.listdir(current_directory + "/")[first_img:]
+    print("Inputs from directory '" + str(current_directory) + "': " + str(inputs))
+
+    cnt = 0.0
 
     for img_path in inputs:
         print("[STATUS] Got image: '" + str(img_path) + "'.")
     
     print("-" * 30)
 
+    print(str(">"*10) + "F: " + str(first_img))
     cur_img_path = current_directory + "/" + inputs[first_img]
+    print(str(">"*10) + "F1: " + str(first_img))
 
     print("[STATUS] Loading image '" + cur_img_path + "'.")
     cur_img = cv2.imread(cur_img_path)
@@ -98,8 +124,10 @@ for current_directory in input_directories:
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     out = cv2.VideoWriter("clahe_" + dir_name + ".mp4", fourcc, fps, (round(width),round(height)))
 
-    for img_path in inputs:
-        img_path = current_directory + "/" + img_path
+    for relative_img_path in inputs:
+        print("[--INFO] Path: '" + img_path + "'.")
+        img_path = current_directory + "/" + relative_img_path
+        print("[INFO] Path: '" + img_path + "'.")
 
         print("[" + str(round(cnt/len(inputs)*100)) + "%] Performing CLAHE on: \"" + img_path + "\"")
         try:
@@ -112,11 +140,17 @@ for current_directory in input_directories:
             print("[STATUS] Performing CLAHE...")
             out_img = clahe(img)
             print("[OK] Finished performing CLAHE.")
+
             print("[OK] Processed image ready.")
 
             # Write to image
-            print("[STATUS] Writing image...")
-            cv2.imwrite(output_directory + output + "_" + img_path, out_img)
+            print(">"*5 + "[INFO] '" + (output_directory + relative_img_path) + "' ...")
+            print("[STATUS] Writing image to '" + (output_directory + relative_img_path) + "' ...")
+            cv2.imwrite(output_directory + relative_img_path, out_img)
+            print("[OK] Successfully written image")
+
+            print("[STATUS] Writing image to '" + (collection + output + "_" + relative_img_path) + "' ...")
+            cv2.imwrite(collection + "/" + output + "_" + relative_img_path, out_img)
             print("[OK] Successfully written image")
 
             # Write to video
