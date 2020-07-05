@@ -168,7 +168,7 @@ for current_directory in input_directories:
 
             # Write to video
             print("[STATUS] Writing to frame...")
-            animation.write(out_img)
+            animation.write(cv2.cvtColor(out_img, cv2.COLOR_GRAY2RGB))
             print("[OK] Successfully written image to frame")
 
             if((cnt - 1) % 100 == 0):
