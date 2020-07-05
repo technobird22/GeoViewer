@@ -10,11 +10,11 @@ import geocap_utils
 
 # [STATUS] Execution finished. Total time elapsed: 124.5 seconds. Processed 844.0 frames. Calculation FPS: 0.1475.
 # [STATUS] ---DONE---
-frames = "everything/"
+frame_path = "everything/"
 target_dir = "compilation"
 
 # output_header = "good_clahe_"
-output_header = str(frames[:-1] + "_")
+output_header = str(frame_path[:-1] + "_")
 
 first_img = 0
 
@@ -51,18 +51,18 @@ print("[STATUS] Safe to write file")
 
 # print("[STATUS] Continuing...")
 
-if(os.path.isdir(frames)):
+if(os.path.isdir(frame_path)):
     print("[OK] Found processed frames.")
 
     print("[STATUS] Loading processed frames...")
-    inputs = os.listdir(frames)[first_img:-1]
+    inputs = os.listdir(frame_path)[first_img:-1]
     print("[OK] Successfully loaded processed frames")
     
     for img_path in inputs:
         print("[STATUS] Got image: '" + str(img_path) + "'.")
 
     print("[STATUS] Getting frame dimensions...")
-    cur_img = frames + inputs[first_img]
+    cur_img = frame_path + inputs[first_img]
     print("[STATUS] Loading image '" + cur_img + "'.")
     img = cv2.imread(cur_img)
     height, width, c = img.shape
@@ -84,7 +84,7 @@ out = cv2.VideoWriter(output_header + dir_name + ".mp4", fourcc, fps, (round(wid
 
 cnt = 0.0
 for img_name in inputs:
-    img_path = frames + img_name
+    img_path = frame_path + img_name
     print("[" + str(round(cnt/len(inputs)*100)) + "%] Processing frame: \"" + img_path + "\"")
     try:
         cnt += 1
