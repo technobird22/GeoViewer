@@ -120,14 +120,21 @@ for current_directory in input_directories:
 
     print("[STATUS] Getting frame dimensions...")
     height, width, c = cur_img.shape
+    height, width, c = round(height), round(width), round(c)
 
     print("[OK] Got frame dimensions")
 
     print("-"*30)
-    print("[INFO] CONFIG:")
+    print("[INFO] VIDEO CONFIG:")
+    print("Working with directory '", current_directory, "'.")
+    print("Frame dimensions: ", height, " by ", width, ".")
+    print("Frame rate: ", fps, " frames per second.")
+
+    print("Video ouput file: '", ("clahe_" + current_directory + ".mp4"), "'.")
+    print("-"*30)
     # Define the codec and create VideoWriter object
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    animation = cv2.VideoWriter("clahe_" + dir_name + ".mp4", fourcc, fps, (round(width),round(height)))
+    animation = cv2.VideoWriter("clahe_" + current_directory + ".mp4", fourcc, fps, width, height)
 
     print("-"*30)
 
