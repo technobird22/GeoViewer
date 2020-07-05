@@ -16,7 +16,7 @@ def parse_frame_name(input_name):
     output_name = date + " @ " + time + "UTC"
     return (output_name, num)
 
-def overlay_text(inp_img, frame_name):
+def overlay_info(inp_img, frame_name):
     print("[INFO] Overlaying text onto frame...")
 
     frame_time, frame_num = parse_frame_name(frame_name)
