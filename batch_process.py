@@ -71,6 +71,7 @@ start_time = time.time()
 
 print("[INFO] Directories to process: " + str(os.listdir()))
 print("-"*30)
+cnt = 0
 for current_directory in input_directories:
     first_img = 1
     # Check if it is a directory
@@ -189,6 +190,12 @@ for current_directory in input_directories:
         print("[ERROR] Failed with message '" + str(sys.exc_info()[0]) + "'.\n")
     
     print("[INFO] --- Finished processing directory '" + current_directory + "'.---\n" + "-"*30)
+
+print("-"*30)
+
+if(cnt == 0):
+    print("[WARN] ---Did not do any processing!---")
+    exit()
 
 elapsed = round(time.time() - start_time, 1)
 cal_fps = round(elapsed/cnt, 4)
