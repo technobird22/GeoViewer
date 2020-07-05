@@ -46,7 +46,7 @@ def overlay_info(inp_img, frame_name):
     return(img)
 
 # For testing the overlay code
-def test_overlay:
+def test_overlay():
     path = "NZ_area_test/"
     img_name = "FD8_IMG_FD_125_IR105_20200704_210006.jpg"
     img = cv2.imread(path + img_name, 1)
