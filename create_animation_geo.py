@@ -13,8 +13,7 @@ import geocap_utils
 frame_path = "everything/"
 target_dir = "compilation"
 
-# output_header = "good_clahe_"
-output_header = str(frame_path[:-1] + "_")
+output_header = "fast_" + frame_path[:-1] + "_"
 
 first_img = 0
 
