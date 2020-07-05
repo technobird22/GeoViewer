@@ -82,8 +82,8 @@ fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 out = cv2.VideoWriter(output_header + dir_name + ".mp4", fourcc, fps, (round(width),round(height)))
 
 cnt = 0.0
-for img_path in inputs:
-    img_path = frames + img_path
+for img_name in inputs:
+    img_path = frames + img_name
     print("[" + str(round(cnt/len(inputs)*100)) + "%] Processing frame: \"" + img_path + "\"")
     try:
         cnt += 1
