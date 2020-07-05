@@ -28,6 +28,9 @@ dir_name = os.path.basename(os.getcwd())
 # Directory for every frame
 output_directory = "everything/"
 
+# Define animation output codec
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+
 if(os.path.isdir(output_directory)):
     print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
     choice = input()
@@ -132,9 +135,12 @@ for current_directory in input_directories:
 
     print("Video ouput file: '", ("clahe_" + current_directory + ".mp4"), "'.")
     print("-"*30)
-    # Define the codec and create VideoWriter object
-    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+
+    # Create VideoWriter object for daily animation
     animation = cv2.VideoWriter("clahe_" + current_directory + ".mp4", fourcc, fps, (width, height))
+    
+    # Create VideoWriter object for total animation
+    total_animation = cv2.VideoWriter("total_clahe_" + dir_name + ".mp4", fourcc, fps, (width, height))
 
     for relative_img_path in inputs:
         print("[--INFO] Path: '" + img_path + "'.")
@@ -166,9 +172,14 @@ for current_directory in input_directories:
             cv2.imwrite(collection + "/" + current_directory + "_" + relative_img_path, out_img)
             print("[OK] Successfully written image")
 
-            # Write to video
-            print("[STATUS] Writing to frame...")
+            # Write to daily animation
+            print("[STATUS] Writing to daily frame...")
             animation.write(cv2.cvtColor(out_img, cv2.COLOR_GRAY2RGB))
+            print("[OK] Successfully written image to frame")
+
+            # Write to total animation
+            print("[STATUS] Writing to total frame...")
+            total_animation.write(cv2.cvtColor(out_img, cv2.COLOR_GRAY2RGB))
             print("[OK] Successfully written image to frame")
 
             if((cnt - 1) % 100 == 0):
@@ -187,14 +198,21 @@ for current_directory in input_directories:
             print("[STATUS] Aborting...")
             exit()
 
-    print("[STATUS] Releasing output stream")
+    print("[STATUS] Releasing daily animation output stream")
     try:
         animation.release()
-        print("[OK] Successfully released output stream")
+        print("[OK] Successfully released daily animation output stream")
     except:
-        print("[ERROR] Failed with message '" + str(sys.exc_info()[0]) + "'.\n")
+        print("[ERROR] Failed to release with message '" + str(sys.exc_info()[0]) + "'.\n")
     
     print("[INFO] --- Finished processing directory '" + current_directory + "'.---\n" + "-"*30)
+
+print("[STATUS] Releasing total animation output stream")
+try:
+    total_animation.release()
+    print("[OK] Successfully released total animation output stream")
+except:
+    print("[ERROR] Failed to release with message '" + str(sys.exc_info()[0]) + "'.\n")
 
 print("-"*30)
 
