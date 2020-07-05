@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+# ~400s
 # import numpy as np
 import cv2
 
@@ -47,7 +48,7 @@ else:
     else:
         print("[OK] Successfully created the directory '" + output_directory + "'.")
 
-output = dir_name
+# output = dir_name
 
 print("-" * 30)
 print("[INFO] ---Excecution start---")
@@ -120,9 +121,13 @@ for current_directory in input_directories:
 
     print("[OK] Got frame dimensions")
 
+    print("-"*30)
+    print("[INFO] CONFIG:")
     # Define the codec and create VideoWriter object
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    out = cv2.VideoWriter("clahe_" + dir_name + ".mp4", fourcc, fps, (round(width),round(height)))
+    animation = cv2.VideoWriter("clahe_" + dir_name + ".mp4", fourcc, fps, (round(width),round(height)))
+
+    print("-"*30)
 
     for relative_img_path in inputs:
         print("[--INFO] Path: '" + img_path + "'.")
@@ -145,17 +150,18 @@ for current_directory in input_directories:
 
             # Write to image
             print(">"*5 + "[INFO] '" + (output_directory + relative_img_path) + "' ...")
-            print("[STATUS] Writing image to '" + (output_directory + relative_img_path) + "' ...")
-            cv2.imwrite(output_directory + relative_img_path, out_img)
+            print("[STATUS] Writing image to '" + (output_directory + current_directory + "_" + relative_img_path) + "' ...")
+            cv2.imwrite(output_directory + current_directory + "_" + relative_img_path, out_img)
             print("[OK] Successfully written image")
 
-            print("[STATUS] Writing image to '" + (collection + output + "_" + relative_img_path) + "' ...")
-            cv2.imwrite(collection + "/" + output + "_" + relative_img_path, out_img)
+            # Write to collection
+            print("[STATUS] Writing image to collection at '" + (collection + current_directory + "_" + relative_img_path) + "' ...")
+            cv2.imwrite(collection + "/" + current_directory + "_" + relative_img_path, out_img)
             print("[OK] Successfully written image")
 
             # Write to video
             print("[STATUS] Writing to frame...")
-            out.write(out_img)
+            animation.write(out_img)
             print("[OK] Successfully written image to frame")
 
             if((cnt - 1) % 100 == 0):
@@ -176,7 +182,7 @@ for current_directory in input_directories:
 
     print("[STATUS] Releasing output stream")
     try:
-        out.release()
+        animation.release()
         print("[OK] Successfully released output stream")
     except:
         print("[ERROR] Failed with message '" + str(sys.exc_info()[0]) + "'.\n")
