@@ -66,5 +66,8 @@ colour = (100, 100, 100)
 coords = (1540, 2128)
 cv2.putText(img, text, coords, font, font_size, colour, font_weight, cv2.LINE_AA)
 
+
+print("-"*30)
+print("---DONE---")
 # Write final output image
 cv2.imwrite(path + "text_" + img_name, img)
