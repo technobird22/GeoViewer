@@ -86,8 +86,8 @@ for current_directory in input_directories:
             print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
             choice = input()
         if(choice != 'y'):
-            print("[STATUS] Aborting...")
-            exit()
+            print("[STATUS] Skipping directory...")
+            continue
     else:
         print("[OK] No output directory found.")
         print("[STATUS] Creating output directory...")
