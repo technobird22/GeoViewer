@@ -21,29 +21,29 @@ def overlay_info(inp_img, frame_name):
     frame_time, frame_num = parse_frame_name(frame_name)
 
     font = cv2.FONT_HERSHEY_PLAIN
-    cv2.putText(img, "GK-2A Imagery", (20, 80), font, 5, (0, 255, 255), 5, cv2.LINE_AA)
+    cv2.putText(inp_img, "GK-2A Imagery", (20, 80), font, 5, (0, 255, 255), 5, cv2.LINE_AA)
 
-    cv2.putText(img, "Animation", (20, 170), font, 6, (0, 165, 255), 5, cv2.LINE_AA)
+    cv2.putText(inp_img, "Animation", (20, 170), font, 6, (0, 165, 255), 5, cv2.LINE_AA)
 
-    cv2.putText(img, "Capture Time: ", (1720, 60), font, 4, (0, 255, 255), 4, cv2.LINE_AA)
-    cv2.putText(img, frame_time, (1570, 110), font, 3, (150, 150, 150), 3, cv2.LINE_AA)
+    cv2.putText(inp_img, "Capture Time: ", (1720, 60), font, 4, (0, 255, 255), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, frame_time, (1570, 110), font, 3, (150, 150, 150), 3, cv2.LINE_AA)
 
-    cv2.putText(img, "Frame Number: ", (1690, 180), font, 4, (0, 255, 255), 4, cv2.LINE_AA)
-    cv2.putText(img, frame_num, (2070, 240), font, 4, (150, 150, 150), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Frame Number: ", (1690, 180), font, 4, (0, 255, 255), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, frame_num, (2070, 240), font, 4, (150, 150, 150), 4, cv2.LINE_AA)
 
-    cv2.putText(img, "Processing: ", (20, 2120), font, 4, (255, 255, 255), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Processing: ", (20, 2120), font, 4, (255, 255, 255), 4, cv2.LINE_AA)
 
-    cv2.putText(img, "Albert (Technobird22)", (20, 2180), font, 4, (0, 255, 0), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Albert (Technobird22)", (20, 2180), font, 4, (0, 255, 0), 4, cv2.LINE_AA)
 
-    cv2.putText(img, "Data size: 1.40 GB", (1710, 2078), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Data size: 1.40 GB", (1710, 2078), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
 
-    cv2.putText(img, "Frame count: 960 frames", (1540, 2128), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Frame count: 960 frames", (1540, 2128), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
 
-    cv2.putText(img, "Data from: MouseBatteries", (1510, 2178), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Data from: MouseBatteries", (1510, 2178), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
 
-    cv2.putText(img, "Thanks :)", (2100, 2194), font, 1, (50, 50, 50), 1, cv2.LINE_AA)
+    cv2.putText(inp_img, "Thanks :)", (2100, 2194), font, 1, (50, 50, 50), 1, cv2.LINE_AA)
 
-    return(img)
+    return(inp_img)
 
 # For testing the overlay code
 def test_overlay():
