@@ -1,5 +1,7 @@
+# Import libraries
 import cv2
 
+# Parse frame name to get time and frame number
 def parse_frame_name(input_name):
     output = input_name[:-6].split('_')
 
@@ -12,6 +14,7 @@ def parse_frame_name(input_name):
     output_name = date + " @ " + time + "UTC"
     return (output_name, num)
 
+# Overlay information onto a frame
 def overlay_info(inp_img, frame_name):
     print("[INFO] Overlaying text onto frame...")
 
@@ -42,6 +45,7 @@ def overlay_info(inp_img, frame_name):
 
     return(img)
 
+# For testing the overlay code
 def test_overlay:
     path = "NZ_area_test/"
     img_name = "FD8_IMG_FD_125_IR105_20200704_210006.jpg"
