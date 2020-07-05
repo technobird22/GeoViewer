@@ -5,9 +5,10 @@ import numpy
 import PIL
 from PIL import Image
 import cv2
-
-frames = "all/"
-target_dir = "FD"
+# [STATUS] Execution finished. Total time elapsed: 124.5 seconds. Processed 844.0 frames. Calculation FPS: 0.1475.
+# [STATUS] ---DONE---
+frames = "everything/"
+target_dir = "compilation"
 
 # output_header = "good_clahe_"
 output_header = str(frames[:-1] + "_")
