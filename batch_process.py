@@ -72,6 +72,7 @@ start_time = time.time()
 print("[INFO] Directories to process: " + str(os.listdir()))
 print("-"*30)
 for current_directory in input_directories:
+    first_img = 1
     # Check if it is a directory
     if(not(os.path.isdir(current_directory)) or current_directory == collection[:-1]):
         continue
@@ -82,7 +83,6 @@ for current_directory in input_directories:
         print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
         # choice = input()
         choice = 'n'
-        first_img += 1
         while(choice != 'y' and choice != 'n'):
             print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
             choice = input()
