@@ -1,9 +1,5 @@
 import cv2
 
-path = "NZ_area_test/"
-img_name = "FD8_IMG_FD_125_IR105_20200704_210006.jpg"
-img = cv2.imread(path + img_name, 1)
-
 def parse_frame_name(input_name):
     output = input_name[:-6].split('_')
 
@@ -46,19 +42,24 @@ def overlay_info(inp_img, frame_name):
 
     return(img)
 
-print("-"*30)
-print("---START---")
+def test_overlay:
+    path = "NZ_area_test/"
+    img_name = "FD8_IMG_FD_125_IR105_20200704_210006.jpg"
+    img = cv2.imread(path + img_name, 1)
 
-print("Input name:", img_name)
-out = parse_frame_name(img_name)[0]
-print("Output time:", out)
-num = parse_frame_name(img_name)[1]
-print("Frame number:", num)
+    print("-"*30)
+    print("---START---")
 
-img = overlay_text(img, img_name)
+    print("Input name:", img_name)
+    out = parse_frame_name(img_name)[0]
+    print("Output time:", out)
+    num = parse_frame_name(img_name)[1]
+    print("Frame number:", num)
 
-print("---DONE---")
-print("-"*30)
+    img = overlay_text(img, img_name)
 
-# Write final output image
-cv2.imwrite(path + "text_" + img_name, img)
+    print("---DONE---")
+    print("-"*30)
+
+    # Write final output image
+    cv2.imwrite(path + "text_" + img_name, img)
