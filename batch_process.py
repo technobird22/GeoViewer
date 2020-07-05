@@ -80,7 +80,8 @@ for current_directory in input_directories:
 
     if(os.path.isdir(output_directory)):
         print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
-        choice = input()
+        # choice = input()
+        choice = 'n'
         first_img += 1
         while(choice != 'y' and choice != 'n'):
             print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
