@@ -5,6 +5,8 @@ import numpy
 import PIL
 from PIL import Image
 import cv2
+
+import geocap_utils
 # [STATUS] Execution finished. Total time elapsed: 124.5 seconds. Processed 844.0 frames. Calculation FPS: 0.1475.
 # [STATUS] ---DONE---
 frames = "everything/"
@@ -54,7 +56,6 @@ if(os.path.isdir(frames)):
     print("[STATUS] Loading processed frames...")
     inputs = os.listdir(frames)[first_img:-1]
     print("[OK] Successfully loaded processed frames")
-
     
     for img_path in inputs:
         print("[STATUS] Got image: '" + str(img_path) + "'.")
@@ -93,7 +94,7 @@ for img_path in inputs:
         print("[OK] Loaded image.")
 
         # Write to video
-        print("[STATUS] Writing to frame...")
+        print("[STATUS] Writing to animation frame...")
         out.write(img)
         print("[OK] Successfully written image to frame")
 
