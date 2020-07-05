@@ -134,9 +134,7 @@ for current_directory in input_directories:
     print("-"*30)
     # Define the codec and create VideoWriter object
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    animation = cv2.VideoWriter("clahe_" + current_directory + ".mp4", fourcc, fps, width, height)
-
-    print("-"*30)
+    animation = cv2.VideoWriter("clahe_" + current_directory + ".mp4", fourcc, fps, (width, height))
 
     for relative_img_path in inputs:
         print("[--INFO] Path: '" + img_path + "'.")
