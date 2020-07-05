@@ -31,6 +31,18 @@ output_directory = "everything/"
 # Define animation output codec
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 
+header = """\
+    ┌────────────────────────────────────────────────────────┐
+    │                       GeoCapture                       │
+    │  Automatic processing of geostationary satellite data  │
+    │                      Version  1.0                      │
+    ├────────────────────────────────────────────────────────┤
+    │             Made by Albert  (Technobird22)             │
+    ├────────────────────────────────────────────────────────┤
+    │   GitHub: https://github.com/technobird22/geocapture   │
+    └────────────────────────────────────────────────────────┘\
+"""
+# print(header + "\n")
 if(os.path.isdir(output_directory)):
     print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
     choice = input()
