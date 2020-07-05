@@ -16,11 +16,11 @@ def parse_frame_name(input_name):
     date = date[6:8] + "/" + date[4:6] + "/" + date[0:4]
     time = time[0:2] + ":" + time[2:5]
 
-    output_name = output[3] + ": " + date + " @ " + time + " UTC"
+    output_name = date + " @ " + time + " UTC"
     return (output_name, num)
 
-def overlay_text(cur_frame):
-    frame_time, frame_num = parse_name(cur_frame)
+def overlay_text(frame_name):
+    frame_time, frame_num = parse_name(frame_name)
 
     print("[INFO] Overlaying text onto frame...")
     font = cv2.FONT_HERSHEY_PLAIN
@@ -28,8 +28,11 @@ def overlay_text(cur_frame):
 
     cv2.putText(img, "Animation", (20, 170), font, 6, (0, 165, 255), 5, cv2.LINE_AA)
 
-    cv2.putText(img, "Time: ", (1650, 60), font, 4, (0, 255, 255), 4, cv2.LINE_AA)
-    cv2.putText(img, frame_time, (1580, 100), font, 3, (150, 150, 150), 3, cv2.LINE_AA)
+    cv2.putText(img, "Capture Time: ", (1720, 60), font, 4, (0, 255, 255), 4, cv2.LINE_AA)
+    cv2.putText(img, frame_time, (1600, 110), font, 3, (150, 150, 150), 3, cv2.LINE_AA)
+
+    cv2.putText(img, "Frame Number: ", (1690, 180), font, 4, (0, 255, 255), 4, cv2.LINE_AA)
+    cv2.putText(img, frame_num, (2070, 240), font, 4, (150, 150, 150), 4, cv2.LINE_AA)
 
     cv2.putText(img, "Processing: ", (20, 2120), font, 4, (255, 255, 255), 4, cv2.LINE_AA)
 
@@ -49,7 +52,7 @@ print("---START---")
 inp = "FD8_IMG_FD_125_IR105_20200704_210006.jpg"
 print("Input name:", inp)
 out = parse_frame_name(inp)[0]
-print("Output name:", out)
+print("Output time:", out)
 num = parse_frame_name(inp)[1]
 print("Frame number:", num)
 
