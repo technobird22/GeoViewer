@@ -12,8 +12,11 @@ cv2.putText(img, "GK-2A Imagery", (20, 80), font, 5, (0, 255, 255), 5, cv2.LINE_
 
 cv2.putText(img, "Animation", (20, 170), font, 6, (0, 165, 255), 5, cv2.LINE_AA)
 
-cv2.putText(img, "Current frame: ", (1650, 60), font, 4, (0, 255, 255), 4, cv2.LINE_AA)
-cv2.putText(img, "128: 20200704 21:30:06", (1580, 100), font, 3, (150, 150, 150), 3, cv2.LINE_AA)
+cv2.putText(img, "Capture Time: ", (1720, 60), font, 4, (0, 255, 255), 4, cv2.LINE_AA)
+cv2.putText(img, "04/07/2020@21:00 UTC", (1600, 110), font, 3, (150, 150, 150), 3, cv2.LINE_AA)
+
+cv2.putText(img, "Frame Number: ", (1690, 180), font, 4, (0, 255, 255), 4, cv2.LINE_AA)
+cv2.putText(img, "152", (2070, 240), font, 4, (150, 150, 150), 4, cv2.LINE_AA)
 
 cv2.putText(img, "Processing: ", (20, 2120), font, 4, (255, 255, 255), 4, cv2.LINE_AA)
 
