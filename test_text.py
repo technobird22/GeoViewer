@@ -66,6 +66,24 @@ colour = (100, 100, 100)
 coords = (1540, 2128)
 cv2.putText(img, text, coords, font, font_size, colour, font_weight, cv2.LINE_AA)
 
+text = "Data from: "
+font = cv2.FONT_HERSHEY_PLAIN
+font_size = 3
+font_weight = 4
+colour = (100, 100, 100)
+coords = (1510, 2178)
+# print(coords)
+cv2.putText(img, text, coords, font, font_size, colour, font_weight, cv2.LINE_AA)
+
+# Easter egg ;)
+text = "Thanks :)"
+font = cv2.FONT_HERSHEY_PLAIN
+font_size = 1
+font_weight = 1
+colour = (50, 50, 50)
+coords = (2100, 2194)
+# print(coords)
+cv2.putText(img, text, coords, font, font_size, colour, font_weight, cv2.LINE_AA)
 
 print("-"*30)
 print("---DONE---")
