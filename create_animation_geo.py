@@ -7,6 +7,7 @@ from PIL import Image
 import cv2
 
 import geocap_utils
+
 # [STATUS] Execution finished. Total time elapsed: 124.5 seconds. Processed 844.0 frames. Calculation FPS: 0.1475.
 # [STATUS] ---DONE---
 frames = "everything/"
@@ -94,7 +95,7 @@ for img_name in inputs:
         print("[OK] Loaded image.")
 
         # Add overlay
-        img = overlay_info(img, img_name)
+        img = geocap_utils.overlay_info(img, img_name)
 
         # Write to video
         print("[STATUS] Writing to animation frame...")
