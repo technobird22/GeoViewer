@@ -42,7 +42,20 @@ header = """\
     │   GitHub: https://github.com/technobird22/geocapture   │
     └────────────────────────────────────────────────────────┘\
 """
+basic_header = """\
+    o--------------------------------------------------------o
+    |                       GeoCapture                       |
+    |  Automatic processing of geostationary satellite data  |
+    |                      Version  1.0                      |
+    o--------------------------------------------------------o
+    |             Made by Albert  (Technobird22)             |
+    o--------------------------------------------------------o
+    |   GitHub: https://github.com/technobird22/geocapture   |
+    o--------------------------------------------------------o\
+"""
 # print(header + "\n")
+print(basic_header + "\n")
+
 if(os.path.isdir(output_directory)):
     print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
     choice = input()
