@@ -5,7 +5,7 @@ import time
 # import numpy as np
 import cv2
 
-sys.stdout = open('debug.log', 'w')
+# sys.stdout = open('debug.log', 'w')
 
 def clahe(in_img):
     clip_limit = 2.0
