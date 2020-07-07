@@ -49,7 +49,7 @@ def overlay_info(inp_img, frame_name, data_size, frame_cnt):
 # For testing the overlay code
 def test_overlay():
     path = "everything/"
-    img_name = "FD0_IMG_FD_001_IR105_20200630_001005.jpg"
+    img_name = "FD0_IMG_FD_123_IR105_56783412_123400.jpg"
     img = cv2.imread(path + img_name, 1)
 
     print("-"*30)
@@ -63,10 +63,11 @@ def test_overlay():
 
     # Apply overlay
     print("[INFO] Applying overlay to image...")
-    img = overlay_info(img, img_name)
+    img = overlay_info(img, img_name, 1.2345678, 123)
 
     # Write final output image
     print("[INFO] Writing final output to image...")
     cv2.imwrite(path + "text_" + img_name, img)
     print("---DONE---")
     print("-"*30)
+test_overlay()
