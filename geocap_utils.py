@@ -3,11 +3,17 @@ import cv2
 
 # Parse frame name to get time and frame number
 def parse_frame_name(input_name):
+
     print("[INFO] Parsing frame name '" + input_name + "'...")
     output = input_name[:-6].split('_')
+    
+    ####################################################
+    # If file name contains "FD*_" at the front, enable:
+    # output = output[1:]
+    ####################################################
 
-    num = output[3]
-    date, time = output[5:7]
+    num = output[2]
+    date, time = output[4:6]
 
     date = date[6:8] + "/" + date[4:6] + "/" + date[0:4]
     time = time[0:2] + ":" + time[2:5]
@@ -36,7 +42,7 @@ def overlay_info(inp_img, frame_name, data_size, frame_cnt):
 
     cv2.putText(inp_img, "Albert (Technobird22)", (20, 2180), font, 4, (0, 255, 0), 4, cv2.LINE_AA)
 
-    cv2.putText(inp_img, "Data size: " + str(round(data_size)) + " GB", (1710, 2078), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Data size: " + str(round(data_size, 2)) + " GB", (1710, 2078), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
 
     cv2.putText(inp_img, "Frame count: " + str(frame_cnt) + " frames", (1540, 2128), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
 
@@ -49,7 +55,7 @@ def overlay_info(inp_img, frame_name, data_size, frame_cnt):
 # For testing the overlay code
 def test_overlay():
     path = "everything/"
-    img_name = "FD0_IMG_FD_123_IR105_56783412_123400.jpg"
+    img_name = "FD8_IMG_FD_001_IR105_20200704_001006.jpg"
     img = cv2.imread(path + img_name, 1)
 
     print("-"*30)
@@ -72,4 +78,4 @@ def test_overlay():
     print("-"*30)
 
 # ---FOR DEBUGGING:---
-#   test_overlay()
+# test_overlay()
