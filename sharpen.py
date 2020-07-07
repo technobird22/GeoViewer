@@ -1,8 +1,8 @@
+import os
+import argparse
 import cv2
 import glob
 import numpy as np
-import os
-import argparse
 from PIL import Image
 from PIL import ImageFilter
 
@@ -25,9 +25,6 @@ semi_final = clahe.apply(image_bw)
 _, ordinary_img = cv2.threshold(image_bw, 155, 255, cv2.THRESH_BINARY)
 
 cv2.imwrite(f'{inputFile}-enhanced.png', semi_final)
-
-from PIL import Image
-from PIL import ImageFilter
 
 sharpened = Image.open(f'{inputFile}-enhanced.png')
 
