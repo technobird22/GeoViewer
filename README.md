@@ -23,6 +23,12 @@ GeoCapture is designed to automatically take raw infrared LRIT images to produce
 ## Running GeoCapture
 - Currently, the main script is `batch_process.py`, which, after being run, automatically does all the processing. It should be relatively easy to change input directories/output locations from the code, where everything is clearly commented. All the enhancements and processes are in the `geocap_utils.py` header file, although I am still moving some across.
 
+## Output files
+### These can easily be changed
+- Directory containing all processed frames
+- One video animation **for each day**
+- One video animation containing all processed frames
+
 ## System Requirements
 This script is relatively lightweight, using less than `200mb` of RAM and less than `20%` utilisation of my CPU (Quad core - 1.8GHZ) during testing. This may change as I add in more features, but it should stay relatively light.
 - Ram: I would suggest having some extra breathing room so maybe 
