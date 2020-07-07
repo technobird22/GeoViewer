@@ -7,31 +7,22 @@ def parse_frame_name(input_name):
     output = input_name[:-6].split('_')
 
     num = output[3]
-    print("[INFO] O:", output[5:7])
     date, time = output[5:7]
-    print("[INFO] c")
 
     date = date[6:8] + "/" + date[4:6] + "/" + date[0:4]
-    print("[INFO] d")
     time = time[0:2] + ":" + time[2:5]
-    print("[INFO] e")
 
     output_name = date + " @ " + time + "UTC"
-    print("[INFO] f")
     return (output_name, num)
 
 # Overlay information onto a frame
 def overlay_info(inp_img, frame_name):
     print("[INFO] Overlaying text onto frame...")
 
-    print("[INFO] a...")
     frame_time, frame_num = parse_frame_name(frame_name)
 
-    print("[INFO] al...")
     font = cv2.FONT_HERSHEY_PLAIN
-    print("[INFO] b...")
     cv2.putText(inp_img, "GK-2A Imagery", (20, 80), font, 5, (0, 255, 255), 5, cv2.LINE_AA)
-    print("[INFO] c...")
 
     cv2.putText(inp_img, "Animation", (20, 170), font, 6, (0, 165, 255), 5, cv2.LINE_AA)
 
