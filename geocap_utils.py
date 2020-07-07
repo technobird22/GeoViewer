@@ -3,25 +3,35 @@ import cv2
 
 # Parse frame name to get time and frame number
 def parse_frame_name(input_name):
+    print("[INFO] Parsing frame name '" + input_name + "'...")
     output = input_name[:-6].split('_')
 
     num = output[3]
+    print("[INFO] O:", output[5:7])
     date, time = output[5:7]
+    print("[INFO] c")
 
     date = date[6:8] + "/" + date[4:6] + "/" + date[0:4]
+    print("[INFO] d")
     time = time[0:2] + ":" + time[2:5]
+    print("[INFO] e")
 
     output_name = date + " @ " + time + "UTC"
+    print("[INFO] f")
     return (output_name, num)
 
 # Overlay information onto a frame
 def overlay_info(inp_img, frame_name):
     print("[INFO] Overlaying text onto frame...")
 
+    print("[INFO] a...")
     frame_time, frame_num = parse_frame_name(frame_name)
 
+    print("[INFO] al...")
     font = cv2.FONT_HERSHEY_PLAIN
+    print("[INFO] b...")
     cv2.putText(inp_img, "GK-2A Imagery", (20, 80), font, 5, (0, 255, 255), 5, cv2.LINE_AA)
+    print("[INFO] c...")
 
     cv2.putText(inp_img, "Animation", (20, 170), font, 6, (0, 165, 255), 5, cv2.LINE_AA)
 
@@ -47,8 +57,8 @@ def overlay_info(inp_img, frame_name):
 
 # For testing the overlay code
 def test_overlay():
-    path = "NZ_area_test/"
-    img_name = "FD8_IMG_FD_125_IR105_20200704_210006.jpg"
+    path = "everything/"
+    img_name = "FD0_IMG_FD_001_IR105_20200630_001005.jpg"
     img = cv2.imread(path + img_name, 1)
 
     print("-"*30)
@@ -60,10 +70,12 @@ def test_overlay():
     num = parse_frame_name(img_name)[1]
     print("Frame number:", num)
 
-    img = overlay_text(img, img_name)
-
-    print("---DONE---")
-    print("-"*30)
+    # Apply overlay
+    print("[INFO] Applying overlay to image...")
+    img = overlay_info(img, img_name)
 
     # Write final output image
+    print("[INFO] Writing final output to image...")
     cv2.imwrite(path + "text_" + img_name, img)
+    print("---DONE---")
+    print("-"*30)
