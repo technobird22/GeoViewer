@@ -55,8 +55,7 @@ basic_header = """\
     |   GitHub: https://github.com/technobird22/geocapture   |
     o--------------------------------------------------------o\
 """
-# print(header + "\n")
-print(basic_header + "\n")
+print(header + "\n")
 
 if(os.path.isdir(output_directory)):
     print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
