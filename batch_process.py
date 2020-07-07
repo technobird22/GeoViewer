@@ -5,6 +5,8 @@ import time
 # import numpy as np
 import cv2
 
+import geocap_utils
+
 # sys.stdout = open('debug.log', 'w')
 
 def clahe(in_img):
@@ -188,7 +190,6 @@ for current_directory in input_directories:
             out_img = clahe(img)
             print("[OK] Finished performing CLAHE.")
 
-            print("[OK] Processed image ready.")
 
             # Write to image
             print(">"*5 + "[INFO] '" + (output_directory + relative_img_path) + "' ...")
