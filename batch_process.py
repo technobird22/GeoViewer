@@ -13,8 +13,12 @@ def clahe(in_img):
     clip_limit = 2.0
     grid_size = (2, 2)
 
+    print("[STATUS] Converting image to grayscale...")
+    in_img = cv2.cvtColor(in_img, cv2.COLOR_BGR2GRAY)
+    print("[OK] Successfully converted to a grayscale image.")
+
     print("[STATUS] Performing CLAHE with clip limit " + str(clip_limit) + " and grid size " + str(grid_size) + ".")
-    return cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=grid_size).apply(in_img)
+    return cv2.cvtColor(cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=grid_size).apply(in_img), cv2.COLOR_GRAY2BGR)
 
 fps = 24
 first_img = 0
@@ -114,7 +118,7 @@ for current_directory in input_directories:
     if(os.path.isdir(output_directory)):
         print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
         # choice = input()
-        choice = 'n'
+        choice = 'y'
         while(choice != 'y' and choice != 'n'):
             print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
             choice = input()
@@ -182,7 +186,7 @@ for current_directory in input_directories:
 
             # Load image
             print("[STATUS] Loading image...")
-            img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+            img = cv2.imread(img_path, 1)
             print("[OK] Loaded image.")
             
             # Perform CLAHE
@@ -211,12 +215,12 @@ for current_directory in input_directories:
 
             # Write to daily animation
             print("[STATUS] Writing to daily frame...")
-            animation.write(cv2.cvtColor(out_img, cv2.COLOR_GRAY2RGB))
+            animation.write(out_img)
             print("[OK] Successfully written image to frame")
 
             # Write to total animation
             print("[STATUS] Writing to total frame...")
-            total_animation.write(cv2.cvtColor(out_img, cv2.COLOR_GRAY2RGB))
+            total_animation.write(out_img)
             print("[OK] Successfully written image to frame")
 
             # If processed lots of frames, print out status
