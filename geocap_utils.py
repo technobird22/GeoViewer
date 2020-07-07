@@ -16,7 +16,7 @@ def parse_frame_name(input_name):
     return (output_name, num)
 
 # Overlay information onto a frame
-def overlay_info(inp_img, frame_name):
+def overlay_info(inp_img, frame_name, data_size, frame_cnt):
     print("[INFO] Overlaying text onto frame...")
 
     frame_time, frame_num = parse_frame_name(frame_name)
@@ -36,13 +36,13 @@ def overlay_info(inp_img, frame_name):
 
     cv2.putText(inp_img, "Albert (Technobird22)", (20, 2180), font, 4, (0, 255, 0), 4, cv2.LINE_AA)
 
-    cv2.putText(inp_img, "Data size: 1.40 GB", (1710, 2078), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Data size: " + str(round(data_size)) + " GB", (1710, 2078), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
 
-    cv2.putText(inp_img, "Frame count: 960 frames", (1540, 2128), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Frame count: " + str(frame_cnt) + " frames", (1540, 2128), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
 
     cv2.putText(inp_img, "Data from: MouseBatteries", (1510, 2178), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
 
-    cv2.putText(inp_img, "Thanks :)", (2100, 2194), font, 1, (50, 50, 50), 1, cv2.LINE_AA)
+    cv2.putText(inp_img, "Thanks ;)", (2100, 2194), font, 1, (50, 50, 50), 1, cv2.LINE_AA)
 
     return(inp_img)
 
