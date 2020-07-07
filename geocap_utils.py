@@ -70,4 +70,6 @@ def test_overlay():
     cv2.imwrite(path + "text_" + img_name, img)
     print("---DONE---")
     print("-"*30)
-test_overlay()
+
+# ---FOR DEBUGGING:---
+#   test_overlay()
