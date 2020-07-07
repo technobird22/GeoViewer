@@ -37,6 +37,12 @@ This script is relatively lightweight, using less than `200mb` of RAM and less t
 
 This script should be able to run on a raspberry pi, but I have yet to test it.
 
+## Required libraries
+Currently required libraries are `opencv-python` and `numpy`
+If you run into import errors, you'll need to run the following commands to install the libraries:
+- `pip install opencv-python`
+- `pip install numpy`
+
 ## Examples
 You can find some examples of what GeoCapture can do below:
 
