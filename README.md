@@ -36,3 +36,19 @@ This script is relatively lightweight, using less than `200mb` of RAM and less t
 - Processor: Shouldn't matter too much but may affect running speed of the program. I have restricted the running speed of the program by having it pause every so often (200 frames right now), which **can** be disabled.
 
 This script should be able to run on a raspberry pi, but I have yet to test it.
+
+## Examples
+You can find some examples of what GeoCapture can do below:
+
+### Video animation:
+External link to YouTube:
+https://youtu.be/TZ3zU0zz20M
+
+### Raw frame (unprocessed):
+<img src="https://raw.githubusercontent.com/technobird22/geocapture/master/examples/raw.jpg" width="200" title="raw frame">
+
+### CLAHE applied:
+<img src="https://raw.githubusercontent.com/technobird22/geocapture/master/examples/clahe.jpg" width="200" title="CLAHE applied">
+
+### Overlay and CLAHE applied:
+<img src="https://raw.githubusercontent.com/technobird22/geocapture/master/examples/clahe_overlay.jpg" width="200" title="Overlay and CLAHE applied">
