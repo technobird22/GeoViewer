@@ -190,6 +190,13 @@ for current_directory in input_directories:
             out_img = clahe(img)
             print("[OK] Finished performing CLAHE.")
 
+            # Add overlay
+            print("[STATUS] Adding overlay...")
+            out_img = geocap_utils.overlay_info(out_img, relative_img_path, 2.45, 1258)
+            time.sleep(0.1)
+            print("[OK] Finished adding overlay.")
+
+            print("[OK] Processed frame ready.")
 
             # Write to image
             print(">"*5 + "[INFO] '" + (output_directory + relative_img_path) + "' ...")
