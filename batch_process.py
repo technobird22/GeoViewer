@@ -84,8 +84,8 @@ print("-" * 30)
 print("[INFO] ---Excecution start---")
 if(dir_name != target_dir):
     print("[WARNING] Working directory '" + dir_name + "' is not the target directory. Continue? [y/n]")
-    # choice = input()
-    choice = 'y'
+    choice = input()
+
     while(choice != 'y' and choice != 'n'):
         print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
     if(choice != 'y'):
@@ -113,7 +113,7 @@ for current_directory in input_directories:
     if(os.path.isdir(output_directory)):
         print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
         # choice = input()
-        choice = 'y'
+        choice = 'n'
         while(choice != 'y' and choice != 'n'):
             print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
             choice = input()
