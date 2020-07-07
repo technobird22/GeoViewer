@@ -170,18 +170,21 @@ for current_directory in input_directories:
     total_animation = cv2.VideoWriter("total_clahe_" + dir_name + ".mp4", fourcc, fps, (width, height))
 
     for relative_img_path in inputs:
-        print("[--INFO] Path: '" + img_path + "'.")
+        print("[INFO] Relative Path: '" + img_path + "'.")
         img_path = current_directory + "/" + relative_img_path
-        print("[INFO] Path: '" + img_path + "'.")
+        print("[INFO] Complete Path: '" + img_path + "'.")
 
+        # Display status
         print("[" + str(round(cnt/len(inputs)*100)) + "%] Performing CLAHE on: \"" + img_path + "\"")
         try:
             cnt += 1
 
+            # Load image
             print("[STATUS] Loading image...")
             img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
             print("[OK] Loaded image.")
             
+            # Perform CLAHE
             print("[STATUS] Performing CLAHE...")
             out_img = clahe(img)
             print("[OK] Finished performing CLAHE.")
@@ -209,6 +212,8 @@ for current_directory in input_directories:
             total_animation.write(cv2.cvtColor(out_img, cv2.COLOR_GRAY2RGB))
             print("[OK] Successfully written image to frame")
 
+            # If processed lots of frames, print out status
+            # and wait a bit to allow the CPU to cool down
             if((cnt - 1) % 100 == 0):
                 elapsed = round(time.time() - start_time, 1)
                 cal_fps = round(elapsed/cnt, 4)
@@ -221,6 +226,7 @@ for current_directory in input_directories:
                     print("[STATUS] Pausing 5 seconds for CPU cooloff...")
                     time.sleep(5)
         except:
+            # Uh oh!
             print("[ERROR] Failed on image '" + img_path + "' with message '" + str(sys.exc_info()[1]) + "'.")
             print("[STATUS] Aborting...")
             exit()
@@ -245,6 +251,9 @@ print("-"*30)
 
 if(cnt == 0):
     print("[WARN] ---Did not do any processing!---")
+    print("[WARN] ---Please check your working directory structure!---")
+    print("[STATUS] ---Exiting...---")
+    print("[STATUS] ---DONE---")
     exit()
 
 elapsed = round(time.time() - start_time, 1)
