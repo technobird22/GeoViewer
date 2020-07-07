@@ -18,6 +18,7 @@ GeoCapture is designed to automatically take raw infrared LRIT images to produce
 - Underlay false colour
 - Add crops of locations
 - Repair dropped frames/packets
+- Sharpen images
 
 ## Running GeoCapture
 - Currently, the main script is `batch_process.py`, which, after being run, automatically does all the processing. It should be relatively easy to change input directories/output locations from the code, where everything is clearly commented. All the enhancements and processes are in the `geocap_utils.py` header file, although I am still moving some across.
