@@ -121,14 +121,14 @@ for current_directory in input_directories:
 
     output_directory = current_directory + "/" + output_directory_name
 
-    if(os.path.isdir(output_directory)):
+    if os.path.isdir(output_directory):
         print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
         # choice = input()
         choice = 'y'
         while(choice != 'y' and choice != 'n'):
             print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
             choice = input()
-        if(choice != 'y'):
+        if choice != 'y' :
             print("[STATUS] Skipping directory...")
             continue
     else:
