@@ -1,25 +1,26 @@
-# Geocapture
-Automatic processing of geostationary satellite data
+# GeoCapture
+GeoCapture is a program for automatically processing data received from geostationary satellites such as GK-2A.
 
 ## About
-GeoCapture is designed to automatically take raw infrared LRIT images to bring out subtle details and generate animations. This is currently designed to process them fully automatically, but it isn't too hard to manually run the scripts according to your needs.
+GeoCapture is designed to automatically take raw infrared LRIT images to bring out subtle details otherwise not recognized in the original image, as well as generate animations. GeoCapture is
+built to process all of this data automatically, so you don't have to lift a finger. However, GeoCapture can be easily configured for manual use.
 **See more information below**
 
 ## Features:
-- Fully automatic (after being run)
-- Enhances landmass and brings out subtle details by running CLAHE (Contrast Limited Adaptive Histogram Equalisation) on each frame.
-- Automatically parses and overlays data onto each frame
-- Lots of debug output and comments
+- Fully Automatic Image Processing
+- Enhances Landmass and brings out subtle details by running Contrast Limited Adaptive Histogram Equalisation (CLAHE) on each frame.
+- Automatically Parses and overlays relevant data
+- *Incredibly* detailed log files.
 
-## Todo:
-- Add false colour (eg. enhanced temerature)
+## Soon to be added:
+- Add false colour Overlays (eg. Enhanced Temperature)
 - Underlay false colour
-- Add crops of locations
+- Add crops for certain locations
 - Repair dropped frames/packets
 - Sharpen images
 
 ## Running GeoCapture
-- Currently, the main script is `batch_process.py`, which, after being run, automatically does all the processing. It should be relatively easy to change input directories/output locations from the code, where everything is clearly commented. All the enhancements and processes are in the `geocap_utils.py` header file, although I am still moving some across.
+- Currently, the main script is `batch_process.py`, which, after being run, automatically does all the processing. It's relatively easy to change input directories/output locations from the code, where everything is clearly commented, however the ability to parse this argument wise will be added in the future. All the enhancements and processes are in the `geocap_utils.py` header file, although I am still moving some across.
 
 ## Output files
 **These can easily be changed**
@@ -29,14 +30,14 @@ GeoCapture is designed to automatically take raw infrared LRIT images to bring o
 
 ## System Requirements
 This script is relatively lightweight, using less than `200mb` of RAM and less than `20%` utilisation of my CPU (Quad core - 1.8GHZ) during testing. This may change as I add in more features, but it should stay relatively light.
-- Ram: I would suggest having some extra breathing room so maybe 
-- Disk space shouldn't be a problem: The output data does take up roughly the same space as input data, but you can easily choose not to keep the processed frames or to overwrite the input files.
-- Processor: Shouldn't matter too much but may affect running speed of the program. I have restricted the running speed of the program by having it pause every so often (200 frames right now), which **can** be disabled.
+- Ram: `4Gb`
+- Disk Space: >`10Gb`
+- Processor: `1Ghz Dual Core` - (Anything built within the past 5 years for a laptop or desktop should work just fine)
 
-This script should be able to run on a raspberry pi, but I have yet to test it.
+This script should be able to be run alongside programs such as `GOESRECV` and `XRIT-RX` on a Raspberry Pi 3B, however this has **not yet been tested**.
 
-## Required libraries
-Currently required libraries are `opencv-python` and `numpy`
+## Required Libraries
+Currently required libraries are `opencv-python` and `numpy`.
 If you run into import errors, you'll need to run the following commands to install the libraries:
 - `pip install opencv-python`
 - `pip install numpy`
