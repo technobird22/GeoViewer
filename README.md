@@ -2,7 +2,7 @@
 Automatic processing of geostationary satellite data
 
 ## About
-GeoCapture is designed to automatically take raw infrared LRIT images to produce bring out subtle details and generate animations. This is currently designed to process them fully automatically, but it isn't too hard to manually run the scripts according to your needs.
+GeoCapture is designed to automatically take raw infrared LRIT images to bring out subtle details and generate animations. This is currently designed to process them fully automatically, but it isn't too hard to manually run the scripts according to your needs.
 **See more information below**
 
 ## Features:
