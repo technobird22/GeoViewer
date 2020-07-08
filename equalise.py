@@ -1,6 +1,4 @@
-import os
 import sys
-import numpy as np
 import cv2
 
 def clahe(in_img):
@@ -25,6 +23,7 @@ for img_path in inputs:
         out_img = do_clahe_img(img)
 
         cv2.imwrite(output + img_path, out_img)
+
     except:
         print("CRITICAL ERROR! Continuing to next file. Failed on image '" + img_path + "' with message '" + str(sys.exc_info()[0]) + "';")
 
