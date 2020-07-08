@@ -73,7 +73,7 @@ def test_overlay():
 
     # Write final output image
     print("[INFO] Writing final output to image...")
-    cv2.imwrite(path + "text_" + img_name, img)
+    cv2.imwrite(path + "overlay_TEST_" + img_name, img)
     print("---DONE---")
     print("-"*30)
 
