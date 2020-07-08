@@ -2,7 +2,7 @@
 Automatic processing of geostationary satellite data
 
 ## About
-GeoCapture is designed to automatically take raw infrared LRIT images to produce bring out subtle details and generate animations. This is currently designed to process them fully automatically, but it isn't too hard to manually run the scripts according to your needs.
+GeoCapture is designed to automatically take raw infrared LRIT images to bring out subtle details and generate animations. This is currently designed to process them fully automatically, but it isn't too hard to manually run the scripts according to your needs.
 **See more information below**
 
 ## Features:
@@ -29,7 +29,7 @@ GeoCapture is designed to automatically take raw infrared LRIT images to produce
 
 ## System Requirements
 This script is relatively lightweight, using less than `200mb` of RAM and less than `20%` utilisation of my CPU (Quad core - 1.8GHZ) during testing. This may change as I add in more features, but it should stay relatively light.
-- Ram: I would suggest having some extra breathing room so maybe 
+- Ram: I would suggest leaving some extra breathing room.
 - Disk space shouldn't be a problem: The output data does take up roughly the same space as input data, but you can easily choose not to keep the processed frames or to overwrite the input files.
 - Processor: Shouldn't matter too much but may affect running speed of the program. I have restricted the running speed of the program by having it pause every so often (200 frames right now), which **can** be disabled.
 
