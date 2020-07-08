@@ -51,7 +51,7 @@ a {
     background-size: cover;
 
     /* Parallax Scrolling */
-    background-image: url("images/headerbackground.jpg");
+    background-image: url("images/background.jpg");
     height: 40%;
     background-attachment: fixed;
     background-position: center;
@@ -163,7 +163,7 @@ tr {
 .main-footer {
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, .1);
-    background-image: url("images/footerbackground.jpg");
+    background-image: url("images/background.jpg");
     background-size: cover;
     font-weight: bold;
     padding-bottom: 30px;
@@ -271,7 +271,7 @@ del {
     /* height: 100%; */
 }
 
-#filters {
+#enhancements {
     list-style: none;
     padding-left: 0px;
     margin-left: 0px;
@@ -285,7 +285,7 @@ del {
     text-align: center;
 }
 
-#filters button {
+#enhancements button {
     height: 25px;
     text-align: center;
     /* width: 350px; */
@@ -303,7 +303,7 @@ del {
     border-radius: 5px;
 }
 
-#filters button:hover{
+#enhancements button:hover{
     background-color: rgb(255, 192, 89);
 }
 

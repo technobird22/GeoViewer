@@ -18,10 +18,7 @@
         <nav class="nav main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="satpass.html">Predictions</a></li>
                 <li><a href="captures.html">Captures</a></li>
-                <li><a href="satellites.html">Satellites</a></li>
-                <li><a href="resources.html">Resources</a></li>
             </ul>
         </nav>
         <h1 class="page-name page-name-large">Full Disk</h1>
@@ -30,8 +27,8 @@
     <section class="content-section container">
         <div id="main-stuff">
             <div id="filter-select">
-                <h3>Filters:</h3>
-                <ul id="filters">
+                <h3>Enhancements:</h3>
+                <ul id="enhancements">
                     <li><button onclick="change_enhancement('raw')">Raw unprocessed frame</button></li>
                     <li><button onclick="change_enhancement('temp')">Temperature enhanced image</button></li>
                     <li><button onclick="change_enhancement('ex-temp')">Extreme temperature enhanced image</button></li>
@@ -39,12 +36,11 @@
                     <li><button onclick="change_enhancement('clahe')">Contrast enhanced image</button></li>
                     <li><button onclick="change_enhancement('animation1')">Animation of past hour</button></li>
                     <li><button onclick="change_enhancement('animation24')">Animation of past 24 hours</button></li>
-                    <li><button onclick="change_enhancement('credits')">Credits</button></li>
                 </ul>
             </div>
 
             <div id="image-display">
-                <img id="display" src="images/instructions.jpg">
+                <img id="display" src="images/instructions.jpg" alt="Full disk image display window">
             </div>
             
             <div id="info-display">
@@ -53,18 +49,23 @@
             </div>
         </div>
 
-        <h2 class=" section-header ">About this page</h2>
+        <h2 class=" section-header">About this page</h2>
+        <p>This page contains a variety of</p>
+        GeoCapture is designed to automatically take raw infrared LRIT images to produce
+        bring out subtle details and generate animations. This is currently designed to 
+        process them fully automatically, but it isn't too hard to manually run the scripts
+         according to your needs. See more information below
+        
+        <h2 class=" section-header">Note</h2>
         <p>This page is currently under very active development, so you will often notice changes to it.</p>
         <p>Please report any bugs to <a href="mailto:wxcapture@gmail.com ">wxcapture@gmail.com</a> or <a
-                href="https://github.com/wxcapture/wxcapture/issues/new ">submit an issue on Github</a></p>
+                href="https://github.com/technobird22/geocapture/issues/new ">submit an issue on Github</a></p>
     </section>
 
     <footer class="main-footer ">
-        <p id="footer-text ">Page last updated at <span class="time">12:06 (NZST)</span> on <span
-                class="time">02/06/2020</span></p>
+        <p id="footer-text ">Page last updated at <span class="time">17:57 (NZST)</span> on <span
+                class="time">08/07/2020</span></p>
     </footer>
-
-    <script src="lightbox/js/lightbox-plus-jquery.min.js "></script>
 </body>
 
 </html>

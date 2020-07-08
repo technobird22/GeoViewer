@@ -30,10 +30,10 @@ built to process all of this data automatically, so you don't have to lift a fin
 
 ## System Requirements
 This script is relatively lightweight, using less than `200mb` of RAM and less than `20%` utilisation of my CPU (Quad core - 1.8GHZ) during testing. This may change as I add in more features, but it should stay relatively light.
+I have restricted the running speed of the program by having it pause after processing a certain number of frames (200 frames right now), which **can** be disabled.
 - Ram: `4Gb`
 - Disk Space: >`10Gb`
 - Processor: `1Ghz Dual Core` - (Anything built within the past 5 years for a laptop or desktop should work just fine)
-
 
 This script should be able to be run alongside programs such as `GOESRECV` and `XRIT-RX` on a Raspberry Pi 3B, however this has **not yet been tested**.
 

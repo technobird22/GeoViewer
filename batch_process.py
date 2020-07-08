@@ -14,11 +14,17 @@ def clahe(in_img):
     grid_size = (2, 2)
 
     print("[STATUS] Converting image to grayscale...")
-    in_img = cv2.cvtColor(in_img, cv2.COLOR_BGR2GRAY)
+    out_img = cv2.cvtColor(in_img, cv2.COLOR_BGR2GRAY)
     print("[OK] Successfully converted to a grayscale image.")
 
     print("[STATUS] Performing CLAHE with clip limit " + str(clip_limit) + " and grid size " + str(grid_size) + ".")
-    return cv2.cvtColor(cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=grid_size).apply(in_img), cv2.COLOR_GRAY2BGR)
+    out_img = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=grid_size).apply(in_img)
+    print("[OK] Successfully performed CLAHE on the image.")
+    
+    print("[STATUS] Converting image to colour...")
+    out_img = cv2.cvtColor(in_img, cv2.COLOR_GRAY2BGR)
+    print("[OK] Successfully converted to a colour image.")
+    return cv2.cvtColor(out_img, cv2.COLOR_GRAY2BGR)
 
 fps = 24
 first_img = 0
@@ -115,14 +121,14 @@ for current_directory in input_directories:
 
     output_directory = current_directory + "/" + output_directory_name
 
-    if(os.path.isdir(output_directory)):
+    if os.path.isdir(output_directory):
         print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
         # choice = input()
         choice = 'y'
         while(choice != 'y' and choice != 'n'):
             print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
             choice = input()
-        if(choice != 'y'):
+        if choice != 'y' :
             print("[STATUS] Skipping directory...")
             continue
     else:
@@ -191,12 +197,12 @@ for current_directory in input_directories:
             
             # Perform CLAHE
             print("[STATUS] Performing CLAHE...")
-            out_img = clahe(img)
+            img = clahe(img)
             print("[OK] Finished performing CLAHE.")
 
             # Add overlay
             print("[STATUS] Adding overlay...")
-            out_img = geocap_utils.overlay_info(out_img, relative_img_path, 2.45, 1258)
+            img = geocap_utils.overlay_info(img, relative_img_path, 2.45, 1258)
             time.sleep(0.1)
             print("[OK] Finished adding overlay.")
 
@@ -205,22 +211,22 @@ for current_directory in input_directories:
             # Write to image
             print(">"*5 + "[INFO] '" + (output_directory + relative_img_path) + "' ...")
             print("[STATUS] Writing image to '" + (output_directory + current_directory + "_" + relative_img_path) + "' ...")
-            cv2.imwrite(output_directory + current_directory + "_" + relative_img_path, out_img)
+            cv2.imwrite(output_directory + current_directory + "_" + relative_img_path, img)
             print("[OK] Successfully written image")
 
             # Write to collection
             print("[STATUS] Writing image to collection at '" + (collection + current_directory + "_" + relative_img_path) + "' ...")
-            cv2.imwrite(collection + "/" + current_directory + "_" + relative_img_path, out_img)
+            cv2.imwrite(collection + "/" + current_directory + "_" + relative_img_path, img)
             print("[OK] Successfully written image")
 
             # Write to daily animation
             print("[STATUS] Writing to daily frame...")
-            animation.write(out_img)
+            animation.write(img)
             print("[OK] Successfully written image to frame")
 
             # Write to total animation
             print("[STATUS] Writing to total frame...")
-            total_animation.write(out_img)
+            total_animation.write(img)
             print("[OK] Successfully written image to frame")
 
             # If processed lots of frames, print out status
