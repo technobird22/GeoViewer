@@ -25,6 +25,7 @@ for img_path in inputs:
         cv2.imwrite(output + img_path, out_img)
 
     except:
-        print("CRITICAL ERROR! Continuing to next file. Failed on image '" + img_path + "' with message '" + str(sys.exc_info()[0]) + "';")
+        print("CRITICAL ERROR! Continuing to next file. Failed on image '" + img_path + "' \
+            with message '" + str(sys.exc_info()[0]) + "';")
 
 print("---DONE---")
