@@ -24,7 +24,7 @@ GeoCapture is designed to automatically take raw infrared LRIT images to produce
 - Currently, the main script is `batch_process.py`, which, after being run, automatically does all the processing. It should be relatively easy to change input directories/output locations from the code, where everything is clearly commented. All the enhancements and processes are in the `geocap_utils.py` header file, although I am still moving some across.
 
 ## Output files
-### These can easily be changed
+**These can easily be changed**
 - Directory containing all processed frames
 - One video animation **for each day**
 - One video animation containing all processed frames
@@ -51,10 +51,12 @@ External link to YouTube:
 https://youtu.be/TZ3zU0zz20M
 
 ### Raw frame (unprocessed):
-<img src="https://raw.githubusercontent.com/technobird22/geocapture/master/examples/raw.jpg" width="200" title="raw frame">
+<img src="https://raw.githubusercontent.com/technobird22/geocapture/master/examples/raw.jpg" width="300" title="raw frame">
+---
 
 ### CLAHE applied:
-<img src="https://raw.githubusercontent.com/technobird22/geocapture/master/examples/clahe.jpg" width="200" title="CLAHE applied">
+<img src="https://raw.githubusercontent.com/technobird22/geocapture/master/examples/clahe.jpg" width="300" title="CLAHE applied">
+---
 
 ### Overlay and CLAHE applied:
-<img src="https://raw.githubusercontent.com/technobird22/geocapture/master/examples/clahe_overlay.jpg" width="200" title="Overlay and CLAHE applied">
+<img src="https://raw.githubusercontent.com/technobird22/geocapture/master/examples/clahe_overlay.jpg" width="300" title="Overlay and CLAHE applied">
