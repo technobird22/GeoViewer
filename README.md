@@ -9,9 +9,7 @@ GeoCapture is designed to automatically take raw infrared LRIT images to produce
 - Fully automatic (after being run)
 - Enhances landmass and brings out subtle details by running CLAHE (Contrast Limited Adaptive Histogram Equalisation) on each frame.
 - Automatically parses and overlays data onto each frame
-
 - Lots of debug output and comments
-- Bugs ;)
 
 ## Todo:
 - Add false colour (eg. enhanced temerature)
