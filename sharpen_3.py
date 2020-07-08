@@ -4,6 +4,8 @@ from PIL import ImageFilter
 sharpenAmount = 2
 output_header = "sharpened_"
 
+inputs = ['test_fd.png']
+
 for cur_file in inputs:
     sharpened = Image.open(f'{cur_file}')
 
