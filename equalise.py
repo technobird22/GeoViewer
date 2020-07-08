@@ -12,7 +12,7 @@ def do_clahe_img(img):
 
 inputs = ["input.jpg"]
 
-# output = "clahe_"
+output = "clahe_"
 
 cnt = 0.0
 
