@@ -93,9 +93,6 @@ for img_name in inputs:
         # img = cv2.cvtColor(numpy.array(PIL.Image.open(img_path)), cv2.COLOR_RGB2BGR)
         print("[OK] Loaded image.")
 
-        # Add overlay
-        img = geocap_utils.overlay_info(img, img_name)
-
         # Write to video
         print("[STATUS] Writing to animation frame...")
         out.write(img)
