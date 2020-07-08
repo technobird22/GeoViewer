@@ -10,16 +10,9 @@ def do_clahe_img(img):
     b_chn, g_chn, r_chn = cv2.split(img)
     return cv2.merge((clahe(b_chn), clahe(g_chn), clahe(r_chn)))
 
-# if(len(sys.argv) == 1):
-#     print("Error: No input files")
-#     exit()
+inputs = ["input.jpg"]
 
-# inputs = sys.argv[1:]
-inputs = os.listdir()
-# inputs = ["IMG_4379.jpg"]
-
-output = "clahe/"
-# output = "clahe_"
+output = "clahe_"
 
 cnt = 0.0
 
@@ -31,8 +24,6 @@ for img_path in inputs:
         img = cv2.imread(img_path)
         out_img = do_clahe_img(img)
 
-        # cv2.imwrite(img_path, out_img)
-        # cv2.imwrite("chain_" + img_path, out_img)
         cv2.imwrite(output + img_path, out_img)
     except:
         print("CRITICAL ERROR! Continuing to next file. Failed on image '" + img_path + "' with message '" + str(sys.exc_info()[0]) + "';")

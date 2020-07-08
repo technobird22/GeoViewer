@@ -34,6 +34,7 @@ This script is relatively lightweight, using less than `200mb` of RAM and less t
 - Disk Space: >`10Gb`
 - Processor: `1Ghz Dual Core` - (Anything built within the past 5 years for a laptop or desktop should work just fine)
 
+
 This script should be able to be run alongside programs such as `GOESRECV` and `XRIT-RX` on a Raspberry Pi 3B, however this has **not yet been tested**.
 
 ## Required Libraries

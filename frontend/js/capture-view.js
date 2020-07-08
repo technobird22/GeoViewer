@@ -1,4 +1,4 @@
-function changefilter(filter){
+function change_enhancement(filter){
     var pass = "2020-06-01-21-35-48-NOAA_18";
     var image_directory = "images/page_for_all/";
     
