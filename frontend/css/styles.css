@@ -271,7 +271,7 @@ del {
     /* height: 100%; */
 }
 
-#filters {
+#enhancements {
     list-style: none;
     padding-left: 0px;
     margin-left: 0px;
@@ -285,7 +285,7 @@ del {
     text-align: center;
 }
 
-#filters button {
+#enhancements button {
     height: 25px;
     text-align: center;
     /* width: 350px; */
@@ -303,7 +303,7 @@ del {
     border-radius: 5px;
 }
 
-#filters button:hover{
+#enhancements button:hover{
     background-color: rgb(255, 192, 89);
 }
 
