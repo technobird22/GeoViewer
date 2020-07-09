@@ -20,7 +20,7 @@ def clahe(in_img):
     print("[STATUS] Performing CLAHE with clip limit " + str(clip_limit) + " and grid size " + str(grid_size) + ".")
     out_img = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=grid_size).apply(out_img)
     print("[OK] Successfully performed CLAHE on the image.")
-    
+
     print("[STATUS] Converting image to colour...")
     out_img = cv2.cvtColor(out_img, cv2.COLOR_GRAY2BGR)
     print("[OK] Successfully converted to a colour image.")
@@ -81,14 +81,14 @@ very_basic_header = """\
 """
 print(very_basic_header + "\n")
 
-if(os.path.isdir(output_directory)):
+if os.path.isdir(output_directory):
     print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
     choice = input()
     # first_dir += 1
     while(choice != 'y' and choice != 'n'):
         print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
         choice = input()
-    if(choice != 'y'):
+    if choice != 'y':
         print("[STATUS] Aborting...")
         exit()
 else:
@@ -105,13 +105,13 @@ else:
 
 print("-" * 30)
 print("[INFO] ---Excecution start---")
-if(dir_name != target_dir):
+if dir_name != target_dir:
     print("[WARNING] Working directory '" + dir_name + "' is not the target directory. Continue? [y/n]")
     choice = input()
 
     while(choice != 'y' and choice != 'n'):
         print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
-    if(choice != 'y'):
+    if choice != 'y':
         print("[STATUS] Aborting...")
         exit()
 else:
@@ -129,23 +129,23 @@ for current_directory in input_directories:
     first_img = 1
     # Check if it is a directory or a file
     if(not(os.path.isdir(current_directory)) or current_directory == collection[:-1]):
-        if(current_directory == collection[:-1]):
-            print("[INFO] Current directory is an OUTPUT directory. Continuing to data directory...")
+        if current_directory == collection[:-1]:
+            print("[INFO] Current directory is an OUTPUT directory. Skipping to data directory...")
         else:
             print("[ERROR] '" + current_directory + "' is not a directory! Skipping...")
-            
+
         continue
 
     output_directory = current_directory + "/" + output_directory_name
 
     if os.path.isdir(output_directory):
-        print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
+        print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite?")
         # choice = input()
         choice = 'y'
         while(choice != 'y' and choice != 'n'):
             print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
             choice = input()
-        if choice != 'y' :
+        if choice != 'y':
             print("[STATUS] Skipping directory...")
             continue
     else:
@@ -158,7 +158,7 @@ for current_directory in input_directories:
         else:
             print("[OK] Successfully created the directory '" + output_directory + "'.")
 
-    
+
     inputs = os.listdir(current_directory + "/")[first_img:]
     print("Inputs from directory '" + str(current_directory) + "': " + str(inputs))
 
@@ -166,7 +166,7 @@ for current_directory in input_directories:
 
     for img_path in inputs:
         print("[STATUS] Got image: '" + str(img_path) + "'.")
-    
+
     print("-" * 30)
 
     print(str(">"*10) + "F: " + str(first_img))
@@ -193,7 +193,7 @@ for current_directory in input_directories:
 
     # Create VideoWriter object for daily animation
     animation = cv2.VideoWriter("daily_" + current_directory + ".mp4", fourcc, fps, (width, height))
-    
+
     # Create VideoWriter object for total animation
     total_animation = cv2.VideoWriter("compilation_" + dir_name + ".mp4", fourcc, fps, (width, height))
 
@@ -203,7 +203,7 @@ for current_directory in input_directories:
         print("[INFO] Complete Path: '" + img_path + "'.")
 
         # Display status
-        print("[" + str(round(cnt/len(inputs)*100)) + "%] Performing CLAHE on: \"" + img_path + "\"")
+        print("[" + str(round(cnt/len(inputs)*100)) + "%] Performing CLAHE on: '" + img_path + "'...")
         try:
             cnt += 1
 
@@ -211,7 +211,7 @@ for current_directory in input_directories:
             print("[STATUS] Loading image...")
             img = cv2.imread(img_path, 1)
             print("[OK] Loaded image.")
-            
+        
             # Perform CLAHE
             print("[STATUS] Performing CLAHE...")
             img = clahe(img)
@@ -248,7 +248,7 @@ for current_directory in input_directories:
 
             # If processed lots of frames, print out status
             # and wait a bit to allow the CPU to cool down
-            if((cnt - 1) % 100 == 0):
+            if (cnt - 1) % 100 == 0:
                 elapsed = round(time.time() - start_time, 1)
                 cal_fps = round(elapsed/cnt, 4)
                 estimated = round(cal_fps * (len(inputs) - cnt), 1)
@@ -256,7 +256,7 @@ for current_directory in input_directories:
                 print("[STATUS] Time elapsed: " + str(elapsed) + " seconds. Calculation FPS: " + str(cal_fps) + ". Estimated remaining time: " + str(estimated) + "seconds. Frame " + str(cnt) + " (" + str(round((float(cnt)/len(inputs))*100)) + "%)")
 
                 # Pause for CPU cooloff
-                if(cnt >= 100):
+                if cnt >= 100:
                     print("[STATUS] Pausing 5 seconds for CPU cooloff...")
                     time.sleep(5)
         except:
@@ -271,7 +271,7 @@ for current_directory in input_directories:
         print("[OK] Successfully released daily animation output stream")
     except:
         print("[ERROR] Failed to release with message '" + str(sys.exc_info()[0]) + "'.\n")
-    
+
     print("[INFO] --- Finished processing directory '" + current_directory + "'.---\n" + "-"*30)
 
 print("[STATUS] Releasing total animation output stream")
@@ -283,7 +283,7 @@ except:
 
 print("-"*30)
 
-if(cnt == 0):
+if cnt == 0:
     print("[WARN] ---Did not do any processing!---")
     print("[WARN] ---Please check your working directory structure!---")
     print("[STATUS] ---Exiting...---")
