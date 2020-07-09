@@ -24,7 +24,7 @@ def clahe(in_img):
     print("[STATUS] Converting image to colour...")
     out_img = cv2.cvtColor(out_img, cv2.COLOR_GRAY2BGR)
     print("[OK] Successfully converted to a colour image.")
-    
+
     return out_img
 
 fps = 24
@@ -187,10 +187,10 @@ for current_directory in input_directories:
     print("-"*30)
 
     # Create VideoWriter object for daily animation
-    animation = cv2.VideoWriter("clahe_" + current_directory + ".mp4", fourcc, fps, (width, height))
+    animation = cv2.VideoWriter("daily_" + current_directory + ".mp4", fourcc, fps, (width, height))
     
     # Create VideoWriter object for total animation
-    total_animation = cv2.VideoWriter("total_clahe_" + dir_name + ".mp4", fourcc, fps, (width, height))
+    total_animation = cv2.VideoWriter("compilation_" + dir_name + ".mp4", fourcc, fps, (width, height))
 
     for relative_img_path in inputs:
         print("[INFO] Relative Path: '" + img_path + "'.")
