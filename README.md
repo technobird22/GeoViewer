@@ -40,7 +40,7 @@ Input currently needs to be in the following directory structure:
             - [More images]
         - more folders...
 ```
-**Please ensure that your files are set up in this configuration!**
+**Please ensure that your files are set up in this configuration!** <br>
 *Note: Will be updating inputs to be able to take data directly from xrit-rx in the future*
 
 ## Output files
