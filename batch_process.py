@@ -127,8 +127,13 @@ print("-"*30)
 cnt = 0
 for current_directory in input_directories:
     first_img = 1
-    # Check if it is a directory
+    # Check if it is a directory or a file
     if(not(os.path.isdir(current_directory)) or current_directory == collection[:-1]):
+        if(current_directory == collection[:-1]):
+            print("[INFO] Current directory is an OUTPUT directory. Continuing to data directory...")
+        else:
+            print("[ERROR] '" + current_directory + "' is not a directory! Skipping...")
+            
         continue
 
     output_directory = current_directory + "/" + output_directory_name
