@@ -14,7 +14,7 @@ def parse_frame_name(input_name):
 
     print("[INFO] Parsing frame name '" + input_name + "'...")
     output = input_name[:-6].split('_')
-    
+
     ####################################################
     # If file name contains "FD*_" at the front, enable:
     # output = output[1:]
@@ -59,7 +59,7 @@ def overlay_info(inp_img, frame_name, data_size, frame_cnt):
 
     cv2.putText(inp_img, "Thanks ;)", (2100, 2194), font, 1, (50, 50, 50), 1, cv2.LINE_AA)
 
-    return(inp_img)
+    return inp_img
 
 # For testing the overlay code
 def test_overlay():

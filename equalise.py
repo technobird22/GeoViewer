@@ -2,7 +2,7 @@ import sys
 import cv2
 
 def clahe(in_img):
-    return cv2.createCLAHE(clipLimit=2.0, tileGridSize=(5,5)).apply(in_img)
+    return cv2.createCLAHE(clipLimit=2.0, tileGridSize=(5, 5)).apply(in_img)
 
 def do_clahe_img(in_img):
     b_chn, g_chn, r_chn = cv2.split(in_img)

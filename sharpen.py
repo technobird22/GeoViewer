@@ -1,8 +1,5 @@
-import os
 import argparse
 import cv2
-import glob
-import numpy as np
 from PIL import Image
 from PIL import ImageFilter
 
@@ -19,7 +16,7 @@ image = cv2.imread(inputFile, cv2.IMREAD_ANYCOLOR | cv2.IMREAD_ANYDEPTH | cv2.IM
 
 image_bw = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-clahe = cv2.createCLAHE(clipLimit = 2)
+clahe = cv2.createCLAHE(clipLimit=2)
 semi_final = clahe.apply(image_bw)
 
 _, ordinary_img = cv2.threshold(image_bw, 155, 255, cv2.THRESH_BINARY)
