@@ -18,13 +18,14 @@ def clahe(in_img):
     print("[OK] Successfully converted to a grayscale image.")
 
     print("[STATUS] Performing CLAHE with clip limit " + str(clip_limit) + " and grid size " + str(grid_size) + ".")
-    out_img = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=grid_size).apply(in_img)
+    out_img = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=grid_size).apply(out_img)
     print("[OK] Successfully performed CLAHE on the image.")
     
     print("[STATUS] Converting image to colour...")
-    out_img = cv2.cvtColor(in_img, cv2.COLOR_GRAY2BGR)
+    out_img = cv2.cvtColor(out_img, cv2.COLOR_GRAY2BGR)
     print("[OK] Successfully converted to a colour image.")
-    return cv2.cvtColor(out_img, cv2.COLOR_GRAY2BGR)
+    
+    return out_img
 
 fps = 24
 first_img = 0
