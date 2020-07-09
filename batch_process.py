@@ -198,7 +198,7 @@ for current_directory in input_directories:
     total_animation = cv2.VideoWriter("compilation_" + dir_name + ".mp4", fourcc, fps, (width, height))
 
     for relative_img_path in inputs:
-        print("[INFO] Relative Path: '" + img_path + "'.")
+        print("[INFO] Relative Path: '" + relative_img_path + "'.")
         img_path = current_directory + "/" + relative_img_path
         print("[INFO] Complete Path: '" + img_path + "'.")
 
