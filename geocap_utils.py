@@ -1,6 +1,14 @@
 # Import libraries
 import cv2
 
+def load_json(tmp_file_path):
+    # load json file from file system
+    print("[INFO] loading JSON file from '" + tmp_file_path + "'...")
+    with open(tmp_file_path) as json_file:
+        data = json.load(json_file)
+    print("[OK] Successfully loaded JSON file from '" + tmp_file_path + "'!")
+    return data
+
 # Parse frame name to get time and frame number
 def parse_frame_name(input_name):
 
@@ -25,8 +33,9 @@ def parse_frame_name(input_name):
 def overlay_info(inp_img, frame_name, data_size, frame_cnt):
     print("[INFO] Overlaying text onto frame...")
 
-    frame_time, frame_num = parse_frame_name(frame_name)
+    CONFIG = load_json("config/config.json")
 
+    frame_time, frame_num = parse_frame_name(frame_name)
     font = cv2.FONT_HERSHEY_PLAIN
     cv2.putText(inp_img, "GK-2A Imagery", (20, 80), font, 5, (0, 255, 255), 5, cv2.LINE_AA)
 
@@ -46,7 +55,7 @@ def overlay_info(inp_img, frame_name, data_size, frame_cnt):
 
     cv2.putText(inp_img, "Frame count: " + str(frame_cnt) + " frames", (1540, 2128), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
 
-    cv2.putText(inp_img, "Data from: MouseBatteries", (1510, 2178), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Data from: " + CONFIG['data source'], (1510, 2178), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
 
     cv2.putText(inp_img, "Thanks ;)", (2100, 2194), font, 1, (50, 50, 50), 1, cv2.LINE_AA)
 
