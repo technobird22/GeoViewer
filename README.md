@@ -22,6 +22,27 @@ built to process all of this data automatically, so you don't have to lift a fin
 ## Running GeoCapture
 - Currently, the main script is `batch_process.py`, which, after being run, automatically does all the processing. It's relatively easy to change input directories/output locations from the code, where everything is clearly commented, however the ability to parse this argument wise will be added in the future. All the enhancements and processes are in the `geocap_utils.py` header file, although I am still moving some across.
 
+## Input files
+Input currently needs to be in the following directory structure:
+```
+    [Working Directory]
+        - [Folder 1]
+            - Image
+            - Image
+            - [More images]
+        - [Folder 2]
+            - Image
+            - Image
+            - [More images]
+        - [Folder 3]
+            - Image
+            - Image
+            - [More images]
+        - more folders...
+```
+**Please ensure that your files are set up in this configuration!**
+*Note: Will be updating inputs to be able to take data directly from xrit-rx in the future*
+
 ## Output files
 **These can easily be changed**
 - Directory containing all processed frames
