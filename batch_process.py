@@ -1,7 +1,6 @@
 import os
 import sys
 import time
-# ~400s
 # import numpy as np
 import cv2
 
