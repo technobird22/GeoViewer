@@ -17,7 +17,8 @@ def clahe(in_img):
     out_img = cv2.cvtColor(in_img, cv2.COLOR_BGR2GRAY)
     print("[OK] Successfully converted to a grayscale image.")
 
-    print("[STATUS] Performing CLAHE with clip limit " + str(clip_limit) + " and grid size " + str(grid_size) + ".")
+    print("[STATUS] Performing CLAHE with clip limit " + str(clip_limit) + " and grid size "\
+         + str(grid_size) + ".")
     out_img = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=grid_size).apply(out_img)
     print("[OK] Successfully performed CLAHE on the image.")
 
@@ -27,26 +28,26 @@ def clahe(in_img):
 
     return out_img
 
-fps = 24
-first_img = 0
+FPS = 24
+FIRST_IMG = 0
 
-input_directories = os.listdir()
-target_dir = "compilation"
+INPUT_DIRECTORIES = os.listdir()
+TARGET_DIR = "compilation"
 
 # output = ""
-collection = "everything/"
-output_directory_name = "frames/"
+COLLECTION = "everything/"
+OUTPUT_DIRECTORY_NAME = "frames/"
 
 # Current directory name
-dir_name = os.path.basename(os.getcwd())
+DIR_NAME = os.path.basename(os.getcwd())
 
 # Directory for every frame
-output_directory = "everything/"
+OUTPUT_DIRECTORY = "everything/"
 
 # Define animation output codec
-fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+FOURCC = cv2.VideoWriter_fourcc(*'mp4v')
 
-header = """\
+HEADER = """\
     ┌────────────────────────────────────────────────────────┐
     │                       GeoCapture                       │
     │  Automatic processing of geostationary satellite data  │
@@ -57,7 +58,7 @@ header = """\
     │   GitHub: https://github.com/technobird22/geocapture   │
     └────────────────────────────────────────────────────────┘\
 """
-basic_header = """\
+BASIC_HEADER = """\
     o--------------------------------------------------------o
     |                       GeoCapture                       |
     |  Automatic processing of geostationary satellite data  |
@@ -68,7 +69,7 @@ basic_header = """\
     |   GitHub: https://github.com/technobird22/geocapture   |
     o--------------------------------------------------------o\
 """
-very_basic_header = """\
+VERY_BASIC_HEADER = """\
     --------------------------------------------------------
                            GeoCapture                       
       Automatic processing of geostationary satellite data  
@@ -79,39 +80,40 @@ very_basic_header = """\
        GitHub: https://github.com/technobird22/geocapture   
     --------------------------------------------------------\
 """
-print(very_basic_header + "\n")
+print(VERY_BASIC_HEADER + "\n")
 
-if os.path.isdir(output_directory):
-    print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite? [y/n]")
-    choice = input()
+if os.path.isdir(OUTPUT_DIRECTORY):
+    print("[WARNING] Output directory '" + OUTPUT_DIRECTORY + "' Already exists. Overwrite? [y/n]")
+    CHOICE = input()
     # first_dir += 1
-    while(choice != 'y' and choice != 'n'):
-        print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
-        choice = input()
-    if choice != 'y':
+    while(CHOICE != 'y' and CHOICE != 'n'):
+        print("[ERROR] Invalid CHOICE. Please try again. Options: 'y' or 'n'")
+        CHOICE = input()
+    if CHOICE != 'y':
         print("[STATUS] Aborting...")
         exit()
 else:
     print("[OK] No output directory found.")
     print("[STATUS] Creating output directory...")
     try:
-        os.mkdir(output_directory)
+        os.mkdir(OUTPUT_DIRECTORY)
     except OSError:
-        print("[ERROR] Creation of the directory '" + output_directory + "' failed")
+        print("[ERROR] Creation of the directory '" + OUTPUT_DIRECTORY + "' failed")
     else:
-        print("[OK] Successfully created the directory '" + output_directory + "'.")
+        print("[OK] Successfully created the directory '" + OUTPUT_DIRECTORY + "'.")
 
-# output = dir_name
+# output = DIR_NAME
 
 print("-" * 30)
 print("[INFO] ---Excecution start---")
-if dir_name != target_dir:
-    print("[WARNING] Working directory '" + dir_name + "' is not the target directory. Continue? [y/n]")
-    choice = input()
+if DIR_NAME != TARGET_DIR:
+    print("[WARNING] Working directory '" + DIR_NAME + "' is not the target directory. \
+        Continue? [y/n]")
+    CHOICE = input()
 
-    while(choice != 'y' and choice != 'n'):
-        print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
-    if choice != 'y':
+    while(CHOICE != 'y' and CHOICE != 'n'):
+        print("[ERROR] Invalid CHOICE. Please try again. Options: 'y' or 'n'")
+    if CHOICE != 'y':
         print("[STATUS] Aborting...")
         exit()
 else:
@@ -120,58 +122,58 @@ else:
 print("-" * 30)
 print("[STATUS] ---Begin Processing---")
 
-start_time = time.time()
+START_TIME = time.time()
 
 print("[INFO] Directories to process: " + str(os.listdir()))
 print("-"*30)
-cnt = 0
-for current_directory in input_directories:
-    first_img = 1
+CNT = 0
+for current_directory in INPUT_DIRECTORIES:
+    FIRST_IMG = 1
     # Check if it is a directory or a file
-    if(not(os.path.isdir(current_directory)) or current_directory == collection[:-1]):
-        if current_directory == collection[:-1]:
+    if(not(os.path.isdir(current_directory)) or current_directory == COLLECTION[:-1]):
+        if current_directory == COLLECTION[:-1]:
             print("[INFO] Current directory is an OUTPUT directory. Skipping to data directory...")
         else:
             print("[ERROR] '" + current_directory + "' is not a directory! Skipping...")
 
         continue
 
-    output_directory = current_directory + "/" + output_directory_name
+    OUTPUT_DIRECTORY = current_directory + "/" + OUTPUT_DIRECTORY_NAME
 
-    if os.path.isdir(output_directory):
-        print("[WARNING] Output directory '" + output_directory + "' Already exists. Overwrite?")
-        # choice = input()
-        choice = 'y'
-        while(choice != 'y' and choice != 'n'):
-            print("[ERROR] Invalid choice. Please try again. Options: 'y' or 'n'")
-            choice = input()
-        if choice != 'y':
+    if os.path.isdir(OUTPUT_DIRECTORY):
+        print("[WARNING] Output directory '" + OUTPUT_DIRECTORY + "' Already exists. Overwrite?")
+        # CHOICE = input()
+        CHOICE = 'y'
+        while(CHOICE != 'y' and CHOICE != 'n'):
+            print("[ERROR] Invalid CHOICE. Please try again. Options: 'y' or 'n'")
+            CHOICE = input()
+        if CHOICE != 'y':
             print("[STATUS] Skipping directory...")
             continue
     else:
         print("[OK] No output directory found.")
         print("[STATUS] Creating output directory...")
         try:
-            os.mkdir(output_directory)
+            os.mkdir(OUTPUT_DIRECTORY)
         except OSError:
-            print("[ERROR] Creation of the directory '" + output_directory + "' failed")
+            print("[ERROR] Creation of the directory '" + OUTPUT_DIRECTORY + "' failed")
         else:
-            print("[OK] Successfully created the directory '" + output_directory + "'.")
+            print("[OK] Successfully created the directory '" + OUTPUT_DIRECTORY + "'.")
 
 
-    inputs = os.listdir(current_directory + "/")[first_img:]
+    inputs = os.listdir(current_directory + "/")[FIRST_IMG:]
     print("Inputs from directory '" + str(current_directory) + "': " + str(inputs))
 
-    cnt = 0.0
+    CNT = 0.0
 
     for img_path in inputs:
         print("[STATUS] Got image: '" + str(img_path) + "'.")
 
     print("-" * 30)
 
-    print(str(">"*10) + "F: " + str(first_img))
-    cur_img_path = current_directory + "/" + inputs[first_img]
-    print(str(">"*10) + "F1: " + str(first_img))
+    print(str(">"*10) + "F: " + str(FIRST_IMG))
+    cur_img_path = current_directory + "/" + inputs[FIRST_IMG]
+    print(str(">"*10) + "F1: " + str(FIRST_IMG))
 
     print("[STATUS] Loading image '" + cur_img_path + "'.")
     cur_img = cv2.imread(cur_img_path)
@@ -186,16 +188,17 @@ for current_directory in input_directories:
     print("[INFO] VIDEO CONFIG:")
     print("Working with directory '", current_directory, "'.")
     print("Frame dimensions: ", height, " by ", width, ".")
-    print("Frame rate: ", fps, " frames per second.")
+    print("Frame rate: ", FPS, " frames per second.")
 
     print("Video ouput file: '", ("clahe_" + current_directory + ".mp4"), "'.")
     print("-"*30)
 
     # Create VideoWriter object for daily animation
-    animation = cv2.VideoWriter("daily_" + current_directory + ".mp4", fourcc, fps, (width, height))
+    animation = cv2.VideoWriter("daily_" + current_directory + ".mp4", FOURCC, FPS, (width, height))
 
     # Create VideoWriter object for total animation
-    total_animation = cv2.VideoWriter("compilation_" + dir_name + ".mp4", fourcc, fps, (width, height))
+    total_animation = cv2.VideoWriter("compilation_" + DIR_NAME + ".mp4", FOURCC, FPS, \
+        (width, height))
 
     for relative_img_path in inputs:
         print("[INFO] Relative Path: '" + relative_img_path + "'.")
@@ -203,15 +206,16 @@ for current_directory in input_directories:
         print("[INFO] Complete Path: '" + img_path + "'.")
 
         # Display status
-        print("[" + str(round(cnt/len(inputs)*100)) + "%] Performing CLAHE on: '" + img_path + "'...")
+        print("[" + str(round(CNT/len(inputs)*100)) + "%] Performing CLAHE on: '" + img_path + \
+            "'...")
         try:
-            cnt += 1
+            CNT += 1
 
             # Load image
             print("[STATUS] Loading image...")
             img = cv2.imread(img_path, 1)
             print("[OK] Loaded image.")
-        
+
             # Perform CLAHE
             print("[STATUS] Performing CLAHE...")
             img = clahe(img)
@@ -226,14 +230,16 @@ for current_directory in input_directories:
             print("[OK] Processed frame ready.")
 
             # Write to image
-            print(">"*5 + "[INFO] '" + (output_directory + relative_img_path) + "' ...")
-            print("[STATUS] Writing image to '" + (output_directory + current_directory + "_" + relative_img_path) + "' ...")
-            cv2.imwrite(output_directory + current_directory + "_" + relative_img_path, img)
+            print(">"*5 + "[INFO] '" + (OUTPUT_DIRECTORY + relative_img_path) + "' ...")
+            print("[STATUS] Writing image to '" + (OUTPUT_DIRECTORY + current_directory + "_" \
+                + relative_img_path) + "' ...")
+            cv2.imwrite(OUTPUT_DIRECTORY + current_directory + "_" + relative_img_path, img)
             print("[OK] Successfully written image")
 
-            # Write to collection
-            print("[STATUS] Writing image to collection at '" + (collection + current_directory + "_" + relative_img_path) + "' ...")
-            cv2.imwrite(collection + "/" + current_directory + "_" + relative_img_path, img)
+            # Write to COLLECTION
+            print("[STATUS] Writing image to COLLECTION at '" \
+                + (COLLECTION + current_directory + "_" + relative_img_path) + "' ...")
+            cv2.imwrite(COLLECTION + "/" + current_directory + "_" + relative_img_path, img)
             print("[OK] Successfully written image")
 
             # Write to daily animation
@@ -248,20 +254,23 @@ for current_directory in input_directories:
 
             # If processed lots of frames, print out status
             # and wait a bit to allow the CPU to cool down
-            if (cnt - 1) % 100 == 0:
-                elapsed = round(time.time() - start_time, 1)
-                cal_fps = round(elapsed/cnt, 4)
-                estimated = round(cal_fps * (len(inputs) - cnt), 1)
+            if (CNT - 1) % 100 == 0:
+                ELAPSED = round(time.time() - START_TIME, 1)
+                CAL_FPS = round(ELAPSED/CNT, 4)
+                ESTIMATED = round(CAL_FPS * (len(inputs) - CNT), 1)
 
-                print("[STATUS] Time elapsed: " + str(elapsed) + " seconds. Calculation FPS: " + str(cal_fps) + ". Estimated remaining time: " + str(estimated) + "seconds. Frame " + str(cnt) + " (" + str(round((float(cnt)/len(inputs))*100)) + "%)")
+                print("[STATUS] Time ELAPSED: " + str(ELAPSED) + " seconds. Calculation FPS: " \
+                    + str(CAL_FPS) + ". ESTIMATED remaining time: " + str(ESTIMATED) + "seconds. \
+                        Frame " + str(CNT) + " (" + str(round((float(CNT)/len(inputs))*100)) + "%)")
 
                 # Pause for CPU cooloff
-                if cnt >= 100:
+                if CNT >= 100:
                     print("[STATUS] Pausing 5 seconds for CPU cooloff...")
                     time.sleep(5)
         except:
             # Uh oh!
-            print("[ERROR] Failed on image '" + img_path + "' with message '" + str(sys.exc_info()[1]) + "'.")
+            print("[ERROR] Failed on image '" + img_path + "' with message '" \
+                + str(sys.exc_info()[1]) + "'.")
             print("[STATUS] Aborting...")
             exit()
 
@@ -283,15 +292,16 @@ except:
 
 print("-"*30)
 
-if cnt == 0:
+if CNT == 0:
     print("[WARN] ---Did not do any processing!---")
     print("[WARN] ---Please check your working directory structure!---")
     print("[STATUS] ---Exiting...---")
     print("[STATUS] ---DONE---")
     exit()
 
-elapsed = round(time.time() - start_time, 1)
-cal_fps = round(elapsed/cnt, 4)
-estimated = round(cal_fps * (len(inputs) - cnt), 1)
-print("[STATUS] Execution finished. Total time elapsed: " + str(elapsed) + " seconds. Processed " + str(cnt) + " frames. Calculation FPS: " + str(cal_fps) + ".")
+ELAPSED = round(time.time() - START_TIME, 1)
+CAL_FPS = round(ELAPSED/CNT, 4)
+ESTIMATED = round(CAL_FPS * (len(inputs) - CNT), 1)
+print("[STATUS] Execution finished. Total time ELAPSED: " + str(ELAPSED) + " seconds. Processed " \
+    + str(CNT) + " frames. Calculation FPS: " + str(CAL_FPS) + ".")
 print("[STATUS] ---DONE---")
