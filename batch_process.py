@@ -8,24 +8,6 @@ import geocap_utils
 
 # sys.stdout = open('debug.log', 'w')
 
-def clahe(in_img):
-    clip_limit = 2.0
-    grid_size = (2, 2)
-
-    print("[STATUS] Converting image to grayscale...")
-    out_img = cv2.cvtColor(in_img, cv2.COLOR_BGR2GRAY)
-    print("[OK] Successfully converted to a grayscale image.")
-
-    print("[STATUS] Performing CLAHE with clip limit " + str(clip_limit) + " and grid size "\
-         + str(grid_size) + ".")
-    out_img = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=grid_size).apply(out_img)
-    print("[OK] Successfully performed CLAHE on the image.")
-
-    print("[STATUS] Converting image to colour...")
-    out_img = cv2.cvtColor(out_img, cv2.COLOR_GRAY2BGR)
-    print("[OK] Successfully converted to a colour image.")
-
-    return out_img
 
 FPS = 24
 FIRST_IMG = 0
@@ -217,7 +199,7 @@ for current_directory in INPUT_DIRECTORIES:
 
             # Perform CLAHE
             print("[STATUS] Performing CLAHE...")
-            img = clahe(img)
+            img = geocap_utils.clahe(img)
             print("[OK] Finished performing CLAHE.")
 
             # Add overlay
