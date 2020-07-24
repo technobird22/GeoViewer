@@ -1,5 +1,5 @@
 # GeoCapture
-GeoCapture is a program for automatically processing data received from geostationary satellites such as GK-2A.
+GeoCapture is a program for automatically processing data received from geostationary satellites such as the `GOES`, `GK-2`, and `Himawari` series.
 
 ## About
 GeoCapture is designed to automatically take raw infrared LRIT images to bring out subtle details otherwise not recognized in the original image, as well as generate animations. GeoCapture is
@@ -12,7 +12,15 @@ built to process all of this data automatically, so you don't have to lift a fin
 - Automatically Parses and overlays relevant data
 - *Incredibly* detailed log files.
 
-## Soon to be added:
+-----
+
+## Todo:
+### Program:
+- Have configuration in a seperate file
+- Add option to ignore certain folders
+- Read directly from directory output structure of XRIT-RX
+
+### Features:
 - Add false colour Overlays (eg. Enhanced Temperature)
 - Underlay false colour
 - Add crops for certain locations
@@ -20,7 +28,7 @@ built to process all of this data automatically, so you don't have to lift a fin
 - Sharpen images
 
 ## Running GeoCapture
-- Currently, the main script is `batch_process.py`, which, after being run, automatically does all the processing. It's relatively easy to change input directories/output locations from the code, where everything is clearly commented, however the ability to parse this argument wise will be added in the future. All the enhancements and processes are in the `geocap_utils.py` header file, although I am still moving some across.
+- Currently, the main script is `batch_process.py`, which, after being run, automatically does all the processing. It's relatively easy to change input directories/output locations from the code, where everything is clearly commented, however the ability to parse this argument wise will be added in the future. All the enhancements and processing scripts are in the `geocap_utils.py` header file, although some are still being moved across.
 
 ## Input files
 Input currently needs to be in the following directory structure:
@@ -45,13 +53,16 @@ Input currently needs to be in the following directory structure:
 
 ## Output files
 **These can easily be changed**
-- Directory containing all processed frames
+- Directory containing processed frames per day
 - One video animation **for each day**
+- Directory containing all processed frames
 - One video animation containing all processed frames
 
 ## System Requirements
 This script is relatively lightweight, using less than `200mb` of RAM and less than `20%` utilisation of my CPU (Quad core - 1.8GHZ) during testing. This may change as I add in more features, but it should stay relatively light.
-I have restricted the running speed of the program by having it pause after processing a certain number of frames (200 frames right now), which **can** be disabled.
+I have restricted the running speed of the program by having it pause after processing a certain number of frames (200 frames right now). This **can** be disabled.
+
+Here are some recommended specs for running GeoCapture:
 - Ram: `4Gb`
 - Disk Space: >`10Gb`
 - Processor: `1Ghz Dual Core` - (Anything built within the past 5 years for a laptop or desktop should work just fine)
@@ -63,6 +74,8 @@ Currently required libraries are `opencv-python` and `numpy`.
 If you run into import errors, you'll need to run the following commands to install the libraries:
 - `pip install opencv-python`
 - `pip install numpy`
+
+-----
 
 ## Examples
 You can find some examples of what GeoCapture can do below:
