@@ -99,3 +99,38 @@ def test_overlay():
 
 # ---FOR DEBUGGING:---
 # test_overlay()
+
+# Headers at the start of program
+HEADER = """\
+    ┌────────────────────────────────────────────────────────┐
+    │                       GeoCapture                       │
+    │  Automatic processing of geostationary satellite data  │
+    │                      Version  1.0                      │
+    ├────────────────────────────────────────────────────────┤
+    │             Made by Albert  (Technobird22)             │
+    ├────────────────────────────────────────────────────────┤
+    │   GitHub: https://github.com/technobird22/geocapture   │
+    └────────────────────────────────────────────────────────┘\
+"""
+BASIC_HEADER = """\
+    o--------------------------------------------------------o
+    |                       GeoCapture                       |
+    |  Automatic processing of geostationary satellite data  |
+    |                      Version  1.0                      |
+    o--------------------------------------------------------o
+    |             Made by Albert  (Technobird22)             |
+    o--------------------------------------------------------o
+    |   GitHub: https://github.com/technobird22/geocapture   |
+    o--------------------------------------------------------o\
+"""
+VERY_BASIC_HEADER = """\
+    --------------------------------------------------------
+                           GeoCapture                       
+      Automatic processing of geostationary satellite data  
+                          Version  1.0                    
+    --------------------------------------------------------
+                 Made by Albert  (Technobird22)             
+    --------------------------------------------------------
+       GitHub: https://github.com/technobird22/geocapture   
+    --------------------------------------------------------\
+"""
