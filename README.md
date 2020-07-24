@@ -16,16 +16,16 @@ built to process all of this data automatically, so you don't have to lift a fin
 
 ## Todo:
 ### Program:
-- [] Have configuration in a seperate file
-- [] Add option to ignore certain folders
-- [] Read directly from directory output structure of XRIT-RX
+- [ ] Have configuration in a seperate file
+- [ ] Add option to ignore certain folders
+- [ ] Read directly from directory output structure of XRIT-RX
 
 ### Features:
-- [] Add false colour Overlays (eg. Enhanced Temperature)
-- [] Underlay false colour
-- [] Add crops for certain locations
-- [] Repair dropped frames/packets
-- [] Sharpen images
+- [ ] Add false colour Overlays (eg. Enhanced Temperature)
+- [ ] Underlay false colour
+- [ ] Add crops for certain locations
+- [ ] Repair dropped frames/packets
+- [ ] Sharpen images
 
 -----
 
