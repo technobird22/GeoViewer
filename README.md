@@ -1,5 +1,5 @@
 # GeoCapture
-GeoCapture is a program for automatically processing data received from geostationary satellites such as the `GOES`, `GK-2`, and `Himawari` series.
+GeoCapture is a program for automatically processing data received from geostationary satellites such as the **GOES**, **GK-2**, and **Himawari** series.
 
 ## About
 GeoCapture is designed to automatically take raw infrared LRIT images to bring out subtle details otherwise not recognized in the original image, as well as generate animations. GeoCapture is
@@ -16,16 +16,18 @@ built to process all of this data automatically, so you don't have to lift a fin
 
 ## Todo:
 ### Program:
-- Have configuration in a seperate file
-- Add option to ignore certain folders
-- Read directly from directory output structure of XRIT-RX
+- [] Have configuration in a seperate file
+- [] Add option to ignore certain folders
+- [] Read directly from directory output structure of XRIT-RX
 
 ### Features:
-- Add false colour Overlays (eg. Enhanced Temperature)
-- Underlay false colour
-- Add crops for certain locations
-- Repair dropped frames/packets
-- Sharpen images
+- [] Add false colour Overlays (eg. Enhanced Temperature)
+- [] Underlay false colour
+- [] Add crops for certain locations
+- [] Repair dropped frames/packets
+- [] Sharpen images
+
+-----
 
 ## Running GeoCapture
 - Currently, the main script is `batch_process.py`, which, after being run, automatically does all the processing. It's relatively easy to change input directories/output locations from the code, where everything is clearly commented, however the ability to parse this argument wise will be added in the future. All the enhancements and processing scripts are in the `geocap_utils.py` header file, although some are still being moved across.
