@@ -1,13 +1,16 @@
+# Main libraries
 import os
 import sys
 import time
-# import numpy as np
-import cv2
 
+# Image processing
+import cv2
+# import numpy as np
+
+# Other scripts
 import geocap_utils
 
 # sys.stdout = open('debug.log', 'w')
-
 
 FPS = 24
 FIRST_IMG = 0
@@ -72,6 +75,7 @@ print("[STATUS] ---Begin Processing---")
 
 START_TIME = time.time()
 
+# Try different subdirectories
 print("[INFO] Directories to process: " + str(os.listdir()))
 print("-"*30)
 CNT = 0
