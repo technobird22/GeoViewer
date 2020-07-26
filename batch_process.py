@@ -114,7 +114,8 @@ for current_directory in INPUT_DIRECTORIES:
 
 
     inputs = os.listdir(current_directory + "/")[FIRST_IMG:]
-    print("Inputs from directory '" + str(current_directory) + "': " + str(inputs))
+    print("[INFO] Loading inputs from directory '" + str(current_directory) + "'...")
+    # print("Inputs from directory '" + str(current_directory) + "': " + str(inputs))
 
     CNT = 0.0
 
