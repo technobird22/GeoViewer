@@ -28,7 +28,7 @@ OUTPUT_DIRECTORY = "everything/"
 # Define animation output codec
 FOURCC = cv2.VideoWriter_fourcc(*'mp4v')
 
-print(geocap_utils.VERY_BASIC_HEADER + "\n")
+print(geocap_utils.VERY_BASIC_HEADER)
 
 if os.path.isdir(OUTPUT_DIRECTORY):
     print("[WARNING] Output directory '" + OUTPUT_DIRECTORY + "' Already exists. Overwrite? [y/n]")
