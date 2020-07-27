@@ -10,15 +10,15 @@ built to process all of this data automatically, so you don't have to lift a fin
 - Fully Automatic Image Processing
 - Enhances Landmass and brings out subtle details by running Contrast Limited Adaptive Histogram Equalisation (CLAHE) on each frame.
 - Automatically Parses and overlays relevant data
+- Can directly take input from XRIT-RX output
 - *Incredibly* detailed log files.
-
 -----
 
 ## Todo:
 ### Program:
 - [ ] Have configuration in a seperate file
-- [ ] Add option to ignore certain folders
-- [ ] Read directly from directory output structure of XRIT-RX
+- [x] <del>Add option to ignore certain folders</del>
+- [x] <del>Read directly from directory output structure of XRIT-RX</del>
 
 ### Features:
 - [ ] Add false colour Overlays (eg. Enhanced Temperature)
@@ -50,28 +50,45 @@ Here are some recommended specs for running GeoCapture:
 This script should be able to be run alongside programs such as `GOESRECV` and `XRIT-RX` on a Raspberry Pi 3B, however this has **not yet been tested**.
 
 ## Input files
-Input currently needs to be in the following directory structure:
+GeoCapture can take input directly from the output directory structure of XRIT-RX.
+<br>
+However, you need to first add in a "config" directory containing the appropriate configuration `JSON` files.
+<br>
+***There is an example config directory in the "data" directory in this repository.***
+<br>
+<br>
+**Here is an example of such a structure:**
 ```
-    [Working Directory]
-        - [Folder 1]
-            - Image
-            - Image
-            - [More images]
-        - [Folder 2]
-            - Image
-            - Image
-            - [More images]
-        - [Folder 3]
-            - Image
-            - Image
-            - [More images]
-        - more folders...
+[Working directory (called "LRIT", which is inside "recieved" in the LRIT-RX output)]
+│
+├───config
+│   ├───config.json
+│   └───data.json
+├───20200628
+│   ├───FD
+│   ├───GWW3F
+│   ├───RWW3A
+│   ├───RWW3F
+│   ├───SSTA
+│   ├───UP50F24
+│   └───UP50F48
+├───20200629
+│   ├───ANT
+│   ├───FD
+│   ├───RWW3A
+│   ├───SICEA
+│   ├───SSTF24
+│   ├───SSTF48
+│   ├───SSTF72
+│   └───SUFA03
+└───[More daily directories...]
 ```
-**Please ensure that your files are set up in this configuration!** <br>
-*Note: Will be updating inputs to be able to take data directly from xrit-rx in the future*
+**Remember to add in the config directory!**
+<br>
+*Remember that there is an example config directory in the "data" directory in this repository.*
 
 ## Output files
-**These can easily be changed**
+**These can easily be changed via the configuration files**
 - Directory containing processed frames per day
 - One video animation **for each day**
 - Directory containing all processed frames
