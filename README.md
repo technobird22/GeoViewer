@@ -39,7 +39,8 @@ If you run into import errors, you'll need to run the following commands to inst
 - `pip install numpy`
 
 ## System Requirements
-This script is relatively lightweight, using less than `200mb` of RAM and less than `20%` utilisation of my CPU (Quad core - 1.8GHZ) during testing. This may change as I add in more features, but it should stay relatively light.
+This script is very lightweight, using less than `200mb` of RAM and less than `20%` utilisation of my CPU (Quad core - 1.8GHZ) during testing. This may change as I add in more features, but it should stay relatively light. During testing, I have found that the script takes around `90` seconds to process a day's worth of images (143 frames)
+<br>
 I have restricted the running speed of the program by having it pause after processing a certain number of frames (200 frames right now). This **can** be disabled.
 
 Here are some recommended specs for running GeoCapture:
