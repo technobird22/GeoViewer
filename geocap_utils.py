@@ -1,9 +1,9 @@
-# Import libraries
+"""Import libraries"""
 import json
 import cv2
 
-# Load a JSON file
 def load_json(tmp_file_path):
+    """Load a JSON file"""
     # load json file from file system
     print("[INFO] loading JSON file from '" + tmp_file_path + "'...")
     with open(tmp_file_path) as json_file:
@@ -11,8 +11,10 @@ def load_json(tmp_file_path):
     print("[OK] Successfully loaded JSON file from '" + tmp_file_path + "'!")
     return data
 
-# Perform CLAHE on an image
 def clahe(in_img):
+    """Perform CLAHE on an image"""
+    print("[STATUS] Performing CLAHE on image...")
+
     clip_limit = 2.0
     grid_size = (2, 2)
 
@@ -29,11 +31,11 @@ def clahe(in_img):
     out_img = cv2.cvtColor(out_img, cv2.COLOR_GRAY2BGR)
     print("[OK] Successfully converted to a colour image.")
 
+    print("[OK] Successfully performed CLAHE on the image.")
     return out_img
 
-# Parse frame name to get time and frame number
 def parse_frame_name(input_name):
-
+    """Parse frame name to get time and frame number"""
     print("[INFO] Parsing frame name '" + input_name + "'...")
     output = input_name[:-6].split('_')
 
@@ -51,8 +53,8 @@ def parse_frame_name(input_name):
     output_name = date + " @ " + time + "UTC"
     return (output_name, frame_num)
 
-# Overlay information onto a frame
 def overlay_info(inp_img, frame_name, data_size, frame_cnt):
+    """Overlay information onto a frame"""
     print("[INFO] Overlaying text onto frame...")
 
     frame_time, frame_num = parse_frame_name(frame_name)
@@ -84,8 +86,9 @@ def overlay_info(inp_img, frame_name, data_size, frame_cnt):
 
     return inp_img
 
-# For testing the overlay code
 def test_overlay():
+    """For testing the overlay code"""
+
     path = "everything/"
     img_name = "FD8_IMG_FD_001_IR105_20200704_001006.jpg"
     img = cv2.imread(path + img_name, 1)
