@@ -257,7 +257,7 @@ if CNT == 0:
     exit()
 
 ELAPSED = round(time.time() - START_TIME, 1)
-CAL_FPS = round(ELAPSED/CNT, 4)
+CAL_FPS = round(CNT/ELAPSED, 4)
 ESTIMATED = round(CAL_FPS * (len(inputs) - CNT), 1)
 print("[STATUS] Execution finished. Total time ELAPSED: " + str(ELAPSED) + " seconds. Processed " \
     + str(CNT) + " frames. Calculation FPS: " + str(CAL_FPS) + ".")
