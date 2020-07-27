@@ -117,7 +117,7 @@ for current_directory in INPUT_DIRECTORIES:
             print("[OK] Successfully created the directory '" + OUTPUT_DIRECTORY + "'.")
 
 
-    inputs = os.listdir(current_directory + "/")[FIRST_IMG:]
+    inputs = os.listdir(current_directory + "/FD/")[FIRST_IMG:]
     print("[INFO] Loading inputs from directory '" + str(current_directory) + "'...")
     # print("Inputs from directory '" + str(current_directory) + "': " + str(inputs))
 
@@ -129,7 +129,7 @@ for current_directory in INPUT_DIRECTORIES:
     print("-" * 30)
 
     print(str(">"*10) + "F: " + str(FIRST_IMG))
-    cur_img_path = current_directory + "/" + inputs[FIRST_IMG]
+    cur_img_path = current_directory + "/FD/" + inputs[FIRST_IMG]
     print(str(">"*10) + "F1: " + str(FIRST_IMG))
 
     print("[STATUS] Loading image '" + cur_img_path + "'.")
@@ -159,7 +159,7 @@ for current_directory in INPUT_DIRECTORIES:
 
     for relative_img_path in inputs:
         print("[INFO] Relative Path: '" + relative_img_path + "'.")
-        img_path = current_directory + "/" + relative_img_path
+        img_path = current_directory + "/FD/" + relative_img_path
         print("[INFO] Complete Path: '" + img_path + "'.")
 
         # Display status
