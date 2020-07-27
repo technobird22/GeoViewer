@@ -1,13 +1,16 @@
+# Main libraries
 import os
 import sys
 import time
-# import numpy as np
-import cv2
 
+# Image processing
+import cv2
+# import numpy as np
+
+# Other scripts
 import geocap_utils
 
 # sys.stdout = open('debug.log', 'w')
-
 
 FPS = 24
 FIRST_IMG = 0
@@ -27,6 +30,9 @@ OUTPUT_DIRECTORY = "everything/"
 
 # Define animation output codec
 FOURCC = cv2.VideoWriter_fourcc(*'mp4v')
+
+# Ignored directories
+IGNORED_DIRS = ["config", COLLECTION[:-1]]
 
 print(geocap_utils.VERY_BASIC_HEADER)
 
@@ -72,18 +78,20 @@ print("[STATUS] ---Begin Processing---")
 
 START_TIME = time.time()
 
+# Try different subdirectories
 print("[INFO] Directories to process: " + str(os.listdir()))
 print("-"*30)
 CNT = 0
 for current_directory in INPUT_DIRECTORIES:
     FIRST_IMG = 1
-    # Check if it is a directory or a file
-    if(not(os.path.isdir(current_directory)) or current_directory == COLLECTION[:-1]):
-        if current_directory == COLLECTION[:-1]:
-            print("[INFO] Current directory is an OUTPUT directory. Skipping to data directory...")
-        else:
-            print("[ERROR] '" + current_directory + "' is not a directory! Skipping...")
+    # Check if it is really a directory
+    if(not(os.path.isdir(current_directory))):
+        print("[ERROR] Directory '" + current_directory + "' is NOT a directory! Skipping...")
+        continue
 
+    # Check if directory is being ignored
+    if(IGNORED_DIRS.count(current_directory) != 0):
+        print("[ERROR] Directory '" + current_directory + "' is being ignored! Skipping...")
         continue
 
     OUTPUT_DIRECTORY = current_directory + "/" + OUTPUT_DIRECTORY_NAME
@@ -110,7 +118,8 @@ for current_directory in INPUT_DIRECTORIES:
 
 
     inputs = os.listdir(current_directory + "/")[FIRST_IMG:]
-    print("Inputs from directory '" + str(current_directory) + "': " + str(inputs))
+    print("[INFO] Loading inputs from directory '" + str(current_directory) + "'...")
+    # print("Inputs from directory '" + str(current_directory) + "': " + str(inputs))
 
     CNT = 0.0
 

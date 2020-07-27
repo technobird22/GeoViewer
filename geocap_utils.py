@@ -1,5 +1,15 @@
 # Import libraries
+import json
 import cv2
+
+# Load a JSON file
+def load_json(tmp_file_path):
+    # load json file from file system
+    print("[INFO] loading JSON file from '" + tmp_file_path + "'...")
+    with open(tmp_file_path) as json_file:
+        data = json.load(json_file)
+    print("[OK] Successfully loaded JSON file from '" + tmp_file_path + "'!")
+    return data
 
 # Perform CLAHE on an image
 def clahe(in_img):
