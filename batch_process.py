@@ -85,12 +85,12 @@ CNT = 0
 for current_directory in INPUT_DIRECTORIES:
     FIRST_IMG = 1
     # Check if it is really a directory
-    if(not(os.path.isdir(current_directory))):
+    if not os.path.isdir(current_directory):
         print("[ERROR] Directory '" + current_directory + "' is NOT a directory! Skipping...")
         continue
 
     # Check if directory is being ignored
-    if(IGNORED_DIRS.count(current_directory) != 0):
+    if IGNORED_DIRS.count(current_directory) != 0:
         print("[ERROR] Directory '" + current_directory + "' is being ignored! Skipping...")
         continue
 
