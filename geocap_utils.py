@@ -9,7 +9,7 @@ def load_json(tmp_file_path):
     with open(tmp_file_path) as json_file:
         data = json.load(json_file)
     print("[OK] Successfully loaded JSON file from '" + tmp_file_path + "'!")
-    
+
     return data
 
 def clahe(in_img):
@@ -83,10 +83,13 @@ def overlay_info(inp_img, frame_name):
     # print("GOT DATA: ", data_info)
 
     # Source data information
-    cv2.putText(inp_img, "Data size: " + str(round(data_info["data_size"], 2)) + " GB", (1710, 2078), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
-    cv2.putText(inp_img, "Frame count: " + str(data_info["frame_count"]) + " frames", (1540, 2128), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Data size: " + str(round(data_info["data_size"], 2)) + " GB",\
+        (1710, 2078), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Frame count: " + str(data_info["frame_count"]) + " frames",\
+        (1540, 2128), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
 
-    cv2.putText(inp_img, "Data from: " + str(data_info["data_source"]), (1510, 2178), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Data from: " + str(data_info["data_source"]), (1510, 2178), font, 3,\
+        (100, 100, 100), 4, cv2.LINE_AA)
     cv2.putText(inp_img, "Thanks ;)", (2100, 2194), font, 1, (50, 50, 50), 1, cv2.LINE_AA)
 
     return inp_img
