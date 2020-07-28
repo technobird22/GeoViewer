@@ -180,7 +180,7 @@ for current_directory in INPUT_DIRECTORIES:
 
             # Add overlay
             print("[STATUS] Adding overlay...")
-            img = geocap_utils.overlay_info(img, relative_img_path, 2.45, 1258)
+            img = geocap_utils.overlay_info(img, relative_img_path)
             time.sleep(0.1)
             print("[OK] Finished adding overlay.")
 

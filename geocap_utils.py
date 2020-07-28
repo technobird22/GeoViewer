@@ -9,6 +9,7 @@ def load_json(tmp_file_path):
     with open(tmp_file_path) as json_file:
         data = json.load(json_file)
     print("[OK] Successfully loaded JSON file from '" + tmp_file_path + "'!")
+    
     return data
 
 def clahe(in_img):
@@ -53,7 +54,7 @@ def parse_frame_name(input_name):
     output_name = date + " @ " + time + "UTC"
     return (output_name, frame_num)
 
-def overlay_info(inp_img, frame_name, data_size, frame_cnt):
+def overlay_info(inp_img, frame_name):
     """Overlay information onto a frame"""
     print("[INFO] Overlaying text onto frame...")
 
@@ -77,11 +78,15 @@ def overlay_info(inp_img, frame_name, data_size, frame_cnt):
     cv2.putText(inp_img, "Processing: ", (20, 2120), font, 4, (255, 255, 255), 4, cv2.LINE_AA)
     cv2.putText(inp_img, "Albert (Technobird22)", (20, 2180), font, 4, (0, 255, 0), 4, cv2.LINE_AA)
 
-    # Source data information
-    cv2.putText(inp_img, "Data size: " + str(round(data_size, 2)) + " GB", (1710, 2078), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
-    cv2.putText(inp_img, "Frame count: " + str(frame_cnt) + " frames", (1540, 2128), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+    # Load JSON for overlay data
+    data_info = load_json("config/data.json")
+    # print("GOT DATA: ", data_info)
 
-    cv2.putText(inp_img, "Data from: [SOURCE]", (1510, 2178), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+    # Source data information
+    cv2.putText(inp_img, "Data size: " + str(round(data_info["data_size"], 2)) + " GB", (1710, 2078), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Frame count: " + str(data_info["frame_count"]) + " frames", (1540, 2128), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+
+    cv2.putText(inp_img, "Data from: " + str(data_info["data_source"]), (1510, 2178), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
     cv2.putText(inp_img, "Thanks ;)", (2100, 2194), font, 1, (50, 50, 50), 1, cv2.LINE_AA)
 
     return inp_img
@@ -104,7 +109,7 @@ def test_overlay():
 
     # Apply overlay
     print("[INFO] Applying overlay to image...")
-    img = overlay_info(img, img_name, 1.2345678, 123)
+    img = overlay_info(img, img_name)
 
     # Write final output image
     print("[INFO] Writing final output to image...")
