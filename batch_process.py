@@ -21,6 +21,7 @@ TARGET_DIR = "LRIT"
 
 # Directory for a collection of every frame
 COLLECTION = "ALL_PROCESSED_FRAMES/"
+OUTPUT_DIRECTORY = "PROCESSED_FRAMES/"
 OUTPUT_DIRECTORY_NAME = "PROCESSED_FRAMES/"
 
 # Current directory name
