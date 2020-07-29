@@ -10,23 +10,21 @@ import cv2
 # Other scripts
 import geocap_utils
 
+# For logging to a file
 # sys.stdout = open('debug.log', 'w')
 
 FPS = 24
 FIRST_IMG = 0
 
 INPUT_DIRECTORIES = os.listdir()
-TARGET_DIR = "compilation"
+TARGET_DIR = "LRIT"
 
-# output = ""
-COLLECTION = "everything/"
-OUTPUT_DIRECTORY_NAME = "frames/"
+# Directory for a collection of every frame
+COLLECTION = "ALL_PROCESSED_FRAMES/"
+OUTPUT_DIRECTORY_NAME = "PROCESSED_FRAMES/"
 
 # Current directory name
 DIR_NAME = os.path.basename(os.getcwd())
-
-# Directory for every frame
-OUTPUT_DIRECTORY = "everything/"
 
 # Define animation output codec
 FOURCC = cv2.VideoWriter_fourcc(*'mp4v')
