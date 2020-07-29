@@ -92,10 +92,10 @@ for current_directory in INPUT_DIRECTORIES:
         print("[ERROR] Directory '" + current_directory + "' is being ignored! Skipping...")
         continue
 
-    OUTPUT_DIRECTORY = current_directory + "/" + OUTPUT_DIRECTORY_NAME
+    OUTPUT_PATH = current_directory + "/" + OUTPUT_DIRECTORY_NAME
 
-    if os.path.isdir(OUTPUT_DIRECTORY):
-        print("[WARNING] Output directory '" + OUTPUT_DIRECTORY + "' Already exists. Overwrite?")
+    if os.path.isdir(OUTPUT_PATH):
+        print("[WARNING] Output directory '" + OUTPUT_PATH + "' Already exists. Overwrite?")
         # CHOICE = input()
         CHOICE = 'y'
         while(CHOICE != 'y' and CHOICE != 'n'):
@@ -108,11 +108,11 @@ for current_directory in INPUT_DIRECTORIES:
         print("[OK] No output directory found.")
         print("[STATUS] Creating output directory...")
         try:
-            os.mkdir(OUTPUT_DIRECTORY)
+            os.mkdir(OUTPUT_PATH)
         except OSError:
-            print("[ERROR] Creation of the directory '" + OUTPUT_DIRECTORY + "' failed")
+            print("[ERROR] Creation of the directory '" + OUTPUT_PATH + "' failed")
         else:
-            print("[OK] Successfully created the directory '" + OUTPUT_DIRECTORY + "'.")
+            print("[OK] Successfully created the directory '" + OUTPUT_PATH + "'.")
 
 
     inputs = os.listdir(current_directory + "/FD/")[FIRST_IMG:]
@@ -185,10 +185,10 @@ for current_directory in INPUT_DIRECTORIES:
             print("[OK] Processed frame ready.")
 
             # Write to image
-            print(">"*5 + "[INFO] '" + (OUTPUT_DIRECTORY + relative_img_path) + "' ...")
-            print("[STATUS] Writing image to '" + (OUTPUT_DIRECTORY + current_directory + "_" \
+            print(">"*5 + "[INFO] '" + (OUTPUT_PATH + relative_img_path) + "' ...")
+            print("[STATUS] Writing image to '" + (OUTPUT_PATH + current_directory + "_" \
                 + relative_img_path) + "' ...")
-            cv2.imwrite(OUTPUT_DIRECTORY + current_directory + "_" + relative_img_path, img)
+            cv2.imwrite(OUTPUT_PATH + current_directory + "_" + relative_img_path, img)
             print("[OK] Successfully written image")
 
             # Write to COLLECTION
