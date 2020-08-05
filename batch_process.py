@@ -35,7 +35,7 @@ width = 2200 # For GK-2A frames. Todo: Add to config files
 height = 2200 # For GK-2A frames. Todo: Add to config files
 
 # Ignored directories
-IGNORED_DIRS = ["config", EVERYTHING[:-2]]
+IGNORED_DIRS = ["config", EVERYTHING[:-1]]
 
 # Create VideoWriter object for total animation
 total_animation = cv2.VideoWriter("compilation_" + DIR_NAME + ".mp4", FOURCC, FPS, \
@@ -122,7 +122,6 @@ for current_directory in INPUT_DIRECTORIES:
             print("[ERROR] Creation of the directory '" + OUTPUT_PATH + "' failed")
         else:
             print("[OK] Successfully created the directory '" + OUTPUT_PATH + "'.")
-
 
     inputs = os.listdir(current_directory + "/FD/")[FIRST_IMG:]
     inputs.sort()
