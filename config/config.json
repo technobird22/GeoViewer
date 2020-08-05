@@ -1,7 +1,5 @@
-[
-    {
-    "data_source": "TEST",
-    "generate daily animation": "yes",
-    "generate compilation animation": "yes"
-    }
-]
+{
+"data_source": "TEST",
+"generate daily animation": "yes",
+"generate compilation animation": "yes"
+}
