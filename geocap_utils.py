@@ -86,7 +86,6 @@ def overlay_info(inp_img, frame_name):
     # Load JSON for overlay data
     data_info = load_json("config/data.json")
     print("GOT DATA: ", data_info)
-    print("DEBUG: ", str(round(data_info["data_size"], 2)))
 
     # Source data information
     cv2.putText(inp_img, "Data size: " + data_info["data_size"] + " GB",\
