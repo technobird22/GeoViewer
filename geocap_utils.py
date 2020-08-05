@@ -71,12 +71,15 @@ def overlay_info(inp_img, frame_name):
     cv2.putText(inp_img, frame_time, (1570, 110), font, 3, (150, 150, 150), 3, cv2.LINE_AA)
 
     # Frame number
-    cv2.putText(inp_img, "Frame Number: ", (1690, 180), font, 4, (0, 255, 255), 4, cv2.LINE_AA)
-    cv2.putText(inp_img, frame_num, (2070, 240), font, 4, (150, 150, 150), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Frame Number: ", (1690, 170), font, 4, (0, 255, 255), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, frame_num, (2070, 230), font, 4, (150, 150, 150), 4, cv2.LINE_AA)
 
     # Credits
-    cv2.putText(inp_img, "Processing: ", (20, 2120), font, 4, (255, 255, 255), 4, cv2.LINE_AA)
-    cv2.putText(inp_img, "Albert (Technobird22)", (20, 2180), font, 4, (0, 255, 0), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Processing: ", (10, 1970), font, 4, (255, 255, 255), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "GeoCapture", (5, 2030), font, 5, (0, 165, 255), 6, cv2.LINE_AA)
+    cv2.putText(inp_img, "By Albert (Technobird22)", (10, 2073), font, 2.5, (0, 255, 255), 3, cv2.LINE_AA)
+    cv2.putText(inp_img, "github.com/technobird22/geocapture", (10, 2105), font, 2, (150, 150, 150), 2, cv2.LINE_AA)
+    cv2.putText(inp_img, "PERSON RUNNING S/W", (20, 2180), font, 4, (0, 255, 0), 4, cv2.LINE_AA)
 
     # Load JSON for overlay data
     data_info = load_json("config/data.json")
@@ -85,13 +88,14 @@ def overlay_info(inp_img, frame_name):
 
     # Source data information
     cv2.putText(inp_img, "Data size: " + str(round(data_info["data_size"], 2)) + " GB",\
-        (1710, 2078), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+        (1650, 2078), font, 3, (150, 150, 150), 4, cv2.LINE_AA)
     cv2.putText(inp_img, "Frame count: " + str(data_info["frame_count"]) + " frames",\
-        (1540, 2128), font, 3, (100, 100, 100), 4, cv2.LINE_AA)
+        (1540, 2128), font, 3, (150, 150, 150), 4, cv2.LINE_AA)
 
-    cv2.putText(inp_img, "Data from: " + str(data_info["data_source"]), (1510, 2178), font, 3,\
-        (100, 100, 100), 4, cv2.LINE_AA)
-    cv2.putText(inp_img, "Thanks ;)", (2100, 2194), font, 1, (50, 50, 50), 1, cv2.LINE_AA)
+    # cv2.putText(inp_img, "Data from: " + str(data_info["data_source"]), (1510, 2178), font, 3,\
+    cv2.putText(inp_img, "Data from: " + str(data_info["data_source"]), (1420, 2178), font, 3,\
+        (150, 150, 150), 4, cv2.LINE_AA)
+    cv2.putText(inp_img, "Easter Egg ;)", (2100, 2194), font, 1, (50, 50, 50), 1, cv2.LINE_AA)
 
     return inp_img
 
