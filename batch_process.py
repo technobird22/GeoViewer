@@ -38,14 +38,29 @@ height = 2200 # For GK-2A frames. Todo: Add to config files
 IGNORED_DIRS = ["config", EVERYTHING[:-1]]
 
 # Create VideoWriter object for total animation
-total_animation = cv2.VideoWriter("compilation_" + DIR_NAME + ".mp4", FOURCC, FPS, \
-    (width, height))
+TOTAL_ANIMATION = cv2.VideoWriter("compilation_" + DIR_NAME + ".mp4", FOURCC, FPS, (width, height))
 
 print(geocap_utils.VERY_BASIC_HEADER)
 
+print("-" * 30)
+print("[INFO] ---Excecution start---")
+
+if DIR_NAME != TARGET_DIR:
+    print("[WARNING] Working directory '" + DIR_NAME + "' is not the target directory. \n\
+        Continue? [y/n]")
+    CHOICE = input().lower()
+
+    while(CHOICE != 'y' and CHOICE != 'n'):
+        print("[ERROR] Invalid CHOICE. Please try again. Options: 'y' or 'n'")
+    if CHOICE != 'y':
+        print("[STATUS] Aborting...")
+        exit()
+else:
+    print("[OK] Working directory is target directory...")
+
 if os.path.isdir(EVERYTHING):
     print("[WARNING] Output directory '" + EVERYTHING + "' Already exists. Overwrite? [y/n]")
-    CHOICE = input()
+    CHOICE = input().lower()
     # first_dir += 1
     while(CHOICE != 'y' and CHOICE != 'n'):
         print("[ERROR] Invalid CHOICE. Please try again. Options: 'y' or 'n'")
@@ -62,23 +77,6 @@ else:
         print("[ERROR] Creation of the directory '" + EVERYTHING + "' failed")
     else:
         print("[OK] Successfully created the directory '" + EVERYTHING + "'.")
-
-# output = DIR_NAME
-
-print("-" * 30)
-print("[INFO] ---Excecution start---")
-if DIR_NAME != TARGET_DIR:
-    print("[WARNING] Working directory '" + DIR_NAME + "' is not the target directory. \n\
-        Continue? [y/n]")
-    CHOICE = input()
-
-    while(CHOICE != 'y' and CHOICE != 'n'):
-        print("[ERROR] Invalid CHOICE. Please try again. Options: 'y' or 'n'")
-    if CHOICE != 'y':
-        print("[STATUS] Aborting...")
-        exit()
-else:
-    print("[OK] Working directory is target directory...")
 
 print("-" * 30)
 print("[STATUS] ---Begin Processing---")
@@ -209,7 +207,7 @@ for current_directory in INPUT_DIRECTORIES:
 
             # Write to total animation
             print("[STATUS] Writing to total frame...")
-            total_animation.write(img)
+            TOTAL_ANIMATION.write(img)
             print("[OK] Successfully written image to frame")
 
             # If processed lots of frames, print out status
@@ -245,7 +243,7 @@ for current_directory in INPUT_DIRECTORIES:
 
 print("[STATUS] Releasing total animation output stream")
 try:
-    total_animation.release()
+    TOTAL_ANIMATION.release()
     print("[OK] Successfully released total animation output stream")
 except:
     print("[ERROR] Failed to release with message '" + str(sys.exc_info()[0]) + "'.\n")
