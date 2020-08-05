@@ -17,26 +17,34 @@ FPS = 24
 FIRST_IMG = 0
 
 INPUT_DIRECTORIES = os.listdir()
+INPUT_DIRECTORIES.sort()
+
 TARGET_DIR = "LRIT"
 
 # Directory for a collection of every frame
-COLLECTION = "ALL_PROCESSED_FRAMES/"
-OUTPUT_DIRECTORY = "PROCESSED_FRAMES/"
-OUTPUT_DIRECTORY_NAME = "PROCESSED_FRAMES/"
+EVERYTHING = "ALL_PROCESSED_FRAMES/"
+IMAGE_OUTPUT_DIRECTORY = "PROCESSED_FRAMES/"
 
 # Current directory name
 DIR_NAME = os.path.basename(os.getcwd())
 
 # Define animation output codec
 FOURCC = cv2.VideoWriter_fourcc(*'mp4v')
+# Dimensions for output animation (same as frame dimensions)
+width = 2200 # For GK-2A frames. Todo: Add to config files
+height = 2200 # For GK-2A frames. Todo: Add to config files
 
 # Ignored directories
-IGNORED_DIRS = ["config", COLLECTION[:-1]]
+IGNORED_DIRS = ["config", EVERYTHING[:-2]]
+
+# Create VideoWriter object for total animation
+total_animation = cv2.VideoWriter("compilation_" + DIR_NAME + ".mp4", FOURCC, FPS, \
+    (width, height))
 
 print(geocap_utils.VERY_BASIC_HEADER)
 
-if os.path.isdir(OUTPUT_DIRECTORY):
-    print("[WARNING] Output directory '" + OUTPUT_DIRECTORY + "' Already exists. Overwrite? [y/n]")
+if os.path.isdir(EVERYTHING):
+    print("[WARNING] Output directory '" + EVERYTHING + "' Already exists. Overwrite? [y/n]")
     CHOICE = input()
     # first_dir += 1
     while(CHOICE != 'y' and CHOICE != 'n'):
@@ -46,21 +54,21 @@ if os.path.isdir(OUTPUT_DIRECTORY):
         print("[STATUS] Aborting...")
         exit()
 else:
-    print("[OK] No output directory found.")
+    print("[WARN] No output directory found.")
     print("[STATUS] Creating output directory...")
     try:
-        os.mkdir(OUTPUT_DIRECTORY)
+        os.mkdir(EVERYTHING)
     except OSError:
-        print("[ERROR] Creation of the directory '" + OUTPUT_DIRECTORY + "' failed")
+        print("[ERROR] Creation of the directory '" + EVERYTHING + "' failed")
     else:
-        print("[OK] Successfully created the directory '" + OUTPUT_DIRECTORY + "'.")
+        print("[OK] Successfully created the directory '" + EVERYTHING + "'.")
 
 # output = DIR_NAME
 
 print("-" * 30)
 print("[INFO] ---Excecution start---")
 if DIR_NAME != TARGET_DIR:
-    print("[WARNING] Working directory '" + DIR_NAME + "' is not the target directory. \
+    print("[WARNING] Working directory '" + DIR_NAME + "' is not the target directory. \n\
         Continue? [y/n]")
     CHOICE = input()
 
@@ -82,7 +90,7 @@ print("[INFO] Directories to process: " + str(os.listdir()))
 print("-"*30)
 CNT = 0
 for current_directory in INPUT_DIRECTORIES:
-    FIRST_IMG = 1
+    FIRST_IMG = 0
     # Check if it is really a directory
     if not os.path.isdir(current_directory):
         print("[ERROR] Directory '" + current_directory + "' is NOT a directory! Skipping...")
@@ -93,7 +101,7 @@ for current_directory in INPUT_DIRECTORIES:
         print("[ERROR] Directory '" + current_directory + "' is being ignored! Skipping...")
         continue
 
-    OUTPUT_PATH = current_directory + "/" + OUTPUT_DIRECTORY_NAME
+    OUTPUT_PATH = current_directory + "/" + IMAGE_OUTPUT_DIRECTORY
 
     if os.path.isdir(OUTPUT_PATH):
         print("[WARNING] Output directory '" + OUTPUT_PATH + "' Already exists. Overwrite?")
@@ -106,7 +114,7 @@ for current_directory in INPUT_DIRECTORIES:
             print("[STATUS] Skipping directory...")
             continue
     else:
-        print("[OK] No output directory found.")
+        print("[WARN] No output directory found.")
         print("[STATUS] Creating output directory...")
         try:
             os.mkdir(OUTPUT_PATH)
@@ -117,6 +125,7 @@ for current_directory in INPUT_DIRECTORIES:
 
 
     inputs = os.listdir(current_directory + "/FD/")[FIRST_IMG:]
+    inputs.sort()
     print("[INFO] Loading inputs from directory '" + str(current_directory) + "'...")
     # print("Inputs from directory '" + str(current_directory) + "': " + str(inputs))
 
@@ -151,10 +160,6 @@ for current_directory in INPUT_DIRECTORIES:
 
     # Create VideoWriter object for daily animation
     animation = cv2.VideoWriter("daily_" + current_directory + ".mp4", FOURCC, FPS, (width, height))
-
-    # Create VideoWriter object for total animation
-    total_animation = cv2.VideoWriter("compilation_" + DIR_NAME + ".mp4", FOURCC, FPS, \
-        (width, height))
 
     for relative_img_path in inputs:
         print("[INFO] Relative Path: '" + relative_img_path + "'.")
@@ -192,10 +197,10 @@ for current_directory in INPUT_DIRECTORIES:
             cv2.imwrite(OUTPUT_PATH + current_directory + "_" + relative_img_path, img)
             print("[OK] Successfully written image")
 
-            # Write to COLLECTION
-            print("[STATUS] Writing image to COLLECTION at '" \
-                + (COLLECTION + current_directory + "_" + relative_img_path) + "' ...")
-            cv2.imwrite(COLLECTION + "/" + current_directory + "_" + relative_img_path, img)
+            # Write to EVERYTHING
+            print("[STATUS] Writing image to EVERYTHING at '" \
+                + (EVERYTHING + current_directory + "_" + relative_img_path) + "' ...")
+            cv2.imwrite(EVERYTHING + "/" + current_directory + "_" + relative_img_path, img)
             print("[OK] Successfully written image")
 
             # Write to daily animation
@@ -216,7 +221,7 @@ for current_directory in INPUT_DIRECTORIES:
                 ESTIMATED = round(CAL_FPS * (len(inputs) - CNT), 1)
 
                 print("[STATUS] Time ELAPSED: " + str(ELAPSED) + " seconds. Calculation FPS: " \
-                    + str(CAL_FPS) + ". ESTIMATED remaining time: " + str(ESTIMATED) + "seconds. \
+                    + str(CAL_FPS) + ". ESTIMATED remaining time: " + str(ESTIMATED) + " seconds. \
                         Frame " + str(CNT) + " (" + str(round((float(CNT)/len(inputs))*100)) + "%)")
 
                 # Pause for CPU cooloff
