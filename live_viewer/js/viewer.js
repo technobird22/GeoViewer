@@ -18,11 +18,11 @@ function about_img(img){
     // alert(img)
     switch(img){
         case "FD":
-            return "Raw unprocessed frame from the satellite";
+            return "This is the raw, unprocessed infra-red frame, as downloaded from the satellite.";
         case "clahe":
-            return "CLAHE enhanced image";
+            return "This is the infra-red frame enhanced with CLAHE processing";
         case "sanchez":
-            return "Colourized image";
+            return "This is the colourized version of the raw infra-red image";
         case "mcir":
             return "Coloured infrared image";
         case "therm":
