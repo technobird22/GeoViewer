@@ -26,10 +26,10 @@ function about_img(img){
             return "This is the colourized version of the raw infra-red image";
 
         // Charts and Predictions
-        case "mcir":
-            return "Coloured infrared image";
-        case "therm":
-            return "Air temperature image";
+        case "GWW3F":
+            return "Global Wave Model data";
+        case "UP50A":
+            return "Pressure and temperature data for South-East Asia";
         case "sea":
             return "Sea surface temperature image";
         case "contrasta":
