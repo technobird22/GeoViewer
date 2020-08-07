@@ -159,7 +159,7 @@ for current_directory in INPUT_DIRECTORIES:
     animation = cv2.VideoWriter("daily_" + current_directory + ".mp4", FOURCC, FPS, (width, height))
 
     if not VERBOSE:
-        # sys.stdout = open('debug.log', 'w')
+        sys.stdout = open('debug.log', 'w')
 
     for relative_img_path in inputs:
         print("[INFO] Relative Path: '" + relative_img_path + "'.")
