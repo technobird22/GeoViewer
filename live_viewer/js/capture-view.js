@@ -1,30 +1,28 @@
 function change_image(img){
-    var pass = "2020-06-01-21-35-48-NOAA_18";
-    var image_directory = "images/page_for_all/";
-    
-    var path = image_directory + pass + "-" + img + ".jpg";
-    var tnpath = image_directory + pass + "-" + img + "-tn.jpg";
-    // var path = "images/page_for_all/".concat(pass, "-", img, ".jpg");
+    var image_directory = "gk-2a/";
+    var path = image_directory + img + ".jpg";
+    var fullpath = location.href.replace("/captures.html", "") + "/" + path;
+    var tnpath = image_directory + "-" + img + "-tn.jpg";
     // alert("Changing Filter...\nFilter Requested: " + img + "\nChanging image display source to:\n" + path);
     document.getElementById("display").src = path;
     document.getElementById("description").innerHTML = 
-    "Image capture time: <br><span class=\"param\">" + pass + "</span>" + 
+    "Image capture time: <br><span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
     "<hr>About this image: <br><span class=\"param\">" + about_img(img) + "</span>" + 
-    "<hr>Path to image: <br><span class=\"param\">" + location.href.replace("/passes.html", "") + "/" + path + "</span>" + 
-    "<hr>Open image in new tab: <br><button onclick=\"window.open('" + location.href.replace("/passes.html", "") + "/" + path + "\', \'_blank\');\">" + "Original Quality" + "</button>" +
-    "<button onclick=\"window.open('" + location.href.replace("/passes.html", "") + "/" + tnpath + "\', \'_blank\');\">" + "Reduced Quality" + "</button>";
+    "<hr>Path to image: <br><span class=\"param\">" + fullpath + "</span>" + 
+    "<hr>Open image in new tab: <br><button onclick=\"window.open('" + fullpath + "', '_blank');\">" + "Original Quality" + "</button>" +
+    "<button onclick=\"window.open('" + location.href.replace("/passes.html", "") + "/" + tnpath + "', '_blank');\">" + "Reduced Quality" + "</button>";
     // document.getElementById("description").innerHTML = path;
 }
 
 function about_img(img){
     // alert(img)
     switch(img){
-        case "za":
-            return "Enhanced infra red image";
-        case "no":
-            return "No colour infrared enhanced image";
-        case "mcir-precip":
-            return "Coloured infrared image highlighting precipitation";
+        case "FD":
+            return "Raw unprocessed frame from the satellite";
+        case "clahe":
+            return "CLAHE enhanced image";
+        case "sanchez":
+            return "Colourized image";
         case "mcir":
             return "Coloured infrared image";
         case "therm":
