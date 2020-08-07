@@ -113,7 +113,7 @@
     word-wrap: break-word;
 }
 
-#main-stuff{
+#viewer-contents{
     column-count: 3;
     column-gap: 10px;
     /* height: 1000px; */
