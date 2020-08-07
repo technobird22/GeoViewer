@@ -10,8 +10,8 @@ import cv2
 # Other scripts
 import geocap_utils
 
-# sys.stdout = open('debug.log', 'w')
 # For logging verbose outputs to a file (progress is still output via STDERR)
+VERBOSE = True
 
 FPS = 24
 FIRST_IMG = 0
@@ -157,6 +157,9 @@ for current_directory in INPUT_DIRECTORIES:
 
     # Create VideoWriter object for daily animation
     animation = cv2.VideoWriter("daily_" + current_directory + ".mp4", FOURCC, FPS, (width, height))
+
+    if not VERBOSE:
+        # sys.stdout = open('debug.log', 'w')
 
     for relative_img_path in inputs:
         print("[INFO] Relative Path: '" + relative_img_path + "'.")
