@@ -167,9 +167,9 @@ for current_directory in INPUT_DIRECTORIES:
         print("[INFO] Complete Path: '" + img_path + "'.")
 
         # Display status
-        print("[" + str(round(CNT/len(inputs)*100)) + "%] Performing CLAHE on: '" + img_path + \
+        print("[" + str(round(CNT/len(inputs)*100)) + "%] Processing image '" + img_path + \
             "'...")
-        sys.stderr.write("[" + str(round(CNT/len(inputs)*100)) + "%] Performing CLAHE on: '"\
+        sys.stderr.write("[" + str(round(CNT/len(inputs)*100)) + "%] Processing image '"\
              + img_path + "'...\n")
 
         try:
