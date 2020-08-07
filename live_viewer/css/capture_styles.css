@@ -1,7 +1,8 @@
 
 /* Image display for captures.html */
 #display {
-    width: 300px;
+    /* width: 300px; */
+    width: 100%;
 
     border: #aaaaaa 2px solid;
     border-radius: 5px;
@@ -19,7 +20,7 @@
     
     background-color: lightblue;
 
-    /* width: 50%; */
+    width: 100%;
     text-align: center;
 }
 
@@ -30,7 +31,7 @@
     width: 95%;
     margin: 2px;
 
-    margin-left: 0px;
+    /* margin-left: 0px; */
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(255, 164, 17);
@@ -71,11 +72,12 @@
     border: #aaaaaa 2px solid;
     border-radius: 5px;
 
-    padding: 10px;
+    /* padding: 10px; */
     
     /* width: 40%; */
+    width: 35%;
     
-    text-align: center;
+    /* text-align: center; */
 }
 
 #info-display{
@@ -83,6 +85,8 @@
     border-radius: 5px;
     
     padding: 10px;
+
+    width: 35%;
     
     text-align: center;
     /* position: relative;
@@ -93,7 +97,9 @@
     /* border: #aaaaaa 2px solid; */
     border-radius: 5px;
     
-    padding: 10px;
+    /* padding: 10px; */
+    
+    width: 30%;
     
     text-align: center;
     /* position: relative;
@@ -113,9 +119,13 @@
     word-wrap: break-word;
 }
 
-#viewer-contents{
-    column-count: 3;
-    column-gap: 10px;
-    /* height: 1000px; */
-    /* height: 2000%; */
+#viewer-contents:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.viewer-section{
+    float: left;
+    padding: 10px;
 }

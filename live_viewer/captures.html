@@ -34,9 +34,10 @@
 
     <section class="content-section container">
         <div id="viewer-contents">
-            <div id="filter-select">
+            <div class="viewer-section" id="filter-select">
                 <h3>Image Types:</h3>
                 <ul id="enhancements">
+                    <li><h3>Full Disk</h3></li>
                     <li><button onclick="change_image('FD')">Raw unprocessed frame</button></li>
                     <li><button onclick="change_image('clahe')">CLAHE enhanced image</button></li>
                     <li><button onclick="change_image('sanchez')">Colourized image</button></li>
@@ -45,15 +46,17 @@
                     <li><button onclick="change_image('precip')">Precipation enhanced image</button></li>
                     <li><button onclick="change_image('animation1')">Animation of past hour</button></li>
                     <li><button onclick="change_image('animation24')">Animation of past 24 hours</button></li>
+                    <li><h3>Charts and Predictions</h3></li>
+                    <li><h3>Other data</h3></li>
                 </ul>
             </div>
 
-            <div id="image-display">
+            <div class="viewer-section" id="image-display">
                 <!-- Will have blurred background with instructions in foreground -->
                 <img id="display" src="gk-2a/instructions.png" alt="Full disk image display window">
             </div>
 
-            <div id="info-display">
+            <div class="viewer-section" id="info-display">
                 <h3>About: </h3>
                 <p id="description">Click on an option on the left to learn more about it.</p>
             </div>
