@@ -1,0 +1,118 @@
+
+/* Image display for captures.html */
+#display {
+    width: 250px;
+    /* width: 30%; */
+    /* height: 100%; */
+}
+
+#enhancements {
+    list-style: none;
+    padding-left: 0px;
+    margin-left: 0px;
+
+    border: lightskyblue 2px solid;
+    border-radius: 5px;
+    
+    background-color: lightblue;
+
+    /* width: 50%; */
+    text-align: center;
+}
+
+#enhancements button {
+    height: 25px;
+    text-align: center;
+    /* width: 350px; */
+    width: 95%;
+    margin: 2px;
+
+    margin-left: 0px;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(255, 164, 17);
+
+    transition: background-color 0.2s;
+
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#enhancements button:hover{
+    background-color: rgb(255, 192, 89);
+}
+
+#description button {
+    height: 25px;
+    text-align: center;
+    /* width: 350px; */
+    width: 95%;
+    margin: 2px;
+
+    margin-left: 0px;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(53, 255, 17);
+
+    transition: background-color 0.2s;
+
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#description button:hover{
+    background-color: rgb(183, 255, 89);
+}
+
+#filter-select{
+    border: #aaaaaa 2px solid;
+    border-radius: 5px;
+
+    padding: 10px;
+    
+    /* width: 40%; */
+    
+    text-align: center;
+}
+
+#info-display{
+    border: #aaaaaa 2px solid;
+    border-radius: 5px;
+    
+    padding: 10px;
+    
+    text-align: center;
+    /* position: relative;
+    right: 20px; */
+}
+
+#image-display{
+    /* border: #aaaaaa 2px solid; */
+    border-radius: 5px;
+    
+    padding: 10px;
+    
+    text-align: center;
+    /* position: relative;
+    right: 20px; */
+}
+
+#description{
+    border: lightskyblue 2px solid;
+    border-radius: 5px;
+    
+    background-color: lightblue;
+    
+    /* width: 70%; */
+    padding: 10px;
+    
+    text-align: left;
+    word-wrap: break-word;
+}
+
+#main-stuff{
+    column-count: 3;
+    column-gap: 10px;
+    /* height: 1000px; */
+    /* height: 2000%; */
+}
