@@ -11,6 +11,7 @@ import cv2
 import geocap_utils
 
 # For logging verbose outputs to a file (progress is still output via STDERR)
+# Useful for debugging. Even if set to NOT verbose, it will still output full logs to a file
 VERBOSE = False
 
 FPS = 24
