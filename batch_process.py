@@ -10,8 +10,8 @@ import cv2
 # Other scripts
 import geocap_utils
 
-# For logging to a file
 # sys.stdout = open('debug.log', 'w')
+# For logging verbose outputs to a file (progress is still output via STDERR)
 
 FPS = 24
 FIRST_IMG = 0
@@ -166,6 +166,9 @@ for current_directory in INPUT_DIRECTORIES:
         # Display status
         print("[" + str(round(CNT/len(inputs)*100)) + "%] Performing CLAHE on: '" + img_path + \
             "'...")
+        sys.stderr.write("[" + str(round(CNT/len(inputs)*100)) + "%] Performing CLAHE on: '"\
+             + img_path + "'...")
+
         try:
             CNT += 1
 
