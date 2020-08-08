@@ -11,12 +11,23 @@ function change_image(img){
     display.src = path;
     display.scrollIntoView();
 
+    // Will check for plurals
+    var last_update = "[P] minute[s] ago"
+                 // = "just now" // If updated this minute
+
+    var next_update = "will be out in [P] minute[s]"
+                 // = "<strong>is already available.</strong><br>
+                 //    <button onclick="refresh_image()>Refresh Image</button>"
+
     document.getElementById("description").innerHTML = 
-    "Image update time: <br><span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
-    "<hr>About this image: <br><span class=\"param\">" + about_img(img) + "</span>" + 
-    "<hr>Path to image: <br><span class=\"param\">" + path + "</span>" + 
-    "<hr>Open image in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
-    "<button onclick=\"window.open('" + tnpath + "', '_blank');\">" + "Reduced Quality" + "</button>";
+    "<h3>About:</h3> <br>" + about_img(img) + 
+    "<br><i>This image was last updated " + last_update + ". The next image " + next_update + "</i>" +
+    "<h3>Export:</h3>" +
+    "Opens image in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
+    "<button onclick=\"window.open('" + tnpath + "', '_blank');\">" + "Reduced Quality" + "</button>" + 
+    "<hr><h3>Statistics: </h3>" + 
+    "Image update time: <span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
+    "<br>Image name: <span class=\"param\">" + img + "</span>";
 }
 
 function about_img(img){
