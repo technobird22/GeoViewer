@@ -163,8 +163,8 @@
     visibility: hidden;
     
     /*Set the size of the magnifier glass:*/
-    width: 100px;
-    height: 100px;
+    width: 25%;
+    height: 25%;
 }
 
 .image-container:hover #magnifier{
