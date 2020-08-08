@@ -36,6 +36,8 @@ function change_image(img){
     var magnifier = document.getElementById("magnifier");
     magnifier.style.backgroundImage = "url('" + path + "')";
     magnifier.style.visibility = "";
+
+    update_magnifier_dimensions();
 }
 
 function about_img(img){
@@ -66,10 +68,24 @@ function about_img(img){
     }
 }
 
+var w, h, bw, zoom;
+function update_magnifier_dimensions(){
+    var glass = document.getElementById("magnifier")
+    var img = document.getElementById("display")
+
+    bw = 3;
+    w = glass.offsetWidth / 2;
+    h = glass.offsetHeight / 2;
+
+    glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+}
+
 // Magnify the display on mouseover
 // Credit: https://www.w3schools.com/howto/howto_js_image_magnifier_glass.asp
-function magnify(imgID, zoom){
-    var img, glass, w, h, bw;
+function magnify(imgID, curzoom){
+    zoom = curzoom;
+
+    var img, glass;
     img = document.getElementById(imgID);
   
     /* Create magnifier glass: */
@@ -83,10 +99,6 @@ function magnify(imgID, zoom){
     glass.style.visibility = "hidden";
     glass.style.backgroundRepeat = "no-repeat";
     glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
-    
-    bw = 3;
-    w = glass.offsetWidth / 2;
-    h = glass.offsetHeight / 2;
 
     /* Execute a function when someone moves the magnifier glass over the image: */
     glass.addEventListener("mousemove", move_magnifier);
@@ -101,6 +113,8 @@ function magnify(imgID, zoom){
     // });
 
     function move_magnifier(e) {
+        update_magnifier_dimensions();
+
         var pos, x, y;
         /* Prevent any other actions that may occur when moving over the image */
         // e.preventDefault();
