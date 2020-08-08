@@ -2,12 +2,12 @@ function change_image(img){
     var image_site = "https://kiwiweather.com/";
     var image_directory = "gk-2a/";
     var path = image_site + image_directory + img;
-    var tnpath = path + "-tn.jpg";
+    var tnpath = path.replace(img, img.replace(".", "-tn."));
 
     // alert("Changing Filter...\nFilter Requested: " + img + "\nChanging image display source to:\n" + path);
     document.getElementById("display").src = path;
     document.getElementById("description").innerHTML = 
-    "Image capture time: <br><span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
+    "Image update time: <br><span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
     "<hr>About this image: <br><span class=\"param\">" + about_img(img) + "</span>" + 
     "<hr>Path to image: <br><span class=\"param\">" + path + "</span>" + 
     "<hr>Open image in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
