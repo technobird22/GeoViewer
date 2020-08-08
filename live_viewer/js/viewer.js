@@ -33,7 +33,9 @@ function change_image(img){
     "Image update time: <span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
     "<br>Image name: <span class=\"param\">" + img + "</span>";
 
-    document.getElementById("magnifier").style.backgroundImage = "url('" + path + "')";
+    var magnifier = document.getElementById("magnifier");
+    magnifier.style.backgroundImage = "url('" + path + "')";
+    magnifier.style.visibility = "";
 }
 
 function about_img(img){
@@ -78,7 +80,7 @@ function magnify(imgID, zoom){
     img.parentElement.insertBefore(glass, img);
     
     /* Set background properties for the magnifier glass: */
-    // glass.style.visibility = "hidden";
+    glass.style.visibility = "hidden";
     glass.style.backgroundRepeat = "no-repeat";
     glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
     

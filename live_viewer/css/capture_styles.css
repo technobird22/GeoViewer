@@ -129,6 +129,22 @@
     padding-left: 10px;
 }
 
+#options{
+    list-style: none;
+    text-align: left;
+    
+    column-count: 2;
+    
+    border: lightskyblue 2px solid;
+    border-radius: 5px;
+    
+    background-color: lightblue;
+}
+
+#options li{
+    /* padding: 10px; */
+}
+
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 750px) {
     #filter-select{
