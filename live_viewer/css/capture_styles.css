@@ -80,19 +80,6 @@
     /* text-align: center; */
 }
 
-#info-display{
-    border: #aaaaaa 2px solid;
-    border-radius: 5px;
-    
-    padding: 10px;
-
-    width: 35%;
-    
-    text-align: center;
-    /* position: relative;
-    right: 20px; */
-}
-
 #image-display{
     /* border: #aaaaaa 2px solid; */
     border-radius: 5px;
@@ -100,6 +87,19 @@
     /* padding: 10px; */
     
     width: 30%;
+    
+    text-align: center;
+    /* position: relative;
+    right: 20px; */
+}
+
+#info-display{
+    border: #aaaaaa 2px solid;
+    border-radius: 5px;
+    
+    padding: 10px;
+
+    width: 35%;
     
     text-align: center;
     /* position: relative;
