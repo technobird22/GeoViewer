@@ -111,7 +111,7 @@
     
     background-color: lightblue;
     
-    /* width: 70%; */
+    width: 100%;
     padding: 10px;
     
     text-align: left;
@@ -127,4 +127,21 @@
 .viewer-section{
     float: left;
     padding-left: 10px;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 750px) {
+    #filter-select{
+        width: 100%;
+    }
+    
+    #image-display{
+        width: 100%;
+    }
+    
+    .viewer-section {
+        float: none;
+        padding: 0px;
+        background-color: red;
+    }
 }
