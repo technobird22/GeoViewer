@@ -145,3 +145,28 @@
         background-color: red;
     }
 }
+
+/* Magnifier for image */
+*{box-sizing: border-box;}
+
+.image-container{
+    position: relative;
+}
+
+#magnifier{
+    position: absolute;
+
+    border: 3px solid #FFF;
+    border-radius: 5px;
+    cursor: crosshair;
+    
+    visibility: hidden;
+    
+    /*Set the size of the magnifier glass:*/
+    width: 100px;
+    height: 100px;
+}
+
+.image-container:hover #magnifier{
+    visibility: visible;
+}

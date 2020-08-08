@@ -14,7 +14,7 @@
     <script type="text/javascript" src="js/viewer.js"></script>
 </head>
 
-<body>
+<body onload="initialize_scripts()">
     <!-- <header class="main-header">
         <nav class="nav main-nav">
             <ul>
@@ -72,8 +72,11 @@
             </div>
 
             <div class="viewer-section" id="image-display">
-                <img id="display" src="gk-2a/instructions.png" alt="Full disk image display window">
-                
+                <div class="image-container">
+                    <img id="display" src="gk-2a/instructions.png" alt="Full disk image display window">
+                </div>
+                <p><em>Hover over image to magnify</em></p>
+
                 <div class="viewer-section" id="info-display">
                     <h3>Information: </h3>
                     <p id="description">Click on an option on the left to learn more about it.</p>
