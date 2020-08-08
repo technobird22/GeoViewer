@@ -3,9 +3,14 @@ function change_image(img){
     var image_directory = "gk-2a/";
     var path = image_site + image_directory + img;
     var tnpath = path.replace(img, img.replace(".", "-tn."));
+    
+    var display = document.getElementById("display")
 
     // alert("Changing Filter...\nFilter Requested: " + img + "\nChanging image display source to:\n" + path);
-    document.getElementById("display").src = path;
+    
+    display.src = path;
+    display.scrollIntoView();
+
     document.getElementById("description").innerHTML = 
     "Image update time: <br><span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
     "<hr>About this image: <br><span class=\"param\">" + about_img(img) + "</span>" + 
