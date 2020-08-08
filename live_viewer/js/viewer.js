@@ -1,8 +1,10 @@
 function change_image(img){
+    var image_site = "https://kiwiweather.com/";
     var image_directory = "gk-2a/";
-    var path = image_directory + img + ".jpg";
+    var path = image_site + image_directory + img + ".jpg";
     var fullpath = location.href.replace("/captures.html", "") + "/" + path;
     var tnpath = image_directory + "-" + img + "-tn.jpg";
+
     // alert("Changing Filter...\nFilter Requested: " + img + "\nChanging image display source to:\n" + path);
     document.getElementById("display").src = path;
     document.getElementById("description").innerHTML = 
