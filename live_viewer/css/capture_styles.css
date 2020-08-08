@@ -1,7 +1,6 @@
 
 /* Image display for captures.html */
 #display {
-    /* width: 300px; */
     width: 100%;
 
     border: #aaaaaa 2px solid;
@@ -27,11 +26,11 @@
 #enhancements button {
     height: 25px;
     text-align: center;
-    /* width: 350px; */
+
     width: 95%;
     margin: 2px;
 
-    /* margin-left: 0px; */
+    margin-left: 0px;
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(255, 164, 17);
@@ -73,23 +72,13 @@
 
     padding: 10px;
     
-    /* width: 40%; */
     width: 30%;
-    
-    /* text-align: center; */
 }
 
-#image-display{
-    /* border: #aaaaaa 2px solid; */
-    border-radius: 5px;
-    
-    /* padding: 10px; */
-    
+#image-display{    
     width: 70%;
     
     text-align: center;
-    /* position: relative;
-    right: 20px; */
 }
 
 #info-display{
@@ -101,8 +90,6 @@
     width: 100%;
     
     text-align: center;
-    /* position: relative;
-    right: 20px; */
 }
 
 #description{
@@ -139,10 +126,6 @@
     border-radius: 5px;
     
     background-color: lightblue;
-}
-
-#options li{
-    /* padding: 10px; */
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
