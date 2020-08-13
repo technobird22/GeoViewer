@@ -45,7 +45,7 @@
     background-color: rgb(255, 192, 89);
 }
 
-#description button {
+button {
     height: 25px;
     text-align: center;
     width: 95%;
@@ -62,8 +62,8 @@
     border-radius: 5px;
 }
 
-#description button:hover{
     background-color: rgb(183, 255, 89);
+button:hover{
 }
 
 #filter-select{
