@@ -62,8 +62,8 @@ button {
     border-radius: 5px;
 }
 
-    background-color: rgb(183, 255, 89);
 button:hover{
+    background-color: rgb(214, 255, 160);
 }
 
 #filter-select{
