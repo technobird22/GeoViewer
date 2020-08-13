@@ -68,6 +68,19 @@ function about_img(img){
     }
 }
 
+function expand_img(){
+    var selection = document.getElementById("filter-select");
+    var display = document.getElementById("image-display");
+    var enhancements_list = document.getElementById("enhancements");
+    // selection.style.height = "100%";
+    selection.style.height = "110px";
+    selection.style.width = "100%";
+    display.style.width = "100%";
+    selection.style.overflow = "hidden";
+    // enhancements_list.style.visibility = "hidden";
+    selection.style.backgroundColor = "blue";
+}
+
 var w, h, bw, zoom;
 function update_magnifier_dimensions(){
     var glass = document.getElementById("magnifier")
