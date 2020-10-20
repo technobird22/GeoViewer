@@ -1,5 +1,5 @@
-
 /* Image display for captures.html */
+
 #display {
     width: 100%;
 
@@ -71,6 +71,7 @@ button:hover{
     border-radius: 5px;
 
     padding: 10px;
+    /* margin: auto; */
     
     width: 30%;
     
@@ -91,6 +92,7 @@ button:hover{
 
 #image-display{    
     width: 70%;
+    /* margin: 10px; */
     
     text-align: center;
 }

@@ -75,6 +75,7 @@ function expand_img(){
     // selection.style.height = "100%";
     selection.style.height = "110px";
     selection.style.width = "100%";
+
     display.style.width = "100%";
     selection.style.overflow = "hidden";
     // enhancements_list.style.visibility = "hidden";
