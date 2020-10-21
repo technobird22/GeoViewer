@@ -2,10 +2,6 @@
 
 #display {
     width: 100%;
-
-    border: #aaaaaa 2px solid;
-    border-radius: 5px;
-
     padding: 10px;
 }
 
@@ -160,6 +156,11 @@ button:hover{
 
 .image-container{
     position: relative;
+    padding: 10px;
+    margin: 10px;
+
+    border: #aaaaaa 2px solid;
+    border-radius: 5px;
 }
 
 #magnifier{

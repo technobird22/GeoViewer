@@ -163,11 +163,14 @@ function magnify(imgID, curzoom){
 
         var pos, x, y;
         /* Prevent any other actions that may occur when moving over the image */
-        // e.preventDefault();
+        e.preventDefault();
+
         /* Get the cursor's x and y positions: */
         pos = get_cursor_pos(e);
         x = pos.x;
         y = pos.y;
+        
+
         /* Prevent the magnifier glass from being positioned outside the image: */
         if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
         if (x < w / zoom) {x = w / zoom;}
