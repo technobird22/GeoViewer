@@ -24,21 +24,7 @@
 }
 
 #enhancements button {
-    /* height: 25px; */
-    /* text-align: center; */
-
-    /* width: 95%; */
-    /* margin: 2px; */
-
-    /* margin: 0px; */
-
-    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
     background-color: rgb(255, 164, 17);
-
-    /* transition: background-color 0.3s; */
-
-    /* border: 1px solid black; */
-    /* border-radius: 5px; */
 }
 
 #enhancements button:hover{
