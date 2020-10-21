@@ -53,13 +53,13 @@ button {
 
     /* margin: 10px; */
 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(141, 255, 121);
 
     transition: background-color 0.2s;
 
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 button:hover{
