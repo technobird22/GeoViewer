@@ -5,6 +5,18 @@
     padding: 10px;
 }
 
+/* Magnifier for image */
+*{box-sizing: border-box;}
+
+.image-container{
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+
+    border: #aaaaaa 2px solid;
+    border-radius: 5px;
+}
+
 #enhancements {
     list-style: none;
     padding: 10px;
@@ -149,18 +161,6 @@ button:hover{
         float: none;
         padding: 0px;
     }
-}
-
-/* Magnifier for image */
-*{box-sizing: border-box;}
-
-.image-container{
-    position: relative;
-    padding: 10px;
-    margin: 10px;
-
-    border: #aaaaaa 2px solid;
-    border-radius: 5px;
 }
 
 #magnifier{
