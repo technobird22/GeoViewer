@@ -73,6 +73,7 @@ function expand_img(){
     var display = document.getElementById("image-display");
     var enhancements_list = document.getElementById("enhancements");
     selection.style.height = "110px";
+    document.getElementById("image_types_heading").style.display = "none";
     
     selection.style.width = "100%";
 
