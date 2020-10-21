@@ -184,8 +184,11 @@ button:hover{
     visibility: hidden;
     
     /*Set the size of the magnifier glass:*/
+    /* width: 250px;
+    height: 250px; */
     width: 25%;
-    height: 25%;
+    padding-top: 25%; 
+    /* height: 25%; */
 }
 
 .image-container:hover #magnifier{
