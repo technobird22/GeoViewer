@@ -77,16 +77,19 @@ function expand_img(){
     document.getElementById("image_types_heading").style.display = "none";
 
     document.getElementById("full_screen_button").style.display = "none";
-    document.getElementById("options_button").style.display = "default";
+    document.getElementById("options_button").style.display = "initial";
     
-    selection.style.height = "80px";
+    selection.style.height = "50px";
     selection.style.width = "100%";
 
     display.style.width = "100%";
     // selection.style.overflow = "hidden";
 
-    selection.style.backgroundColor = "lightblue";
-    setTimeout(function(){selection.style.overflow = "hidden"; enhancements_list.style.display = "none";}, 1000);
+    setTimeout(function(){
+        selection.style.overflow = "hidden";
+        enhancements_list.style.display = "none";
+        selection.style.backgroundColor = "lightblue";
+    }, 750);
 }
 
 var w, h, bw, zoom;
