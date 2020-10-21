@@ -77,9 +77,8 @@ function expand_img(){
     selection.style.width = "100%";
 
     display.style.width = "100%";
-    selection.style.overflow = "hidden";
-    // enhancements_list.style.visibility = "hidden";
     selection.style.backgroundColor = "blue";
+    setTimeout(function(){selection.style.overflow = "hidden"; enhancements_list.style.display = "none";}, 1000);
 }
 
 var w, h, bw, zoom;
