@@ -178,17 +178,14 @@ button:hover{
     position: absolute;
 
     border: 3px solid #FFF;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: crosshair;
     
     visibility: hidden;
     
     /*Set the size of the magnifier glass:*/
-    /* width: 250px;
-    height: 250px; */
     width: 25%;
     padding-top: 25%; 
-    /* height: 25%; */
 }
 
 .image-container:hover #magnifier{
