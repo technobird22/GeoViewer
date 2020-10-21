@@ -72,7 +72,6 @@ function expand_img(){
     var selection = document.getElementById("filter-select");
     var display = document.getElementById("image-display");
     var enhancements_list = document.getElementById("enhancements");
-    // selection.style.height = "100%";
     selection.style.height = "110px";
     
     selection.style.width = "100%";
