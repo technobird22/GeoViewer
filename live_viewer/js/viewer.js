@@ -100,7 +100,7 @@ function show_options(){
     var enhancements_list = document.getElementById("enhancements");
     
     selection.style.overflow = "visible";
-    enhancements_list.style.display = "initial";
+    // enhancements_list.style.display = "initial";
     selection.style.backgroundColor = "white";
 
     document.getElementById("image_types_heading").style.display = "initial";
