@@ -73,6 +73,7 @@ function expand_img(){
     var selection = document.getElementById("filter-select");
     var display = document.getElementById("image-display");
     var enhancements_list = document.getElementById("enhancements");
+    
     document.getElementById("image_types_heading").style.display = "none";
 
     document.getElementById("full_screen_button").style.display = "none";
