@@ -92,6 +92,27 @@ function expand_img(){
     }, 750);
 }
 
+function show_options(){
+    var selection = document.getElementById("filter-select");
+    var display = document.getElementById("image-display");
+    var enhancements_list = document.getElementById("enhancements");
+    
+    document.getElementById("image_types_heading").style.display = "initial";
+
+    document.getElementById("full_screen_button").style.display = "initial";
+    document.getElementById("options_button").style.display = "none";
+    
+    selection.style.height = "1300px";
+    selection.style.width = "30%";
+
+    display.style.width = "100%";
+    // selection.style.overflow = "hidden";
+
+    selection.style.backgroundColor = "white";
+    selection.style.overflow = "visible";
+    enhancements_list.style.display = "initial";
+}
+
 var w, h, bw, zoom;
 function update_magnifier_dimensions(){
     var glass = document.getElementById("magnifier")
