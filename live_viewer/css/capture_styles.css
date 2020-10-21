@@ -79,12 +79,11 @@ button:hover{
     height: 1300px;
     overflow: visible;
     
-    transition: height, 0.5s;
-    /* transition: , 0.5s; */
+    transition: 0.3s;
 }
 
 #filter-select:hover{
-    background-color: yellow;
+    background-color: #eeeeee;
     /* height: 10%; */
     /* height: 110px; */
     /* width: 10px; */
