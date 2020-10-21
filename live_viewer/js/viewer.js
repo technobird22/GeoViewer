@@ -3,8 +3,8 @@ function initialize_scripts(){
     magnify("display", 3);
 }
 
-function change_image(img){
-    var image_site = "https://kiwiweather.com/";
+function change_image(image_site, img){
+    // var image_site = "https://kiwiweather.com/";
     var image_directory = "gk-2a/";
     var path = image_site + image_directory + img;
     var tnpath = path.replace(img, img.replace(".", "-tn."));
@@ -63,6 +63,9 @@ function about_img(img){
             return "Contrast - Channel A image";
         case "contrastb":
             return "Contrast - Channel B image";
+        
+        case "wxfox.png":
+        return "Weather fox image for testing";
         
         default:
             return "Requested image not found. Please submit an issue on GitHub for Albert (technobird22)";
