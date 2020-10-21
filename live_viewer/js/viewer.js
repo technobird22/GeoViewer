@@ -1,4 +1,5 @@
 function initialize_scripts(){
+    document.getElementById("options_button").style.display = "none";
     magnify("display", 3);
 }
 
