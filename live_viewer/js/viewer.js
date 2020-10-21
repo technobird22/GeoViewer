@@ -73,6 +73,9 @@ function expand_img(){
     var display = document.getElementById("image-display");
     var enhancements_list = document.getElementById("enhancements");
     document.getElementById("image_types_heading").style.display = "none";
+
+    document.getElementById("full_screen_button").style.display = "none";
+    document.getElementById("options_button").style.display = "default";
     
     selection.style.height = "80px";
     selection.style.width = "100%";
