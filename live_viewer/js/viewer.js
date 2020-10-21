@@ -72,14 +72,15 @@ function expand_img(){
     var selection = document.getElementById("filter-select");
     var display = document.getElementById("image-display");
     var enhancements_list = document.getElementById("enhancements");
-    selection.style.height = "110px";
     document.getElementById("image_types_heading").style.display = "none";
     
+    selection.style.height = "80px";
     selection.style.width = "100%";
 
     display.style.width = "100%";
-    selection.style.backgroundColor = "blue";
+    // selection.style.overflow = "hidden";
 
+    selection.style.backgroundColor = "lightblue";
     setTimeout(function(){selection.style.overflow = "hidden"; enhancements_list.style.display = "none";}, 1000);
 }
 
