@@ -74,10 +74,12 @@ function expand_img(){
     var enhancements_list = document.getElementById("enhancements");
     // selection.style.height = "100%";
     selection.style.height = "110px";
+    
     selection.style.width = "100%";
 
     display.style.width = "100%";
     selection.style.backgroundColor = "blue";
+
     setTimeout(function(){selection.style.overflow = "hidden"; enhancements_list.style.display = "none";}, 1000);
 }
 
