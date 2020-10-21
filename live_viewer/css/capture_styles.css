@@ -134,6 +134,10 @@ button:hover{
     background-color: lightblue;
 }
 
+#options_button{
+    display: none;
+}
+
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 750px) {
     #filter-select{

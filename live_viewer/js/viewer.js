@@ -1,5 +1,5 @@
 function initialize_scripts(){
-    document.getElementById("options_button").style.display = "none";
+    // document.getElementById("options_button").style.display = "none";
     magnify("display", 3);
 }
 
@@ -89,7 +89,7 @@ function expand_img(){
 
     setTimeout(function(){
         selection.style.overflow = "hidden";
-        enhancements_list.style.display = "none";
+        // enhancements_list.style.display = "none";
         selection.style.backgroundColor = "lightblue";
     }, 750);
 }
