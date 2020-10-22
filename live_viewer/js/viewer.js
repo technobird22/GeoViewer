@@ -28,9 +28,6 @@ function change_video(image_site, img){
     display.style.display = "none";
     vid_display.style.display = "initial";
 
-    var magnifier = document.getElementById("magnifier");
-    magnifier.style.backgroundImage = "url('" + path + "')";
-
     // Will check for plurals
     var last_update = "[P] minute[s] ago"
     // = "just now" // If updated this minute
