@@ -135,6 +135,11 @@ button:hover{
     /* padding: 10px; */
 }
 
+#magnifier_instructions{
+    font-style: italic;
+    font-weight: bold;
+}
+
 #options_list{
     list-style: none;
     text-align: left ;

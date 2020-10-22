@@ -83,7 +83,7 @@
             <div class="viewer-section" id="image-display">
                 <div class="image-container">
                     <img id="display" src="gk-2a/instructions.png" alt="Full disk image display window">
-                    <p><em><strong>Hover over image to magnify</strong></em></p>
+                    <p id="magnifier_instructions">Hover over image to magnify</p>
                 </div>
 
 
@@ -97,16 +97,16 @@
                     <ul id="options_list">
                         <li>
                             <input type="checkbox" id="autorefresh" name="autorefresh" value="yes">
-                            <label for="vehicle1"> Autorefresh</label><br></li>
+                            <label for="autorefresh"> Autorefresh</label><br></li>
                         <li>
                             <input type="checkbox" id="magnifier_on" onclick="magnifier_option()" name="magnifier_on" checked="true">
                             Magnifier
                         </li>
                         <li>
-                            <div style="padding: 0px;">
+                            <div id="magnifier_options">
                                 <label>Magnification</label>
-                                <input type="range" id="magnifieron" name="magnifieron" min=2 max=10 step=1 value="yes">
-                                <!-- <label>[P] times magnification</label> -->
+                                <input type="range" id="magnifieron" name="magnifieron" min=2 max=10 step=2 value=2>
+                                <p>[P] times magnification</p>
                             </div>
                         </li>
                     </ul>
