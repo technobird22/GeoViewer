@@ -26,6 +26,11 @@ function change_image(image_site, img){
         is_magnifier_on = true;
         is_instructions = false;
     }
+    
+    display.src = tnpath;
+
+    var magnifier = document.getElementById("magnifier");
+    magnifier.style.backgroundImage = "url('" + path + "')";
 
     // Will check for plurals
     var last_update = "[P] minute[s] ago"
@@ -43,7 +48,6 @@ function update_page_info(image_site, img, last_update, next_update){
     path = image_site + image_directory + img;
     tnpath = path.replace(img, img.replace(".", "-tn."));
     
-    display.src = tnpath;
     display.scrollIntoView();
 
     document.getElementById("description").innerHTML = 
@@ -55,9 +59,6 @@ function update_page_info(image_site, img, last_update, next_update){
     "<hr><h3>Statistics: </h3>" + 
     "Image update time: <span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
     "<br>Image name: <span class=\"param\">" + img + "</span>";
-
-    var magnifier = document.getElementById("magnifier");
-    magnifier.style.backgroundImage = "url('" + path + "')";
 
     update_magnifier_dimensions();
 }
