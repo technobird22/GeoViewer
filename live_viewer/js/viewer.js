@@ -22,7 +22,6 @@ function change_image(image_site, img){
     var display = document.getElementById("display")
 
     // alert("Changing Filter...\nFilter Requested: " + img + "\nChanging image display source to:\n" + path);
-    alert(display.src)
     if(is_instructions){
         is_magnifier_on = true;
         is_instructions = false;
