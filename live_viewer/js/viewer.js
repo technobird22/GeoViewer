@@ -1,19 +1,26 @@
 function initialize_scripts(){
     // document.getElementById("options_button").style.display = "none";
+    set_image_site('https://kiwiweather.com/');
     magnify("display", 3);
 }
 
 // Globals
-var path
-var tnpath
-var is_magnifier_on = false
-var is_instructions = true
+var image_site;
+
+var path;
+var tnpath;
+var is_magnifier_on = false;
+var is_instructions = true;
+
+function set_image_site(img_site){
+    image_site = img_site;
+}
 
 function whatpath(){
     alert("Path is: " + path);
 }
 
-function change_video(image_site, img){
+function change_video(img){
     // alert("Changing (video)")
     var image_directory = "gk-2a/";
     path = image_site + image_directory + img;
@@ -43,7 +50,7 @@ function change_video(image_site, img){
     }, 750);
 }
 
-function change_image(image_site, img){
+function change_image(img){
     // var image_site = "https://kiwiweather.com/";
     var image_directory = "gk-2a/";
     path = image_site + image_directory + img;
