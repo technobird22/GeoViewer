@@ -130,10 +130,19 @@ function show_options(){
 var w, h, bw, zoom;
 function magnifier_option(){
     var checkBox = document.getElementById("magnifier_on");
+    var mag_instructions = document.getElementById("magnifier_instructions");
+
     if (checkBox.checked == true){
         is_magnifier_on = true;
+
+        mag_instructions.innerHTML = "Hover over image to magnify";
     } else{
+        if(is_instructions){
+            is_instructions = false;
+        }
         is_magnifier_on = false;
+
+        mag_instructions.innerHTML = "Magnifier is disabled";
 
         glass = document.getElementById("magnifier");
         glass.style.visibility = "hidden";
