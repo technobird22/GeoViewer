@@ -53,7 +53,7 @@ a {
     background-size: cover;
 
     /* Parallax Scrolling */
-    background-image: url("images/background.jpg");
+    background-image: url("images/nz_background.jpg");
     height: 40%;
     background-attachment: fixed;
     background-position: center;
@@ -165,7 +165,7 @@ tr {
 .main-footer {
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, .1);
-    background-image: url("images/background.jpg");
+    background-image: url("images/nz_background.jpg");
     background-size: cover;
     font-weight: bold;
     padding-bottom: 30px;
