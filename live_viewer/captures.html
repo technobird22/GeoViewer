@@ -76,6 +76,7 @@
                     
                     <li><h3>Other data</h3></li>
                     <li><button onclick="change_image('', 'wxfox.png')">Weather Fox</button></li>
+                    <li><button onclick="whatpath()">What's the image path???</button></li>
                 </ul>
             </div>
 
@@ -93,12 +94,12 @@
 
                 <div class="viewer-section info-display">
                     <h3>Options: </h3>
-                    <ul id="options">
+                    <ul id="options_list">
                         <li>
                             <input type="checkbox" id="autorefresh" name="autorefresh" value="yes">
                             <label for="vehicle1"> Autorefresh</label><br></li>
                         <li>
-                            <input type="checkbox" id="magnifier_on" name="magnifier_on" value="yes">
+                            <input type="checkbox" id="magnifier_on" onclick="magnifier_option()" name="magnifier_on" checked="true">
                             Magnifier
                         </li>
                         <li>

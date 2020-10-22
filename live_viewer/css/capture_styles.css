@@ -135,14 +135,13 @@ button:hover{
     /* padding: 10px; */
 }
 
-#options{
+#options_list{
     list-style: none;
-    text-align: left;
+    text-align: left ;
     
     padding: 10px;
-    /* margin: 10px; */
     
-    column-count: 2;
+    /* column-count: 2; */
     
     border: lightskyblue 2px solid;
     border-radius: 5px;

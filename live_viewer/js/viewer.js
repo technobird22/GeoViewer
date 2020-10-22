@@ -3,17 +3,32 @@ function initialize_scripts(){
     magnify("display", 3);
 }
 
+// Globals
+var path
+var tnpath
+var is_magnifier_on = false
+var is_instructions = true
+
+function whatpath(){
+    alert("Path is: " + path);
+}
+
 function change_image(image_site, img){
     // var image_site = "https://kiwiweather.com/";
     var image_directory = "gk-2a/";
-    var path = image_site + image_directory + img;
-    var tnpath = path.replace(img, img.replace(".", "-tn."));
+    path = image_site + image_directory + img;
+    tnpath = path.replace(img, img.replace(".", "-tn."));
     
     var display = document.getElementById("display")
 
     // alert("Changing Filter...\nFilter Requested: " + img + "\nChanging image display source to:\n" + path);
-    
-    display.src = path;
+    alert(display.src)
+    if(is_instructions){
+        is_magnifier_on = true;
+        is_instructions = false;
+    }
+
+    display.src = tnpath;
     display.scrollIntoView();
 
     // Will check for plurals
@@ -36,7 +51,6 @@ function change_image(image_site, img){
 
     var magnifier = document.getElementById("magnifier");
     magnifier.style.backgroundImage = "url('" + path + "')";
-    magnifier.style.visibility = "";
 
     update_magnifier_dimensions();
 }
@@ -115,6 +129,18 @@ function show_options(){
 }
 
 var w, h, bw, zoom;
+function magnifier_option(){
+    var checkBox = document.getElementById("magnifier_on");
+    if (checkBox.checked == true){
+        is_magnifier_on = true;
+    } else{
+        is_magnifier_on = false;
+
+        glass = document.getElementById("magnifier");
+        glass.style.visibility = "hidden";
+    }
+}
+
 function update_magnifier_dimensions(){
     var glass = document.getElementById("magnifier")
     var img = document.getElementById("display")
@@ -173,19 +199,19 @@ function magnify(imgID, curzoom){
 
         /* Prevent the magnifier glass from being positioned outside the image: */
         /* Hide magnifier if it is about to be */
-        if (x > img.width - (w / zoom)){
+        if(x > img.width - (w / zoom)){
             x = img.width - (w / zoom);
             glass.style.visibility = "hidden";
-        } else if (x < w / zoom){
+        } else if(x < w / zoom){
             x = w / zoom;
             glass.style.visibility = "hidden";
-        } else if (y > img.height - (h / zoom)){
+        } else if(y > img.height - (h / zoom)){
             y = img.height - (h / zoom);
             glass.style.visibility = "hidden";
-        } else if (y < h / zoom){
+        } else if(y < h / zoom){
             y = h / zoom;
             glass.style.visibility = "hidden";
-        } else{
+        } else if(is_magnifier_on){
             glass.style.visibility = "visible";
         }
         
