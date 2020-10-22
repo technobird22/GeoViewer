@@ -43,7 +43,20 @@ function change_video(img){
     // = "<strong>is already available.</strong><br>
     //    <button onclick="refresh_image()>Refresh Image</button>"
     
-    update_page_info(data_site, img, last_update, next_update);
+    display.scrollIntoView();
+
+    // Update page info
+    document.getElementById("description").innerHTML = 
+    "<h3>About:</h3> <br>" + about_img(img) + 
+    "<br><i>This image was last updated " + last_update + ". The next image " + next_update + "</i>" +
+    "<h3>Export:</h3>" +
+    "Opens image in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
+    "<button onclick=\"window.open('" + tnpath + "', '_blank');\">" + "Reduced Quality" + "</button>" + 
+    "<hr><h3>Statistics: </h3>" + 
+    "Image update time: <span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
+    "<br>Image name: <span class=\"param\">" + img + "</span>";
+
+    update_magnifier_dimensions();
 
     setTimeout(function(){
         vid_display.play();
@@ -81,17 +94,9 @@ function change_image(img){
     // = "<strong>is already available.</strong><br>
     //    <button onclick="refresh_image()>Refresh Image</button>"
     
-    update_page_info(data_site, img, last_update, next_update);
-}
-
-// Update information about displayed data
-function update_page_info(data_site, img, last_update, next_update){
-    var data_directory = "gk-2a/";
-    path = data_site + data_directory + img;
-    tnpath = path.replace(img, img.replace(".", "-tn."));
-    
     display.scrollIntoView();
 
+    // Update page info
     document.getElementById("description").innerHTML = 
     "<h3>About:</h3> <br>" + about_img(img) + 
     "<br><i>This image was last updated " + last_update + ". The next image " + next_update + "</i>" +
