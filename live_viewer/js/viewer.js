@@ -13,6 +13,37 @@ function whatpath(){
     alert("Path is: " + path);
 }
 
+function change_video(image_site, img){
+    // alert("Changing (video)")
+    var image_directory = "gk-2a/";
+    path = image_site + image_directory + img;
+    tnpath = path.replace(img, img.replace(".", "-tn."));
+    
+    var display = document.getElementById("display")
+    var vid_display = document.getElementById("video_display")
+    
+    // display.style.visibility = "hidden";
+    display.style.display = "none";
+    vid_display.style.display = "initial";
+
+    var magnifier = document.getElementById("magnifier");
+    magnifier.style.backgroundImage = "url('" + path + "')";
+
+    // Will check for plurals
+    var last_update = "[P] minute[s] ago"
+    // = "just now" // If updated this minute
+    
+    var next_update = "will be out in [P] minute[s]"
+    // = "<strong>is already available.</strong><br>
+    //    <button onclick="refresh_image()>Refresh Image</button>"
+    
+    update_page_info(image_site, img, last_update, next_update);
+
+    setTimeout(function(){
+        vid_display.play();
+    }, 750);
+}
+
 function change_image(image_site, img){
     // var image_site = "https://kiwiweather.com/";
     var image_directory = "gk-2a/";
@@ -20,6 +51,10 @@ function change_image(image_site, img){
     tnpath = path.replace(img, img.replace(".", "-tn."));
     
     var display = document.getElementById("display")
+    var vid_display = document.getElementById("video_display")
+
+    display.style.display = "initial";
+    vid_display.style.display = "none";
 
     // alert("Changing Filter...\nFilter Requested: " + img + "\nChanging image display source to:\n" + path);
     if(is_instructions){

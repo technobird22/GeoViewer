@@ -5,6 +5,13 @@
     padding: 10px;
 }
 
+#video_display {
+    width: 100%;
+    padding: 10px;
+    
+    display: none;
+}
+
 /* Magnifier for image */
 *{
     box-sizing: border-box;

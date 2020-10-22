@@ -49,10 +49,10 @@
 
                 <ul class="enhancements">
                     <h3>Animations</h3>
-                    <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>Colourized 24 hours</del></button></li>
-                    <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>Colourized 72 hours</del></button></li>
-                    <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>CLAHE enhanced 24 hours</del></button></li>
-                    <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>CLAHE enhanced 72 hours</del></button></li>
+                    <li><button onclick="change_video('https:\/\/kiwiweather.com/', 'FD-_sanchez-143.mp4')">Colourized 24 hours</button></li>
+                    <li><button onclick="change_video('https:\/\/kiwiweather.com/', '')"><del>Colourized 72 hours</del></button></li>
+                    <li><button onclick="change_video('https:\/\/kiwiweather.com/', '')"><del>CLAHE enhanced 24 hours</del></button></li>
+                    <li><button onclick="change_video('https:\/\/kiwiweather.com/', '')"><del>CLAHE enhanced 72 hours</del></button></li>
                 </ul>
                 
                 <h2>Charts and Predictions</h2>
@@ -92,6 +92,7 @@
             <div class="viewer-section" id="image-display">
                 <div class="image-container">
                     <img id="display" src="gk-2a/instructions.png" alt="Full disk image display window">
+                    <video id="video_display" src="https://kiwiweather.com/gk-2a/FD-_sanchez-143.mp4" controls loop></video>
                     <p id="magnifier_instructions">Hover over image to magnify</p>
                 </div>
 
