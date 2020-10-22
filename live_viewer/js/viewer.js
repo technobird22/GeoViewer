@@ -27,16 +27,24 @@ function change_image(image_site, img){
         is_instructions = false;
     }
 
-    display.src = tnpath;
-    display.scrollIntoView();
-
     // Will check for plurals
     var last_update = "[P] minute[s] ago"
-                 // = "just now" // If updated this minute
-
+    // = "just now" // If updated this minute
+    
     var next_update = "will be out in [P] minute[s]"
-                 // = "<strong>is already available.</strong><br>
-                 //    <button onclick="refresh_image()>Refresh Image</button>"
+    // = "<strong>is already available.</strong><br>
+    //    <button onclick="refresh_image()>Refresh Image</button>"
+    
+    update_page_info(image_site, img, last_update, next_update);
+}
+
+function update_page_info(image_site, img, last_update, next_update){
+    var image_directory = "gk-2a/";
+    path = image_site + image_directory + img;
+    tnpath = path.replace(img, img.replace(".", "-tn."));
+    
+    display.src = tnpath;
+    display.scrollIntoView();
 
     document.getElementById("description").innerHTML = 
     "<h3>About:</h3> <br>" + about_img(img) + 
