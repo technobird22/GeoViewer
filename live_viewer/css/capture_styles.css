@@ -12,8 +12,8 @@
 
 .image-container{
     position: relative;
-    padding: 10px;
-    margin: 10px;
+    padding: 5px;
+    margin: 5px;
 
     border: #aaaaaa 2px solid;
     border-radius: 5px;
@@ -68,7 +68,7 @@ button:hover{
     border-radius: 5px;
 
     padding: 10px;
-    /* margin: auto; */
+    /* margin: 5px; */
     
     width: 30%;
     
@@ -81,6 +81,7 @@ button:hover{
 
 #filter-select:hover{
     background-color: #eeeeee;
+    /* margin: 5px; */
     /* height: 10%; */
     /* height: 110px; */
     /* width: 10px; */
@@ -95,11 +96,12 @@ button:hover{
     text-align: center;
 }
 
-#info-display{
+.info-display{
     border: #aaaaaa 2px solid;
     border-radius: 5px;
     
-    /* padding: 5px; */
+    margin: 5px;
+    padding: 10px;
 
     width: 100%;
     
@@ -128,13 +130,16 @@ button:hover{
 
 .viewer-section{
     float: left;
-    /* margin: 10px; */
-    padding: 10px;
+    /* margin: 5px; */
+    /* padding: 10px; */
 }
 
 #options{
     list-style: none;
     text-align: left;
+    
+    padding: 10px;
+    /* margin: 10px; */
     
     column-count: 2;
     
