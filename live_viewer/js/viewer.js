@@ -1,19 +1,19 @@
 function initialize_scripts(){
     // document.getElementById("options_button").style.display = "none";
-    set_image_site('https://kiwiweather.com/');
+    set_data_site('https://kiwiweather.com/');
     magnify("display", 3);
 }
 
 // Globals
-var image_site;
+var data_site;
 
 var path;
 var tnpath;
 var is_magnifier_on = false;
 var is_instructions = true;
 
-function set_image_site(img_site){
-    image_site = img_site;
+function set_data_site(img_site){
+    data_site = img_site;
 }
 
 function whatpath(){
@@ -22,8 +22,8 @@ function whatpath(){
 
 function change_video(img){
     // alert("Changing (video)")
-    var image_directory = "gk-2a/";
-    path = image_site + image_directory + img;
+    var data_directory = "gk-2a/";
+    path = data_site + data_directory + img;
     tnpath = path.replace(img, img.replace(".", "-tn."));
     
     var display = document.getElementById("display")
@@ -43,7 +43,7 @@ function change_video(img){
     // = "<strong>is already available.</strong><br>
     //    <button onclick="refresh_image()>Refresh Image</button>"
     
-    update_page_info(image_site, img, last_update, next_update);
+    update_page_info(data_site, img, last_update, next_update);
 
     setTimeout(function(){
         vid_display.play();
@@ -51,9 +51,9 @@ function change_video(img){
 }
 
 function change_image(img){
-    // var image_site = "https://kiwiweather.com/";
-    var image_directory = "gk-2a/";
-    path = image_site + image_directory + img;
+    // var data_site = "https://kiwiweather.com/";
+    var data_directory = "gk-2a/";
+    path = data_site + data_directory + img;
     tnpath = path.replace(img, img.replace(".", "-tn."));
     
     var display = document.getElementById("display")
@@ -81,12 +81,12 @@ function change_image(img){
     // = "<strong>is already available.</strong><br>
     //    <button onclick="refresh_image()>Refresh Image</button>"
     
-    update_page_info(image_site, img, last_update, next_update);
+    update_page_info(data_site, img, last_update, next_update);
 }
 
-function update_page_info(image_site, img, last_update, next_update){
-    var image_directory = "gk-2a/";
-    path = image_site + image_directory + img;
+function update_page_info(data_site, img, last_update, next_update){
+    var data_directory = "gk-2a/";
+    path = data_site + data_directory + img;
     tnpath = path.replace(img, img.replace(".", "-tn."));
     
     display.scrollIntoView();
