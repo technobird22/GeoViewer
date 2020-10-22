@@ -19,7 +19,7 @@
     border-radius: 5px;
 }
 
-#enhancements {
+.enhancements {
     list-style: none;
     padding: 10px;
     /* margin: 10px; */
@@ -33,11 +33,11 @@
     text-align: center;
 }
 
-#enhancements button {
+.enhancements button {
     background-color: rgb(255, 164, 17);
 }
 
-#enhancements button:hover{
+.enhancements button:hover{
     background-color: rgb(255, 192, 89);
 }
 
@@ -75,7 +75,9 @@ button:hover{
     
     /* height: 100%; */
     height: 1300px;
-    overflow: visible;
+    
+    overflow:scroll;
+    /* overflow: visible; */
     
     transition: 0.3s;
 }

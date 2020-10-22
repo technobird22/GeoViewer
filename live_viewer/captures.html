@@ -35,33 +35,39 @@
     <section class="content-section container">
         <div id="viewer-contents">
             <div class="viewer-section" id="filter-select">
-                <h3 id="image_types_heading">Image Types:</h3>
-                <button id="full_screen_button" onclick="expand_img()">Expand Image</button>
-                <button id="options_button" onclick="show_options()">Show Options</button>
-                <ul id="enhancements">
-                    <li><h3>Full Disk</h3></li>
+                <h1 id="image_types_heading">Image Types:</h1>
+                <h2>Full Disk</h2>
+                <ul class="enhancements">
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', 'FD.jpg')">Raw unprocessed frame</button></li>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', 'clahe.jpg')">CLAHE enhanced</button></li>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', 'sanchez.jpg')">Colourized</button></li>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', 'temp')"><del>Temperature enhanced</del></button></li>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', 'ex-temp')"><del>Extreme temperature enhanced</del></button></li>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', 'precip')"><del>Precipation enhanced</del></button></li>
-                    
-                    <li><h3>Animations</h3></li>
+                </ul>
+
+                <ul class="enhancements">
+                    <h3>Animations</h3>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>Colourized 24 hours</del></button></li>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>Colourized 72 hours</del></button></li>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>CLAHE enhanced 24 hours</del></button></li>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>CLAHE enhanced 72 hours</del></button></li>
-                    <h3>Charts and Predictions</h3></li>
-
+                </ul>
+                
+                <h2>Charts and Predictions</h2>
+                <ul class="enhancements">
                     <h4>Global</h4>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', 'GWW3F.gif')">Wave Model</button></li>
-                    
+                </ul>
+
+                <ul class="enhancements">
                     <h4>South-East Asia</h4>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', 'UP50A.gif')">Pressure and Temperature</button></li>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>Wind and Temperature Forecast - 24hrs</del></button></li>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>Wind and Temperature Forecast - 48hrs</del></button></li>
-                    
+                </ul>
+                
+                <ul class="enhancements">
                     <h4>Korean Region</h4>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>FOG</del></button></li>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>Detailed IR</del></button></li>
@@ -73,7 +79,9 @@
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>Sea Surface Temperature Forecast - 72hrs</del></button></li>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>Sea Ice</del></button></li>
                     <li><button onclick="change_image('https:\/\/kiwiweather.com/', '')"><del>Surface Pressure</del></button></li>
-                    
+                </ul>
+
+                <ul class="enhancements">
                     <li><h3>Other data</h3></li>
                     <li><button onclick="change_image('', 'wxfox.png')">Weather Fox</button></li>
                     <li><button onclick="whatpath()">What's the image path???</button></li>
@@ -95,6 +103,10 @@
                 <div class="viewer-section info-display">
                     <h3>Options: </h3>
                     <ul id="options_list">
+                        <li>
+                            <button id="full_screen_button" onclick="expand_img()">Expand Image</button>
+                            <button id="options_button" onclick="show_options()">Show Options</button>
+                        </li>
                         <li>
                             <input type="checkbox" id="autorefresh" name="autorefresh" value="yes">
                             <label for="autorefresh"> Autorefresh</label><br></li>
