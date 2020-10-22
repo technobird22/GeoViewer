@@ -6,7 +6,9 @@
 }
 
 /* Magnifier for image */
-*{box-sizing: border-box;}
+*{
+    box-sizing: border-box;
+}
 
 .image-container{
     position: relative;

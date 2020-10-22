@@ -169,7 +169,7 @@ function magnify(imgID, curzoom){
         pos = get_cursor_pos(e);
         x = pos.x;
         y = pos.y;
-        
+
 
         /* Prevent the magnifier glass from being positioned outside the image: */
         if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
@@ -179,6 +179,7 @@ function magnify(imgID, curzoom){
         /* Set the position of the magnifier glass: */
         glass.style.left = (x - w) + "px";
         glass.style.top = (y - h) + "px";
+        
         /* Display what the magnifier glass "sees": */
         glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
     }
