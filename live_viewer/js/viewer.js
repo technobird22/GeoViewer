@@ -122,7 +122,7 @@ function show_options(){
     document.getElementById("options_button").style.display = "none";
     
     selection.style.height = "1300px";
-    selection.style.width = "30%";
+    selection.style.width = "28%";
 
     display.style.width = "70%";
 }
