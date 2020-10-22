@@ -3,7 +3,7 @@ function initialize_scripts(){
     magnify("display", 3);
 }
 
-// Globals
+// Global variables
 var data_site;
 
 var path;
@@ -11,14 +11,17 @@ var tnpath;
 var is_magnifier_on = false;
 var is_instructions = true;
 
+// Set site from which data is retreived
 function set_data_site(img_site){
     data_site = img_site;
 }
 
+// (For testing): Show alert with current path
 function whatpath(){
     alert("Path is: " + path);
 }
 
+// Change video source
 function change_video(img){
     var data_directory = "gk-2a/";
     path = data_site + data_directory + img;
@@ -47,6 +50,7 @@ function change_video(img){
     }, 750);
 }
 
+// Change image source
 function change_image(img){
     var data_directory = "gk-2a/";
     path = data_site + data_directory + img;
@@ -80,6 +84,7 @@ function change_image(img){
     update_page_info(data_site, img, last_update, next_update);
 }
 
+// Update information about displayed data
 function update_page_info(data_site, img, last_update, next_update){
     var data_directory = "gk-2a/";
     path = data_site + data_directory + img;
@@ -100,6 +105,7 @@ function update_page_info(data_site, img, last_update, next_update){
     update_magnifier_dimensions();
 }
 
+// Return information about a specific image
 function about_img(img){
     switch(img){
         // Full disk images
@@ -122,6 +128,7 @@ function about_img(img){
         case "contrastb":
             return "Contrast - Channel B image";
         
+        // Other data
         case "wxfox.png":
         return "Weather fox image for testing";
         
@@ -130,6 +137,7 @@ function about_img(img){
     }
 }
 
+// Expand image display
 function expand_img(){
     var selection = document.getElementById("filter-select");
     var display = document.getElementById("image-display");
@@ -152,6 +160,7 @@ function expand_img(){
     }, 750);
 }
 
+// Show options / minimize image
 function show_options(){
     var selection = document.getElementById("filter-select");
     var display = document.getElementById("image-display");
@@ -172,6 +181,7 @@ function show_options(){
     display.style.width = "70%";
 }
 
+// Magnifier scripts
 var w, h, bw, zoom;
 function magnifier_option(){
     var checkBox = document.getElementById("magnifier_on");
@@ -194,6 +204,7 @@ function magnifier_option(){
     }
 }
 
+// Update dimentions of magnifier when image is changed
 function update_magnifier_dimensions(){
     var glass = document.getElementById("magnifier")
     var img = document.getElementById("display")
