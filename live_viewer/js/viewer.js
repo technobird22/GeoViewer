@@ -22,6 +22,8 @@ function change_video(image_site, img){
     var display = document.getElementById("display")
     var vid_display = document.getElementById("video_display")
     
+    vid_display.src = path;
+
     // display.style.visibility = "hidden";
     display.style.display = "none";
     vid_display.style.display = "initial";
