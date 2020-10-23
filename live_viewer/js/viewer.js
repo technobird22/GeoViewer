@@ -286,7 +286,7 @@ function magnify(imgID, curzoom){
 
         var pos, x, y;
         /* Prevent any other actions that may occur when moving over the image */
-        e.preventDefault();
+        // e.preventDefault();
 
         /* Get the cursor's x and y positions: */
         pos = get_cursor_pos(e);
