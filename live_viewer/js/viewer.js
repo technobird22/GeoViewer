@@ -107,8 +107,8 @@ function change_image(img){
     "Open image in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
     "<button onclick=\"window.open('" + tnpath + "', '_blank');\">" + "Reduced Quality" + "</button>" + 
     
-    "Download image: <br><button href='" + path + "' download>" + "Original Quality" + "</button>" +
-    "<button onclick=\"window.open('" + tnpath + "', '_blank');\">" + "Reduced Quality" + "</button>" + 
+    "Download image: <br><a href='" + path + "' download><button>" + "Original Quality" + "</button></a>" +
+    " <br><a href='" + tnpath + "' download><button>" + "Reduced Quality" + "</button></a>" + 
     "<hr><h3>Statistics: </h3>" + 
     "Image update time: <span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
     "<br>Image name: <span class=\"param\">" + img + "</span>";
