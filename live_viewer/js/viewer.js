@@ -1,6 +1,6 @@
 function initialize_scripts(){
     set_data_site('https://kiwiweather.com/');
-    set_data_site('');
+    // set_data_site(''); // For local viewing or tests
     magnify("display", 3);
 }
 
