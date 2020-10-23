@@ -100,7 +100,7 @@ function change_image(img){
     "<h3>About:</h3> <br>" + about_img(img) + 
     "<br><i>This image was last updated " + last_update + ". The next image " + next_update + "</i>" +
     "<h3>Export:</h3>" +
-    "Opens image in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
+    "Open image in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
     "<button onclick=\"window.open('" + tnpath + "', '_blank');\">" + "Reduced Quality" + "</button>" + 
     "<hr><h3>Statistics: </h3>" + 
     "Image update time: <span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
