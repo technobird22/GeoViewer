@@ -9,6 +9,7 @@ var data_site;
 
 var path;
 var tnpath;
+
 var show_full_preview = false;
 var is_magnifier_on = false;
 var is_instructions = true;
