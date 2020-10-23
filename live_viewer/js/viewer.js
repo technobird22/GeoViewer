@@ -1,5 +1,6 @@
 function initialize_scripts(){
     set_data_site('https://kiwiweather.com/');
+    set_data_site('');
     magnify("display", 3);
 }
 
@@ -25,7 +26,6 @@ function whatpath(){
 function change_video(img){
     var data_directory = "gk-2a/";
     path = data_site + data_directory + img;
-    tnpath = path.replace(img, img.replace(".", "-tn."));
     
     var display = document.getElementById("display")
     var vid_display = document.getElementById("video_display")
@@ -43,7 +43,7 @@ function change_video(img){
     // = "<strong>is already available.</strong><br>
     //    <button onclick="refresh_image()>Refresh Image</button>"
     
-    display.scrollIntoView();
+    vid_display.scrollIntoView();
 
     // Update page info
     document.getElementById("description").innerHTML = 
@@ -55,11 +55,9 @@ function change_video(img){
     "Video update time: <span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
     "<br>Video name: <span class=\"param\">" + img + "</span>";
 
-    update_magnifier_dimensions();
-
     setTimeout(function(){
         vid_display.play();
-    }, 750);
+    }, 500);
 }
 
 // Change image source
@@ -101,6 +99,9 @@ function change_image(img){
     "<br><i>This image was last updated " + last_update + ". The next image " + next_update + "</i>" +
     "<h3>Export:</h3>" +
     "Open image in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
+    "<button onclick=\"window.open('" + tnpath + "', '_blank');\">" + "Reduced Quality" + "</button>" + 
+    
+    "Download image: <br><button href='" + path + "' download>" + "Original Quality" + "</button>" +
     "<button onclick=\"window.open('" + tnpath + "', '_blank');\">" + "Reduced Quality" + "</button>" + 
     "<hr><h3>Statistics: </h3>" + 
     "Image update time: <span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
