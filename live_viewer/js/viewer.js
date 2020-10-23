@@ -226,6 +226,17 @@ function full_size_option(){
     }
 }
 
+// Fox
+function fox(){
+    set_data_site('');
+    show_full_preview = true;
+
+    change_image('wxfox.png')
+
+    show_full_preview = false;
+    set_data_site('https://kiwiweather.com/');
+}
+
 // Update dimentions of magnifier when image is changed
 function update_magnifier_dimensions(){
     var glass = document.getElementById("magnifier")
