@@ -48,13 +48,12 @@ function change_video(img){
     // Update page info
     document.getElementById("description").innerHTML = 
     "<h3>About:</h3> <br>" + about_img(img) + 
-    "<br><i>This image was last updated " + last_update + ". The next image " + next_update + "</i>" +
+    "<br><i>This video was last updated " + last_update + ". The next video " + next_update + "</i>" +
     "<h3>Export:</h3>" +
-    "Opens image in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
-    "<button onclick=\"window.open('" + tnpath + "', '_blank');\">" + "Reduced Quality" + "</button>" + 
+    "Open video in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
     "<hr><h3>Statistics: </h3>" + 
-    "Image update time: <span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
-    "<br>Image name: <span class=\"param\">" + img + "</span>";
+    "Video update time: <span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
+    "<br>Video name: <span class=\"param\">" + img + "</span>";
 
     update_magnifier_dimensions();
 
