@@ -9,6 +9,7 @@ var data_site;
 
 var path;
 var tnpath;
+var show_full_preview = false;
 var is_magnifier_on = false;
 var is_instructions = true;
 
@@ -78,7 +79,11 @@ function change_image(img){
         is_instructions = false;
     }
     
-    display.src = tnpath;
+    if(show_full_preview){
+        display.src = path;
+    } else{
+        display.src = tnpath;
+    }
 
     var magnifier = document.getElementById("magnifier");
     magnifier.style.backgroundImage = "url('" + path + "')";
@@ -206,6 +211,17 @@ function magnifier_option(){
 
         glass = document.getElementById("magnifier");
         glass.style.visibility = "hidden";
+    }
+}
+
+// Option to make preview image full size
+function full_size_option(){
+    var checkBox = document.getElementById("full_size_prev");
+
+    if (checkBox.checked == true){
+        show_full_preview = true;
+    } else{
+        show_full_preview = false;
     }
 }
 
