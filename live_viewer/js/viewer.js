@@ -79,7 +79,14 @@ function change_image(img){
     display.style.display = "initial";
     vid_display.style.display = "none";
 
-    // alert("Changing Filter...\nFilter Requested: " + img + "\nChanging image display source to:\n" + path);
+    refresh_image();
+}
+
+// Change image source
+function refresh_image(){
+    var display = document.getElementById("display")
+
+    // alert("Refreshing data...");
     if(is_instructions){
         is_magnifier_on = true;
         is_instructions = false;
