@@ -62,6 +62,11 @@ function change_video(vid){
     }, 500);
 }
 
+// Refresh the whole page
+function refresh_page(){
+    location.reload();
+}
+
 // Change image source
 function change_image(img){
     var data_directory = "gk-2a/";
