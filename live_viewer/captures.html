@@ -31,15 +31,14 @@
         <h3>Below, you will find the latest images received from GK-2A.<br>
             These will be in near real-time but to update the ones you see, you will need to <strong>refresh the page</strong> or <strong><del>enable auto updates</del></strong>
         </h3>
-        <h3>This page's data comes from <a href="https://kiwiweather.com/">https://kiwiweather.com/</a>, hosted by Trumpkyn</h3>
     </section>
 
     <section class="content-section container">
         <div id="viewer-contents">
             <div class="viewer-section" id="filter-select">
-                <h1 id="image_types_heading">Image Types:</h1>
-                <h2>Full Disk</h2>
+                <h1 id="image_types_heading">Earth Imagery</h1>
                 <ul class="enhancements">
+                    <h3>Full Disk</h3>
                     <li><button onclick="change_image('FD.jpg')">Raw unprocessed frame</button></li>
                     <li><button onclick="change_image('clahe.jpg')">CLAHE enhanced</button></li>
                     <li><button onclick="change_image('sanchez.jpg')">Colourized</button></li>
@@ -56,7 +55,8 @@
                     <li><button onclick="change_video('FD-raw-715.mp4')">RAW IR 72 hours</button></li>
                 </ul>
                 
-                <h2>Charts and Predictions</h2>
+                <!-- <h2>Charts and Predictions</h2> -->
+                <h2>Graphics</h2>
                 <ul class="enhancements">
                     <h4>Global</h4>
                     <li><button onclick="change_image('GWW3F.gif')">Wave Model</button></li>
@@ -142,12 +142,18 @@
         This viewer displays near real time images from the satellite, GK-2A. You can select various enhancements to view, and you can hover over the image for a higher resolution, magnified view.
 
         <h2 class=" section-header">About the data</h2>
-        This data was received from the South Korean satellite Geokompsat-2A, abbreviated "GK-2A". These will be in near real-time, and consist of data from imagers on the satellite as well as a variety of other sources, including, but not limited to, rebroadcasts of the Korean Weather Agency, Future weather predictions, Downlink schedules, and more.
+        This data was received from the South Korean satellite Geokompsat-2A, abbreviated "GK-2A". The data you see here has been recieved and decoded in real time, and consists of data from imagers on the satellite as well as a variety of other sources, including, rebroadcasts of the Korean Weather Agency, Future weather predictions, Downlink schedules, and more.
         <br>
-        You can see Japan, Australia, New Zealand, as well as a variety of other countries on the full disc frames.
+        You can see Japan, Australia, New Zealand, as well as a variety of other countries on the full disc frames, especially with the <a href="">Sanchez</a> enhancement, written by NullPainter.
+        <br>
+        This data was received by ourselves using dedicated hardware and processing software. Read more about it <a href="">here</a>.
+        <br>
+        A massive thank you to <b>Trumpkyn</b> for hosting this page's data.
+        You can find more at <a href="https://kiwiweather.com/">https://kiwiweather.com/</a>
 
         <h2>Note:</h2>
-        <p>This page is currently under active development, so you will often notice changes to it. Please keep an eye out for any problems / bugs, and if you do notice anything amiss, please use the following method to let me know</p>
+        <p>This page is currently under active development so you will often notice changes to it. Please keep an eye out for any problems or bugs, and if you do notice anything amiss, please let me know by
+        <a href="https://github.com/technobird22/geocapture/issues/new ">submitting an issue on the "GeoCapture" Github repository</a> or by writing an email to <span class="param">q2r3.</span><span class="param">kiki</span>  at<span class="param">gmail</span> <em>.</em> com
         <p>This page is part of the "GeoCapture" project, and was made by Albert (technobird22), so please report any bugs by
             <a href="https://github.com/technobird22/geocapture/issues/new ">submitting an issue on the "GeoCapture" Github repository</a></p>
     </section>
