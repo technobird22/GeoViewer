@@ -26,9 +26,10 @@ function whatpath(){
 }
 
 // Change video source
-function change_video(vid){
+function change_video(new_img){
+    img = new_img
     var data_directory = "gk-2a/";
-    path = data_site + data_directory + vid;
+    path = data_site + data_directory + img;
     
     var display = document.getElementById("display")
     var vid_display = document.getElementById("video_display")
@@ -37,6 +38,7 @@ function change_video(vid){
 
     display.style.display = "none";
     vid_display.style.display = "initial";
+    disable_magnifier()
 
     // Will check for plurals
     var last_update = "[P] minute[s] ago"
@@ -50,13 +52,13 @@ function change_video(vid){
 
     // Update page info
     document.getElementById("description").innerHTML = 
-    "<h3>About:</h3> <br>" + about_img() + 
+    "<h3 class='small-header'>About:</h3> <br>" + about_data() + 
     "<br><i>This video was last updated " + last_update + ". The next video " + next_update + "</i>" +
-    "<h3>Export:</h3>" +
+    "<h3 class='small-header'>Export:</h3>" +
     "Open video in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
     "<hr><h3>Statistics: </h3>" + 
     "Video update time: <span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
-    "<br>Video name: <span class=\"param\">" + vid + "</span>";
+    "<br>Video name: <span class=\"param\">" + img + "</span>";
 
     setTimeout(function(){
         vid_display.play();
@@ -85,7 +87,7 @@ function change_image(new_img){
     refresh_image();
 }
 
-// Change image source
+// Refresh image source
 function refresh_image(){
     var display = document.getElementById("display")
 
@@ -116,9 +118,9 @@ function refresh_image(){
 
     // Update page info
     document.getElementById("description").innerHTML = 
-    "<h3>About:</h3> <br>" + about_img() + 
+    "<h3 class='small-header'>About:</h3> <br>" + about_data() + 
     "<br><i>This image was last updated " + last_update + ". The next image " + next_update + "</i>" +
-    "<h3>Export:</h3>" +
+    "<h3 class='small-header'>Export:</h3>" +
     "Open image in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
     "<button onclick=\"window.open('" + tnpath + "', '_blank');\">" + "Reduced Quality" + "</button>" + 
     
@@ -132,7 +134,7 @@ function refresh_image(){
 }
 
 // Return information about a specific image
-function about_img(){
+function about_data(){
     switch(img){
         // Full disk images
         case "FD.jpg":
@@ -141,6 +143,16 @@ function about_img(){
             return "This is the infra-red frame enhanced with CLAHE processing";
         case "sanchez.jpg":
             return "This is the colourized version of the raw infra-red image";
+
+        // Animations
+        case "FD-_sanchez-143.mp4":
+            return "This is an animation of the image data from the last 24 hours, colourised using Sanchez, by NullPainter";
+        case "FD-_sanchez-715.mp4":
+            return "This is an animation of the image data from the last 72 hours, colourised using Sanchez, by NullPainter";
+        case "FD-raw-143.mp4":
+            return "This is an animation of the image data from the last 24 hours, received as-is from the satellite, with no processing";
+        case "FD-raw-715.mp4":
+            return "This is an animation of the image data from the last 72 hours, received as-is from the satellite, with no processing";
 
         // Charts and Predictions
         case "GWW3F.gif":
@@ -205,6 +217,11 @@ function show_options(){
     selection.style.width = "28%";
 
     display.style.width = "70%";
+}
+
+function disable_magnifier(){
+    document.getElementById("magnifier_on").checked = false;
+    magnifier_option();
 }
 
 // Magnifier scripts

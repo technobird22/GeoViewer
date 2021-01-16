@@ -86,6 +86,19 @@ a {
     padding: 0 1.5em;
 }
 
+.small-header {
+    color: #000000;
+    /* font-family: 'Berlin Sans FB', 'Times New Roman', Times, serif; */
+    /* font-style: oblique; */
+    /* text-decoration: underline; */
+
+    font-weight: normal;
+    text-align: left;
+
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+}
+
 .section-header {
     color: #000000;
     /* font-family: Georgia, 'Times New Roman', Times, serif; */
