@@ -25,9 +25,9 @@ function whatpath(){
 }
 
 // Change video source
-function change_video(img){
+function change_video(vid){
     var data_directory = "gk-2a/";
-    path = data_site + data_directory + img;
+    path = data_site + data_directory + vid;
     
     var display = document.getElementById("display")
     var vid_display = document.getElementById("video_display")
@@ -49,13 +49,13 @@ function change_video(img){
 
     // Update page info
     document.getElementById("description").innerHTML = 
-    "<h3>About:</h3> <br>" + about_img(img) + 
+    "<h3>About:</h3> <br>" + about_img(vid) + 
     "<br><i>This video was last updated " + last_update + ". The next video " + next_update + "</i>" +
     "<h3>Export:</h3>" +
     "Open video in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
     "<hr><h3>Statistics: </h3>" + 
     "Video update time: <span class=\"param\">" + " [PLACEHOLDER] " + "</span>" + 
-    "<br>Video name: <span class=\"param\">" + img + "</span>";
+    "<br>Video name: <span class=\"param\">" + vid + "</span>";
 
     setTimeout(function(){
         vid_display.play();
