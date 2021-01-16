@@ -7,6 +7,7 @@ function initialize_scripts(){
 // Global variables
 var data_site;
 
+var img;
 var path;
 var tnpath;
 
@@ -49,7 +50,7 @@ function change_video(vid){
 
     // Update page info
     document.getElementById("description").innerHTML = 
-    "<h3>About:</h3> <br>" + about_img(vid) + 
+    "<h3>About:</h3> <br>" + about_img() + 
     "<br><i>This video was last updated " + last_update + ". The next video " + next_update + "</i>" +
     "<h3>Export:</h3>" +
     "Open video in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
@@ -68,7 +69,9 @@ function refresh_page(){
 }
 
 // Change image source
-function change_image(img){
+function change_image(new_img){
+    img = new_img
+    
     var data_directory = "gk-2a/";
     path = data_site + data_directory + img;
     tnpath = path.replace(img, img.replace(".", "-tn."));
@@ -113,7 +116,7 @@ function refresh_image(){
 
     // Update page info
     document.getElementById("description").innerHTML = 
-    "<h3>About:</h3> <br>" + about_img(img) + 
+    "<h3>About:</h3> <br>" + about_img() + 
     "<br><i>This image was last updated " + last_update + ". The next image " + next_update + "</i>" +
     "<h3>Export:</h3>" +
     "Open image in new tab: <br><button onclick=\"window.open('" + path + "', '_blank');\">" + "Original Quality" + "</button>" +
@@ -129,7 +132,7 @@ function refresh_image(){
 }
 
 // Return information about a specific image
-function about_img(img){
+function about_img(){
     switch(img){
         // Full disk images
         case "FD.jpg":
@@ -250,19 +253,19 @@ function fox(){
     change_image('wxfox.png')
 
     show_full_preview = false;
-    set_data_site('https://kiwiweather.com/');
+    initialize_scripts()
 }
 
 // Update dimentions of magnifier when image is changed
 function update_magnifier_dimensions(){
     var glass = document.getElementById("magnifier")
-    var img = document.getElementById("display")
+    var data = document.getElementById("display")
 
     bw = 3;
     w = glass.offsetWidth / 2;
     h = glass.offsetHeight / 2;
 
-    glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+    glass.style.backgroundSize = (data.width * zoom) + "px " + (data.height * zoom) + "px";
 }
 
 // Magnify the display on mouseover
@@ -270,28 +273,28 @@ function update_magnifier_dimensions(){
 function magnify(imgID, curzoom){
     zoom = curzoom;
 
-    var img, glass;
-    img = document.getElementById(imgID);
+    var data, glass;
+    data = document.getElementById(imgID);
   
     /* Create magnifier glass: */
     glass = document.createElement("DIV");
     glass.setAttribute("id", "magnifier");
     
     /* Insert magnifier glass: */
-    img.parentElement.insertBefore(glass, img);
+    data.parentElement.insertBefore(glass, data);
     
     /* Set background properties for the magnifier glass: */
     glass.style.visibility = "hidden";
     glass.style.backgroundRepeat = "no-repeat";
-    glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+    glass.style.backgroundSize = (data.width * zoom) + "px " + (data.height * zoom) + "px";
 
     /* Execute a function when someone moves the magnifier glass over the image: */
     glass.addEventListener("mousemove", move_magnifier);
-    img.addEventListener("mousemove", move_magnifier);
+    data.addEventListener("mousemove", move_magnifier);
   
     /*and also for touch screens:*/
     glass.addEventListener("touchmove", move_magnifier);
-    img.addEventListener("touchmove", move_magnifier);
+    data.addEventListener("touchmove", move_magnifier);
 
     // $("#display").mouseover(function(){
     //     $("#magnifier").css("visibility", "visible");
@@ -312,14 +315,14 @@ function magnify(imgID, curzoom){
 
         /* Prevent the magnifier glass from being positioned outside the image: */
         /* Hide magnifier if it is about to be */
-        if(x > img.width - (w / zoom)){
-            x = img.width - (w / zoom);
+        if(x > data.width - (w / zoom)){
+            x = data.width - (w / zoom);
             glass.style.visibility = "hidden";
         } else if(x < w / zoom){
             x = w / zoom;
             glass.style.visibility = "hidden";
-        } else if(y > img.height - (h / zoom)){
-            y = img.height - (h / zoom);
+        } else if(y > data.height - (h / zoom)){
+            y = data.height - (h / zoom);
             glass.style.visibility = "hidden";
         } else if(y < h / zoom){
             y = h / zoom;
@@ -340,7 +343,7 @@ function magnify(imgID, curzoom){
         var a, x = 0, y = 0;
         e = e || window.event;
         /* Get the x and y positions of the image: */
-        a = img.getBoundingClientRect();
+        a = data.getBoundingClientRect();
         /* Calculate the cursor's x and y coordinates, relative to the image: */
         x = e.pageX - a.left;
         y = e.pageY - a.top;
