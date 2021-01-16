@@ -224,6 +224,10 @@ function magnifier_option(){
 
         glass = document.getElementById("magnifier");
         glass.style.visibility = "hidden";
+
+        // If the magnifier is disabled, show the full quality image
+        document.getElementById("full_size_prev").checked = true;
+        full_size_option();
     }
 }
 
