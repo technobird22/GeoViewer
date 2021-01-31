@@ -282,9 +282,20 @@ del {
     color: rgb(147, 216, 44);
 }
 
-infobar{
-    border: 2px solid #13bf00;
+.infobar {
+    background-color: #ededed;
+    border: 2px solid #969696;
     border-radius: 5px;
-    background-color: #b6ffab;
     padding: 10px;
+    margin: 0px;
+}
+
+.green-box {
+    background-color: #b6ffab;
+    border: 2px solid #13bf00;
+}
+
+.yellow-box {
+    background-color: #fff757;
+    border: 2px solid #bdbd2d;
 }
