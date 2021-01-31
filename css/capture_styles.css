@@ -168,7 +168,7 @@ button:hover{
     font-weight: bold;
 }
 
-#mobile-prompt{
+.mobile-prompt{
     display: none;
 }
 
@@ -187,8 +187,8 @@ button:hover{
         display: none;
     }
 
-    #mobile-prompt{
-        display: initial;
+    .mobile-prompt{
+        display: inherit;
     }
 
     .viewer-section {

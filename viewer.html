@@ -30,11 +30,15 @@
     <section class="content-section container">
         <h3>Below, you will find the latest images received from GK-2A on <a href="https://github.com/technobird22/GeoViewer/">GeoViewer</a><br>
         </h3>
-        <div id="refresh-prompt" class="green-box infobar">
-            🟢 The data below is live from the satellite. However, you will need to either <strong>manually reload the page</strong> or <strong><del>turn on autoreload below</del> to update the data</strong>
+        <div id="new-data-prompt" class="red-box infobar">
+            🔴 New data is available. <strong>Reload</strong> the data viewer or <strong><del>enable autoreload</del> to get updated data</strong>
         </div>
-        <div id="mobile-prompt" class="yellow-box infobar">
-            <br>
+        <br>
+        <div id="refresh-prompt" class="green-box infobar">
+            🟢 The data below is live from the satellite. However, you will need to either <strong>manually reload the page</strong> or <strong><del>enable autoreload</del> to always get the latest data</strong>
+        </div>
+        <br class="mobile-prompt">
+        <div class="yellow-box infobar mobile-prompt">
             🟡 We have detected that you are on mobile. To save data, you might want to <strong>show a reduced quality image preview</strong>
         </div>
         <br>

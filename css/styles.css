@@ -285,6 +285,7 @@ del {
 .infobar {
     background-color: #ededed;
     border: 2px solid #969696;
+
     border-radius: 5px;
     padding: 10px;
     margin: 0px;
@@ -299,4 +300,9 @@ del {
 .yellow-box {
     background-color: #fff757;
     border: 2px solid #bdbd2d;
+}
+
+.red-box {
+    background-color: #ff9999;
+    border: 2px solid #a82828;
 }
