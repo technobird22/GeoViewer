@@ -22,10 +22,11 @@ GeoViewer displays a collection of weather satellite data from a variety of sour
 
 ## Todo:
 - [x] <del>Split project</del>
-- [ ] Rewrite README.MD
+- [x] Rewrite README.MD
 - [ ] Remember selected options and enhancements (with URL parameters)
 - [ ] Add crops for popular locations
 - [ ] Users can pick locations on the viewer to easily share with others
+- [ ] Add social media share buttons (twitter, embed, facebook, email)
 - [ ] Prompt users on mobile to switch to low quality mode (with infobars)
 - [ ] Repair dropped frames/packets (by having multiple feeders)
 - [ ] Globe composite of multiple satellites
@@ -43,11 +44,10 @@ GeoViewer displays a collection of weather satellite data from a variety of sour
 
 ## Running GeoCapture
 A live version of the site can be found at [https://techno.nzbird.com/GeoViewer/captures.html](https://techno.nzbird.com/GeoViewer/captures.html)
+<iframe src="https://techno.nzbird.com/GeoViewer/captures.html" width="1000" height="500" frameborder="0" allowfullscreen/>
 
 ## Browser requirements
-Relatively modern browser. Requires JavaScript.
-
-TODO
+GeoViewer requires a relatively modern browser. Requires JavaScript to be enabled.
 
 Tested on Chrome 88 and Firefox 84.
 Site is mobile friendly, though some of the formatting becomes a bit off.

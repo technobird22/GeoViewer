@@ -166,7 +166,7 @@ tr {
     font-weight: bolder;
 }
 
-.time, .param {
+.time, .param, .code {
     color: white;
     font-family: 'Courier New', Courier, monospace;
     
@@ -280,4 +280,11 @@ del {
 .good {
     font-weight: bold;
     color: rgb(147, 216, 44);
+}
+
+infobar{
+    border: 2px solid #13bf00;
+    border-radius: 5px;
+    background-color: #b6ffab;
+    padding: 10px;
 }
