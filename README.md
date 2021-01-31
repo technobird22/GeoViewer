@@ -23,6 +23,7 @@ GeoViewer displays a collection of weather satellite data from a variety of sour
 ## Todo:
 - [x] <del>Split project</del>
 - [x] <del>Rewrite README.MD</del>
+- [ ] Autoreloader
 - [ ] Remember selected options and enhancements (with URL parameters)
 - [ ] Add crops for popular locations
 - [ ] Users can pick locations on the viewer to easily share with others
