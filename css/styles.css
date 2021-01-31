@@ -288,6 +288,7 @@ del {
     border-radius: 5px;
     padding: 10px;
     margin: 0px;
+    line-height: 30px;
 }
 
 .green-box {

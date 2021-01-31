@@ -168,6 +168,10 @@ button:hover{
     font-weight: bold;
 }
 
+#mobile-prompt{
+    display: none;
+}
+
 /* Responsive layout - If screen is narrow */
 @media screen and (max-width: 750px) {
     #filter-select{
@@ -181,6 +185,10 @@ button:hover{
     
     #full_screen_button{
         display: none;
+    }
+
+    #mobile-prompt{
+        display: initial;
     }
 
     .viewer-section {
