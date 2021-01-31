@@ -22,23 +22,24 @@ GeoViewer displays a collection of weather satellite data from a variety of sour
 
 ## Todo:
 - [x] <del>Split project</del>
-- [x] Rewrite README.MD
+- [x] <del>Rewrite README.MD</del>
 - [ ] Remember selected options and enhancements (with URL parameters)
 - [ ] Add crops for popular locations
 - [ ] Users can pick locations on the viewer to easily share with others
-- [ ] Add social media share buttons (twitter, embed, facebook, email)
+- [ ] Add social media share buttons (twitter, <del>embed</del>, facebook, email)
 - [ ] Prompt users on mobile to switch to low quality mode (with infobars)
 - [ ] Repair dropped frames/packets (by having multiple feeders)
 - [ ] Globe composite of multiple satellites
 - [ ] Overlay flight data from ADSBexchange
 - [ ] Project and overlay polar satellite data
-- [ ] Overlay APRS symbols (for fun?)
+- [ ] Overlay APRS symbols (?)
 - [ ] Overlay lightning data (?)
 
 ### Add other satellites:
 - [ ] GOES 17
 - [ ] GOES 16
 - [ ] Himawari 8
+- [ ] Polar orbiting
 
 -----
 
