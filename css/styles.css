@@ -65,15 +65,11 @@ a {
 .page-name {
     color: white;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 10em;
+    font-size: 5em;
     margin: 0;
     font-weight: bold;
     text-decoration: none;
     text-align: center;
-}
-
-.page-name-large {
-    font-size: 3em;
 }
 
 .row-highlight {
@@ -173,6 +169,10 @@ tr {
     background-color: #888888;
     border-radius: 2px;
     text-align: center;
+}
+
+.allow_break{
+    word-break: break-all;
 }
 
 #footer-text {
