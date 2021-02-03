@@ -12,6 +12,16 @@ body {
     padding: 0;
 }
 
+.page-name {
+    color: white;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 4em;
+    margin: 0;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
 .nav ul {
     margin: 0;
 }
@@ -62,24 +72,14 @@ a {
     padding-bottom: 5;
 }
 
-.page-name {
-    color: white;
-    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 4em;
-    margin: 0;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-}
-
-.row-highlight {
-    background-color: #8595AE;
-}
-
 .container {
     color: gray;
     margin: 0 auto;
     padding: 0 1.5em;
+}
+
+.row-highlight {
+    background-color: #8595AE;
 }
 
 .small-header {

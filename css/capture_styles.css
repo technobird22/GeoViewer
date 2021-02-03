@@ -17,6 +17,12 @@
     box-sizing: border-box;
 }
 
+.viewer-section{
+    float: left;
+    /* margin: 5px; */
+    /* padding: 10px; */
+}
+
 .image-container{
     position: relative;
     padding: 5px;
@@ -115,7 +121,7 @@ button:hover{
 
     width: 100%;
     
-    text-align: center;
+    /* text-align: center; */
 }
 
 #description{
@@ -136,12 +142,6 @@ button:hover{
     content: "";
     display: table;
     clear: both;
-}
-
-.viewer-section{
-    float: left;
-    /* margin: 5px; */
-    /* padding: 10px; */
 }
 
 #magnifier_instructions{
