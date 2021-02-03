@@ -306,3 +306,9 @@ del {
     background-color: #ff9999;
     border: 2px solid #a82828;
 }
+
+#attribution{
+    font-style: oblique;
+    color: #FFF;
+    padding-top: 10px;
+}
