@@ -312,3 +312,7 @@ del {
     color: #FFF;
     padding-top: 10px;
 }
+
+#new-data-prompt{
+    display: none;
+}
