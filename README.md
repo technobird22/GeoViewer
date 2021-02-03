@@ -23,13 +23,16 @@ GeoViewer displays a collection of weather satellite data from a variety of sour
 ## Todo:
 - [x] <del>Split project</del>
 - [x] <del>Rewrite README.MD</del>
+- [x] <del>Prompt users on mobile to switch to low quality mode (with infobars)</del>
+- [x] <del>Make site mobile friendly</del>
 - [ ] Autoreloader
 - [ ] Remember selected options and enhancements (with URL parameters)
 - [ ] Add crops for popular locations
 - [ ] Users can pick locations on the viewer to easily share with others
 - [ ] Add social media share buttons (twitter, <del>embed</del>, facebook, email)
-- [ ] Prompt users on mobile to switch to low quality mode (with infobars)
 - [ ] Repair dropped frames/packets (by having multiple feeders)
+- [ ] Make individual separate GeoViewer people can host themselves
+- [ ] Make a hub where people can view data from feeders around the world, with links to feeders' own GeoViewer pages.
 - [ ] Globe composite of multiple satellites
 - [ ] Overlay flight data from ADSBexchange
 - [ ] Project and overlay polar satellite data
@@ -37,6 +40,7 @@ GeoViewer displays a collection of weather satellite data from a variety of sour
 - [ ] Overlay lightning data (?)
 
 ### Add other satellites:
+- [x] GK-2A
 - [ ] GOES 17
 - [ ] GOES 16
 - [ ] Himawari 8
