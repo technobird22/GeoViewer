@@ -1,9 +1,9 @@
 # GeoViewer
 [![Website status](https://img.shields.io/website-up-down-green-red/https/techno.nzbird.com/GeoViewer/captures.html.svg)](https://techno.nzbird.com/GeoViewer/captures.html)
 [![GitHub issues](https://img.shields.io/github/issues/technobird22/geoviewer)](https://GitHub.com/technobird22/GeoViewer/issues/)
-[![GitHub forks](https://img.shields.io/github/forks/technobird22/GeoViewer.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/technobird22/GeoViewer/network/)
 [![GitHub stars](https://img.shields.io/github/stars/technobird22/GeoViewer.svg?style=social&label=Star&maxAge=2592000)](https://github.com/technobird22/GeoViewer/stargazers/)
 [![GitHub watchers](https://img.shields.io/github/watchers/technobird22/GeoViewer.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/technobird22/GeoViewer/watchers/)
+[![GitHub forks](https://img.shields.io/github/forks/technobird22/GeoViewer.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/technobird22/GeoViewer/network/)
 
 
 GeoViewer* is a web app for viewing imagery and other data received from geostationary satellites such as the **GOES**, **GK-2**, and **Himawari** series.
@@ -48,9 +48,11 @@ GeoViewer displays a collection of weather satellite data from a variety of sour
 
 -----
 
-## Running GeoCapture
+## Running GeoViewer
 A live version of the site can be found at [https://techno.nzbird.com/GeoViewer/captures.html](https://techno.nzbird.com/GeoViewer/captures.html)
 <iframe src="https://techno.nzbird.com/GeoViewer/captures.html" width="1000" height="500" frameborder="0" allowfullscreen/>
+
+**We are currently working on a version of GeoViewer that people can host themselves for their own station.<br>Keep tuned for that!
 
 ## Browser requirements
 GeoViewer requires a relatively modern browser. Requires JavaScript to be enabled.
