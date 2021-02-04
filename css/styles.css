@@ -282,6 +282,10 @@ del {
     color: rgb(147, 216, 44);
 }
 
+.hide{
+    display: none;
+}
+
 .infobar {
     background-color: #ededed;
     border: 2px solid #969696;
@@ -314,5 +318,9 @@ del {
 }
 
 #new-data-prompt{
+    display: none;
+}
+
+#text_display{
     display: none;
 }
