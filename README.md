@@ -11,7 +11,7 @@ GeoViewer* is a web app for viewing imagery and other data received from geostat
 **Previously GeoCapture. For the satellite data processing code, check out [GeoAnimator](https://github.com/technobird22/geoanimator/)*
 
 ## About
-GeoViewer displays a collection of weather satellite data from a variety of sources (in both processed and original forms) in one place. There are many useful features such as zoom on hover and a variety of overlays and enhancements. This site is also mobile friendly. <del>You can also select an area of interest and easily share it with others</del>
+GeoViewer is a collection of weather satellite data from a variety of sources in one place, with data available in both original and enhanced forms. There are many useful features such as zoom on hover and a variety of overlays and enhancements. You can also easily change the wavelength channel that you are viewing for multispectral analysis. This site is also mobile friendly. <del>You can also select an area of interest and easily share it with others</del>
 
 ## Features:
 - Zoom on hover
@@ -55,7 +55,7 @@ A live version of the site can be found at [https://techno.nzbird.com/GeoViewer/
 **We are currently working on a version of GeoViewer that people can host themselves for their own station.<br>Keep tuned for that!
 
 ## Browser requirements
-GeoViewer requires a relatively modern browser. Requires JavaScript to be enabled.
+GeoViewer requires a relatively modern browser and JavaScript to function properly.
 
 Tested on Chrome 88 and Firefox 84.
-Site is mobile friendly, though some of the formatting becomes a bit off.
+Site is mobile friendly.
