@@ -155,10 +155,41 @@ function about_data(){
             return "This is an animation of the image data from the last 72 hours, received as-is from the satellite, with no processing";
 
         // Charts and Predictions
+        // Global
         case "GWW3F.gif":
             return "Global Wave Model data";
+
+        // South-East Asia
         case "UP50A.gif":
             return "Pressure and temperature data for South-East Asia";
+        case "UP50F24.png":
+            return "Wind and Temperature Forecast for South-East Asia for the next 24 hours (today).";
+        case "UP50F48.png":
+            return "Wind and Temperature Forecast for South-East Asia for the next 48 hours (today and tomorrow).";
+
+        // Korea
+        case "COMSFOG.png":
+            return "Fog data for the Korean region.";
+        case "COMSIR1.png":
+            return "Detailed satellite IR image for the Korean region (with borders shown).";
+        case "RWW3A.gif":
+            return "Wave analysis for the Korean region.";
+        case "RWW3F.gif":
+            return "Wave model for the Korean region.";
+        case "SSTA.gif":
+            return "Current sea surface temperature for the Korean region now.";
+        case "SSTF24.png":
+            return "Forecast sea surface temperature for the Korean region for the next 24 hours (today).";
+        case "SSTF48.png":
+            return "Forecast sea surface temperature for the Korean region for the next 48 hours (today and tomorrow).";
+        case "SSTF72.png":
+            return "Forecast sea surface temperature for the Korean region for the next 72 hours (up to the day after tomorrow).";
+        case "SICEA.png":
+            return "Sea ice data for the Korean region.";
+        case "SUFA03.gif":
+            return "Surface pressure data for the Korean region.";
+
+
         case "sea":
             return "Sea surface temperature image";
         case "contrasta":
