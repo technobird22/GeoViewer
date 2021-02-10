@@ -12,6 +12,58 @@ body {
     padding: 0;
 }
 
+
+b {
+    color: gray;
+    font-size: large;
+    font-weight: bold;
+}
+
+
+del {
+    color: #cccccc;
+}
+
+table {
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+
+.main-header table {
+    border-collapse: collapse;
+}
+
+.content-section {
+    margin: 1em;
+}
+
+.content-section th {
+    background-color: #30406C;
+    border: 1px solid black;
+    color: white;
+    font-weight: bolder;
+    text-align: left;
+}
+
+
+.content-section td {
+    color: black;
+    font-weight: bold;
+    text-align: left;
+}
+
+tr {
+    border: solid;
+    border-width: 2px 0;
+}
+
+
 .page-name {
     color: white;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -112,43 +164,6 @@ a {
     margin-bottom: 5px;
 }
 
-.main-header table {
-    border-collapse: collapse;
-}
-
-.content-section {
-    margin: 1em;
-}
-
-.content-section th {
-    background-color: #30406C;
-    border: 1px solid black;
-    color: white;
-    font-weight: bolder;
-    text-align: left;
-}
-
-table {
-    border-collapse: collapse;
-    border: 3px solid black;
-}
-
-th,
-td {
-    padding: 10px;
-}
-
-.content-section td {
-    color: black;
-    font-weight: bold;
-    text-align: left;
-}
-
-tr {
-    border: solid;
-    border-width: 2px 0;
-}
-
 .content-section a:link {
     color: blue;
     /* font-size: 1.2em; */
@@ -178,10 +193,6 @@ tr {
     word-break: break-all;
 }
 
-#footer-text {
-    color: white;
-}
-
 .main-footer {
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, .1);
@@ -199,7 +210,7 @@ tr {
     background-size: cover;
 }
 
-/* Hints */
+/* Tooltips */
 .hint {
     position: relative;
     display: inline-block;
@@ -245,12 +256,6 @@ tr {
     border: 3px dashed #cccccc;
 }
 
-b {
-    color: gray;
-    font-size: large;
-    font-weight: bold;
-}
-
 .showhidebutton {
     font-size: large;
 
@@ -270,10 +275,6 @@ b {
     margin-bottom: 10px;
     border: 3px solid rgb(157, 183, 255);
     /* border-radius: 10px; */
-}
-
-del {
-    color: #cccccc;
 }
 
 .example-image {
@@ -326,4 +327,8 @@ del {
 
 #text_display{
     display: none;
+}
+
+#footer-text {
+    color: white;
 }
