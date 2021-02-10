@@ -38,6 +38,7 @@ GeoViewer is a collection of weather satellite data from a variety of sources in
 - [ ] Project and overlay polar satellite data
 - [ ] Overlay APRS symbols (?)
 - [ ] Overlay lightning data (?)
+- [ ] Rename to 'Global Sat Viewer' (?)
 
 ### Add other satellites:
 - [x] GK-2A
