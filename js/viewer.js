@@ -1,6 +1,7 @@
 function initialize_scripts(){
     set_data_site('https://kiwiweather.com/');
     // set_data_site(''); // For local viewing or tests
+    full_size_option();
     magnify("display", 3);
 }
 
@@ -75,7 +76,7 @@ function change_image(new_img){
     img = new_img
     
     var data_directory = "gk-2a/";
-    path = data_site + data_directory + img;
+    path = data_site + data_directory + img + "?t=";
     tnpath = path.replace(img, img.replace(".", "-tn."));
     
     var display = document.getElementById("display")
