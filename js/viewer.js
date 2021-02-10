@@ -190,7 +190,7 @@ function about_data(){
         case "SUFA03.gif":
             return "Surface pressure data for the Korean region.";
 
-
+        // Legacy
         case "sea":
             return "Sea surface temperature image";
         case "contrasta":
@@ -294,17 +294,6 @@ function full_size_option(){
     }
 }
 
-// Fox
-function fox(){
-    set_data_site('');
-    show_full_preview = true;
-
-    change_image('wxfox.png')
-
-    show_full_preview = false;
-    initialize_scripts()
-}
-
 // Update dimentions of magnifier when image is changed
 function update_magnifier_dimensions(){
     var glass = document.getElementById("magnifier")
@@ -318,7 +307,7 @@ function update_magnifier_dimensions(){
 }
 
 // Magnify the display on mouseover
-// Credit: https://www.w3schools.com/howto/howto_js_image_magnifier_glass.asp
+// Inspired by: https://www.w3schools.com/howto/howto_js_image_magnifier_glass.asp
 function magnify(imgID, curzoom){
     zoom = curzoom;
 
@@ -345,10 +334,6 @@ function magnify(imgID, curzoom){
     glass.addEventListener("touchmove", move_magnifier);
     data.addEventListener("touchmove", move_magnifier);
 
-    // $("#display").mouseover(function(){
-    //     $("#magnifier").css("visibility", "visible");
-    // });
-
     function move_magnifier(e) {
         update_magnifier_dimensions();
 
@@ -361,9 +346,8 @@ function magnify(imgID, curzoom){
         x = pos.x;
         y = pos.y;
 
-
         /* Prevent the magnifier glass from being positioned outside the image: */
-        /* Hide magnifier if it is about to be */
+        /* Hide magnifier if it is about to leave the edge */
         if(x > data.width - (w / zoom)){
             x = data.width - (w / zoom);
             glass.style.visibility = "hidden";
@@ -384,7 +368,7 @@ function magnify(imgID, curzoom){
         glass.style.left = (x - w) + "px";
         glass.style.top = (y - h) + "px";
         
-        /* Display what the magnifier glass "sees": */
+        /* Update what the magnifier contains: */
         glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
     }
   
@@ -393,12 +377,15 @@ function magnify(imgID, curzoom){
         e = e || window.event;
         /* Get the x and y positions of the image: */
         a = data.getBoundingClientRect();
-        /* Calculate the cursor's x and y coordinates, relative to the image: */
+
+        /* Calculate the cursor's coordinates, relative to the image: */
         x = e.pageX - a.left;
         y = e.pageY - a.top;
-        /* Consider any page scrolling: */
+
+        /* Take account of page scrolling: */
         x = x - window.pageXOffset;
         y = y - window.pageYOffset;
+
         return {x : x, y : y};
     }
 }
